@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="201934AF-A25E-4731-BBC6-3F8572005C86" ModuleId="Loki" />
+  <Module PersistentId="BA535456-0636-48C8-B298-BE68FA2708E3" ModuleId="Loki.Tests" />
+</Modules>
