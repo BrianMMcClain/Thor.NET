@@ -2,11 +2,6 @@
 
 namespace Thor.Net.Hamma
 {
-    public interface ICloudFoundryCommunicator
-    {
-        bool SetTarget(Uri cloudUri);
-    }
-
     public class CloudFoundryCommunicator : ICloudFoundryCommunicator
     {
         public bool SetTarget(Uri cloudUri)
