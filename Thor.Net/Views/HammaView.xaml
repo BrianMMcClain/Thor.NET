@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel>
-        <StackPanel Orientation="Horizontal" >
+    <StackPanel Orientation="Vertical"> 
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="Apps">Apps</Button>
+            <Button x:Name="Clouds">Clouds</Button>
+            <Button x:Name="Services">Services</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
             <TextBlock Text="Thor is here!"></TextBlock>
         </StackPanel>
     </StackPanel>
