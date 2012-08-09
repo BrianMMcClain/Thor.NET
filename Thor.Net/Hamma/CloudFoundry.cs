@@ -1,11 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Thor.Net.Hamma
 {
-    class CloudFoundry
+    public class CloudFoundry
     {
+        private readonly ICloudFoundryCommunicator _mockedCommunicator;
+
+        public CloudFoundry(ICloudFoundryCommunicator mockedCommunicator)
+        {
+            _mockedCommunicator = mockedCommunicator;
+        }
+
+        public bool SetTarget(Uri goodCloudUri)
+        {
+            return false;
+        }
+    }
+
+    public interface ICloudFoundryCommunicator
+    {
+        bool SetTarget(Uri goodCloudUri);
     }
 }
