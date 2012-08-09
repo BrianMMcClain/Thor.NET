@@ -2,27 +2,23 @@
 
 namespace Thor.Net.Hamma
 {
-    public class CloudFoundryCommunicator : ICloudFoundryCommunicator
+    public class CloudFoundry
     {
-        public bool SetTarget(Uri cloudUri)
+        private readonly ICloudFoundryCommunicator _mockedCommunicator;
+
+        public CloudFoundry(ICloudFoundryCommunicator mockedCommunicator)
         {
-            throw new NotImplementedException();
+            _mockedCommunicator = mockedCommunicator;
+        }
+
+        public bool SetTarget(Uri goodCloudUri)
+        {
+            return false;
         }
     }
 
-    public class CloudFoundry
+    public interface ICloudFoundryCommunicator
     {
-        private readonly ICloudFoundryCommunicator _cloudFoundryCommunicator;
-
-        public CloudFoundry(ICloudFoundryCommunicator cloudFoundryCommunicator)
-        {
-            _cloudFoundryCommunicator = cloudFoundryCommunicator;
-        }
-
-        public bool SetTarget(Uri cloudUri)
-        {
-            return _cloudFoundryCommunicator.SetTarget(cloudUri);
-        }
-
+        bool SetTarget(Uri goodCloudUri);
     }
 }

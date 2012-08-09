@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Thor.Net\Thor.Net.csproj">
-      <Project>{CF670112-21CE-48B9-B2A1-A35EFF0C83DE}</Project>
+      <Project>{4532920C-C63A-4E9B-A3B2-41F69B98F93C}</Project>
       <Name>Thor.Net</Name>
     </ProjectReference>
   </ItemGroup>
