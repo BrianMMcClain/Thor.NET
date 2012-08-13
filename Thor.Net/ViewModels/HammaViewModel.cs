@@ -6,7 +6,7 @@ namespace Thor.Net.ViewModels
     {
         public void Apps()
         {
-            
+            AppsViewModel
         }
     }
 }
