@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Thor.Net.Views
+namespace Ui.Wpf.Views
 {
     /// <summary>
-    /// Interaction logic for ServicesView.xaml
+    /// Interaction logic for Clouds.xaml
     /// </summary>
-    public partial class ServicesView : UserControl
+    public partial class Clouds : UserControl
     {
-        public ServicesView()
+        public Clouds()
         {
             InitializeComponent();
         }

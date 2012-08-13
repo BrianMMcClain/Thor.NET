@@ -64,22 +64,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\BaseFoundry.cs" />
+    <Compile Include="Models\FoundryServices.cs" />
+    <Compile Include="Models\FoundryApplication.cs" />
+    <Compile Include="Models\FoundryDeployments.cs" />
+    <Compile Include="Models\FoundryTarget.cs" />
+    <Compile Include="Models\IBaseFoundry.cs" />
     <Compile Include="ThorHammaStrapper.cs" />
-    <Compile Include="ViewModels\AppsViewModel.cs" />
-    <Compile Include="ViewModels\CloudsViewModel.cs" />
     <Compile Include="ViewModels\HammaViewModel.cs" />
-    <Compile Include="ViewModels\ServicesViewModel.cs" />
-    <Compile Include="Views\AppsView.xaml.cs">
-      <DependentUpon>AppsView.xaml</DependentUpon>
+    <Compile Include="Views\Applications.xaml.cs">
+      <DependentUpon>Applications.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CloudsView.xaml.cs">
-      <DependentUpon>CloudsView.xaml</DependentUpon>
+    <Compile Include="Views\Clouds.xaml.cs">
+      <DependentUpon>Clouds.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HammaView.xaml.cs">
       <DependentUpon>HammaView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ServicesView.xaml.cs">
-      <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -111,25 +111,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Views\AppsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\Applications.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CloudsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\Clouds.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HammaView.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ServicesView.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

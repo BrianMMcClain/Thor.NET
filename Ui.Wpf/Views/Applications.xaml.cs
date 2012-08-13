@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Ui.Wpf.Views
 {
     /// <summary>
-    /// Interaction logic for HammaView.xaml
+    /// Interaction logic for Applications.xaml
     /// </summary>
-    public partial class HammaView : UserControl
+    public partial class Applications : UserControl
     {
-        public HammaView()
+        public Applications()
         {
             InitializeComponent();
         }

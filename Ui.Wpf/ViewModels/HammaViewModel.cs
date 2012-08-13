@@ -2,8 +2,6 @@
 {
     public class HammaViewModel
     {
-        public void Apps()
-        {
-        }
+
     }
 }
