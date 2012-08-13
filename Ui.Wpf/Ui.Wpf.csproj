@@ -71,6 +71,9 @@
     <Compile Include="Models\FoundryTarget.cs" />
     <Compile Include="Models\IBaseFoundry.cs" />
     <Compile Include="ThorHammaStrapper.cs" />
+    <Compile Include="ViewModels\FoundryApplicationsViewModel.cs" />
+    <Compile Include="ViewModels\FoundryCloudsViewModel.cs" />
+    <Compile Include="ViewModels\FoundryServicesViewModel.cs" />
     <Compile Include="ViewModels\HammaViewModel.cs" />
     <Compile Include="Views\Applications.xaml.cs">
       <DependentUpon>Applications.xaml</DependentUpon>
