@@ -1,6 +1,9 @@
-Thor.NET - Windows 7 Version
+![Thor](http://adronhall.smugmug.com/Software/Software-Development/Pyrocumulus/i-NqSGc4m/0/S/Marvel-vs-Capcom-3-MVC3-S.jpg "Thor")
+Project Thor.NET Overview
 ===
-Project Mission:
+The Thor.NET Project is setup to deliver a high quality, solid user experience, and resilient user interface for Cloud Foundry (w/ Iron Foundry Extension Support) PaaS enabled systems to the Apple OS-X System. This project, to ensure a solid user experience utilizes the Cocoa Framework.
+
+_**Please fork and contribute back.**_ If you'd like to contact the team working on Thor so we can discuss our current road map, please feel free to contact me [Adron Hall](https://github.com/Adron/) via Twitter [@Adron](https://twitter.com/#!/adron) or e-mail me <adron.hall@tier3.com>. You can also of course message me directly via Github.
 ---
 The goal behind this project is to provide a native Windows 7 user interface for administration of Cloud Foundry enabled targets, the applications and services deployed and the resources allocated to these environments.
 Technology:
