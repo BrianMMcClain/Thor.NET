@@ -8,9 +8,12 @@ Technology:
 The technology used includes several different pieces of the .NET Framework, 3rd Party Open Source Software Libraries and custom code.
 
 Key Libraries in the Application:
+
 	*	.NET Framework 4.0
 	*	Caliburn.Micro for MVVM Framework
+
 Key Libraries in the Testing of the Application:
+
 	*	NUnit
 	*	NSubstitute
 	*	NBuilder
