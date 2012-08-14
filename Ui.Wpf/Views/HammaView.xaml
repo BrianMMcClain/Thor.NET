@@ -7,9 +7,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button>Clouds</Button>
-            <Button>Applications</Button>
-            <Button>Services</Button>
+            <Button x:Name="ShowFoundryClouds" >Clouds</Button>
+            <Button x:Name="ShowFoundryApplications" >Applications</Button>
+            <Button x:Name="ShowFoundryServices" >Services</Button>
         </StackPanel>
         
         <UserControl>

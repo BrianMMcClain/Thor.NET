@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collateral", "Collateral", "{3BF66F76-B07B-4CCF-89B4-0D0CB9ABF1D4}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Wpf", "Ui.Wpf\Ui.Wpf.csproj", "{3709F442-8736-45DD-B720-E16FD85B1AD7}"
