@@ -1,4 +1,4 @@
-﻿namespace Thor.Net
+﻿namespace Ui.Wpf
 {
 	using System;
 	using System.Collections.Generic;
@@ -54,3 +54,4 @@
 		}
 	}
 }
+
