@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A2FB9EA4-ECBA-4471-A3C1-B6183F2735E8}</ProjectGuid>
+    <ProjectGuid>{69442836-40AD-42F5-A5D6-1A73028B0DF9}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ui.Metro.Csharp</RootNamespace>
@@ -109,6 +109,11 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\FoundryApplication.cs" />
+    <Compile Include="Model\FoundryCloud.cs" />
+    <Compile Include="Model\FoundryDeployment.cs" />
+    <Compile Include="Model\FoundryService.cs" />
+    <Compile Include="Model\ThorDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +123,10 @@
     <None Include="Ui.Metro.Csharp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
