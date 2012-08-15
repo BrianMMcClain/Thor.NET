@@ -129,6 +129,8 @@
     <None Include="SharpSplitApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BrownTan.png" />
+    <Content Include="Assets\LightBlue.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />

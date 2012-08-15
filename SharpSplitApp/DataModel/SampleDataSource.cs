@@ -176,14 +176,14 @@ namespace SharpSplitApp.Data
 
             var group1 = new SampleDataGroup("Clouds",
                     "Clouds",
-                    "Manage your clouds, deploy to your clouds",
-                    "Assets/DarkGray.png",
-                    "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
-            group1.Items.Add(new SampleDataItem("Group-1-Item-1",
-                    "Item Title: 1",
-                    "Item Subtitle: 1",
-                    "Assets/LightGray.png",
-                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
+                    "Manage clouds",
+                    "Assets/LightBlue.png",
+                    "Manage your clouds, view information, deploy applications, review services and more.");
+            group1.Items.Add(new SampleDataItem("Applications",
+                    "Applications",
+                    "Manage Applications",
+                    "Assets/BrownTan.png",
+                    "Manage your ",
                     ITEM_CONTENT,
                     group1));
             group1.Items.Add(new SampleDataItem("Group-1-Item-2",
@@ -216,10 +216,10 @@ namespace SharpSplitApp.Data
                     group1));
             this.AllGroups.Add(group1);
 
-            var group2 = new SampleDataGroup("Group-2",
+            var group2 = new SampleDataGroup("Applications",
                     "Group Title: 2",
                     "Group Subtitle: 2",
-                    "Assets/LightGray.png",
+                    "Assets/BrownTan.png",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             group2.Items.Add(new SampleDataItem("Group-2-Item-1",
                     "Item Title: 1",
