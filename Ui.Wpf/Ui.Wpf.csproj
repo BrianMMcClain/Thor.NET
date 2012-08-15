@@ -75,8 +75,14 @@
     <Compile Include="ViewModels\FoundryCloudsViewModel.cs" />
     <Compile Include="ViewModels\FoundryServicesViewModel.cs" />
     <Compile Include="ViewModels\HammaViewModel.cs" />
+    <Compile Include="Views\FoundryApplicationsView.xaml.cs">
+      <DependentUpon>FoundryApplicationsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FoundryCloudsView.xaml.cs">
       <DependentUpon>FoundryCloudsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FoundryServicesView.xaml.cs">
+      <DependentUpon>FoundryServicesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HammaView.xaml.cs">
       <DependentUpon>HammaView.xaml</DependentUpon>
@@ -113,7 +119,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\FoundryApplicationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FoundryCloudsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FoundryServicesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

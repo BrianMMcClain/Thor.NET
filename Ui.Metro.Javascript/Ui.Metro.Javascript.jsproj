@@ -32,7 +32,7 @@
     <ProjectConfiguration Include="Release|x86">
       <Configuration>Release</Configuration>
       <Platform>x86</Platform>
-    </ProjectConfiguration>  
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>79832a7c-b1e5-42b9-9f2d-9446ecf13990</ProjectGuid>
