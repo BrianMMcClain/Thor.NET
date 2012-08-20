@@ -100,9 +100,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -114,12 +111,25 @@
     <Compile Include="Model\FoundryDeployment.cs" />
     <Compile Include="Model\FoundryService.cs" />
     <Compile Include="Model\ThorDomain.cs" />
+    <Compile Include="net40\AppBootstrapper.cs" />
+    <Compile Include="net40\IShell.cs" />
+    <Compile Include="net40\ShellViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sl4-windowsphone71\AppBootstrapper.cs" />
+    <Compile Include="sl4-windowsphone71\MainPageViewModel.cs" />
+    <Compile Include="sl4\AppBootstrapper.cs" />
+    <Compile Include="sl4\IShell.cs" />
+    <Compile Include="sl4\ShellViewModel.cs" />
+    <Compile Include="sl5\AppBootstrapper.cs" />
+    <Compile Include="sl5\IShell.cs" />
+    <Compile Include="sl5\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="install.ps1" />
+    <None Include="packages.config" />
     <None Include="Ui.Metro.Csharp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +154,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="net40\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="sl4\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="sl5\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.1.3.1\lib\WinRT45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Extensions">
+      <HintPath>..\packages\Caliburn.Micro.1.3.1\lib\WinRT45\Caliburn.Micro.Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
