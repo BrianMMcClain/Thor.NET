@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoundryGate
+namespace Testing
 {
     public class Class1
     {
