@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collateral", "Collateral", "{3BF66F76-B07B-4CCF-89B4-0D0CB9ABF1D4}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{34776A05-9F55-4E40-BB6A-809E8B258894}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundry", "Foundry\Foundry.csproj", "{45FC0604-CE5F-45DC-81D3-BD2D24D6DA33}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Thor.Net.Installer", "Thor.Net.Installer\Thor.Net.Installer.vdproj", "{3BE31B17-1220-4D18-A682-C849FBD7264D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,14 @@ Global
 		{45FC0604-CE5F-45DC-81D3-BD2D24D6DA33}.Release|ARM.ActiveCfg = Release|Any CPU
 		{45FC0604-CE5F-45DC-81D3-BD2D24D6DA33}.Release|x64.ActiveCfg = Release|Any CPU
 		{45FC0604-CE5F-45DC-81D3-BD2D24D6DA33}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Debug|Any CPU.ActiveCfg = Debug
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Debug|ARM.ActiveCfg = Debug
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Debug|x64.ActiveCfg = Debug
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Debug|x86.ActiveCfg = Debug
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Release|Any CPU.ActiveCfg = Release
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Release|ARM.ActiveCfg = Release
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Release|x64.ActiveCfg = Release
+		{3BE31B17-1220-4D18-A682-C849FBD7264D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
