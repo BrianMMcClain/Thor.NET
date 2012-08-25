@@ -248,7 +248,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Thor.Net.Installer"
         "ProductCode" = "8:{CFF1BA09-5637-4FA3-BEA2-F64CC6074E5A}"
-        "PackageCode" = "8:{01672C53-5689-49E1-99D5-A49BB84FF4E4}"
+        "PackageCode" = "8:{D42578F8-1AC7-495C-A45B-7A83FD53500B}"
         "UpgradeCode" = "8:{7B8467D5-BBBF-40A5-9828-1CFA9FF1DD6D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
