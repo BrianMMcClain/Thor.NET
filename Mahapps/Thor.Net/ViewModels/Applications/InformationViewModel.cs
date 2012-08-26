@@ -1,4 +1,4 @@
-﻿namespace Thor.Net.ViewModels.Clouds
+﻿namespace Thor.Net.ViewModels.Applications
 {
 
    public class InformationViewModel
