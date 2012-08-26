@@ -12,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Thor.Net
+namespace Thor.Net.Views.Clouds
 {
     /// <summary>
-    /// Interaction logic for AddApplication.xaml
+    /// Interaction logic for AddView.xaml
     /// </summary>
-    public partial class AddApplication : UserControl
+    public partial class AddView : UserControl
     {
-        public AddApplication()
+        public AddView()
         {
             InitializeComponent();
         }
