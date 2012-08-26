@@ -9,7 +9,7 @@
         Title="Thor.NET"
         MinHeight="768"
         MinWidth="1024"
-        Icon="mahapps.metro.logo2.ico"
+        Icon="../mahapps.metro.logo2.ico"
         ShowTitleBar="True"
         ShowIconOnTitleBar="true">
     <Window.Resources>
