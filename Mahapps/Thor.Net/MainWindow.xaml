@@ -12,8 +12,32 @@
         Icon="mahapps.metro.logo2.ico"
         ShowTitleBar="True"
         ShowIconOnTitleBar="true">
-    <StackPanel>
-        
-        
-    </StackPanel>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro.Resources;component/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Controls:MetroWindow.WindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="settings" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.WindowCommands>
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="Clouds"></TabItem>
+            <TabItem Header="Applications"></TabItem>
+            <TabItem Header="Services"></TabItem>
+        </TabControl>
+    </Grid>
+
 </Controls:MetroWindow>
