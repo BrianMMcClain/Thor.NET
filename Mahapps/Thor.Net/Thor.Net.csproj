@@ -55,23 +55,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\AddApplication.xaml">
+    <Page Include="Views\Clouds\AddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\Clouds\InformationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clouds\ManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Views\AddApplication.xaml.cs">
-      <DependentUpon>AddApplication.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModels\Applications\AddViewModel.cs" />
+    <Compile Include="ViewModels\Applications\InformationViewModel.cs" />
+    <Compile Include="ViewModels\Applications\ManageViewModel.cs" />
+    <Compile Include="ViewModels\Clouds\AddViewModel.cs" />
+    <Compile Include="ViewModels\Clouds\InformationViewModel.cs" />
+    <Compile Include="ViewModels\Clouds\ManageViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Clouds\AddView.xaml.cs">
+      <DependentUpon>AddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\InformationView.xaml.cs">
+      <DependentUpon>InformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\ManageView.xaml.cs">
+      <DependentUpon>ManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -113,7 +134,7 @@
     <Resource Include="mahapps.metro.logo2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Applications\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
