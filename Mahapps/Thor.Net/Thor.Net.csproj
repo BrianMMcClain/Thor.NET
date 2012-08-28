@@ -55,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Applications\AddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Applications\InformationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Applications\ManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Clouds\AddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +87,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Asgard\Jörð.cs" />
+    <Compile Include="Models\BaseFoundry.cs" />
+    <Compile Include="Models\FoundryApplication.cs" />
+    <Compile Include="Models\FoundryDeployments.cs" />
+    <Compile Include="Models\FoundryServices.cs" />
+    <Compile Include="Models\FoundryTarget.cs" />
+    <Compile Include="Models\IBaseFoundry.cs" />
     <Compile Include="ViewModels\Applications\AddViewModel.cs" />
     <Compile Include="ViewModels\Applications\InformationViewModel.cs" />
     <Compile Include="ViewModels\Applications\ManageViewModel.cs" />
@@ -82,6 +101,15 @@
     <Compile Include="ViewModels\Clouds\InformationViewModel.cs" />
     <Compile Include="ViewModels\Clouds\ManageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Applications\AddView.xaml.cs">
+      <DependentUpon>AddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\InformationView.xaml.cs">
+      <DependentUpon>InformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ManageView.xaml.cs">
+      <DependentUpon>ManageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clouds\AddView.xaml.cs">
       <DependentUpon>AddView.xaml</DependentUpon>
     </Compile>
@@ -133,9 +161,7 @@
   <ItemGroup>
     <Resource Include="mahapps.metro.logo2.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Applications\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
