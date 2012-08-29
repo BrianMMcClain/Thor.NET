@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Asgard\Jörð.cs" />
+    <Compile Include="Models\BaseFoundry.cs" />
+    <Compile Include="Models\FoundryApplication.cs" />
+    <Compile Include="Models\FoundryDeployments.cs" />
+    <Compile Include="Models\FoundryServices.cs" />
+    <Compile Include="Models\FoundryTarget.cs" />
+    <Compile Include="Models\IBaseFoundry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
