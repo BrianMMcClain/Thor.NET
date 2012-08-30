@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows;
 using MahApps.Metro.Controls;
-using Thor.Net.Asgard;
+using ServiceStack.Text;
 using Thor.Net.Models;
+using Thor.Net.Properties;
 
 namespace Thor.Net.Views
 {
@@ -12,23 +13,30 @@ namespace Thor.Net.Views
         {
             InitializeComponent();
 
-
             //testing a tile.
+            var asdf = new Tile {Content = "est" + "\nblasdgh", Title = "Test1", Count = "53"};
+            CloudStackPanel.Children.Add(asdf);
 
-            Tile asdf = new Tile();
-            asdf.Content = "est" + "\nblasdgh";
-            asdf.Title = "Test1";
-            asdf.Count = "53";
-            this.CloudStackPanel.Children.Add(asdf);
+            if (string.IsNullOrWhiteSpace(Settings.Default.FoundryTargets))
+                Settings.Default.FoundryTargets = "blagh";
+            Settings.Default.Save();
 
-            var db = new JörðEntities();
-            //var targets = db.FoundryTargets.Where(x => x.);
+            var target = new FoundryTarget
+                             {
+                                 Name = "name",
+                                 Created = DateTime.Now,
+                                 Stamp = DateTime.Now,
+                                 Path = new Uri("http://api.someplace.com")
+                             };
 
-            var targets = db.FoundryTargets.Where(x => x.Name != string.Empty).ToList();
+            var serializeToString = TypeSerializer.SerializeToString(target);
 
-            MessageBox.Show(targets[0].Name);
+            var blagh = serializeToString.SerializeAndFormat();
+
+            var targetDeserialized = TypeSerializer.DeserializeFromString<FoundryTarget>(blagh);
+
+            MessageBox.Show("Settings was saved " + Settings.Default.FoundryTargets + "\n" +
+                "\n\n...and serilized:\n" + blagh + "\n\n\nTarget Name: " + targetDeserialized.Name + "\nType:" + targetDeserialized.GetType());
         }
-
-       
     }
 }

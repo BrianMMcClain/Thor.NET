@@ -22,5 +22,53 @@ namespace Thor.Net.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FoundryTargets {
+            get {
+                return ((string)(this["FoundryTargets"]));
+            }
+            set {
+                this["FoundryTargets"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FoundryApplications {
+            get {
+                return ((string)(this["FoundryApplications"]));
+            }
+            set {
+                this["FoundryApplications"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FoundryDeployments {
+            get {
+                return ((string)(this["FoundryDeployments"]));
+            }
+            set {
+                this["FoundryDeployments"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FoundryServices {
+            get {
+                return ((string)(this["FoundryServices"]));
+            }
+            set {
+                this["FoundryServices"] = value;
+            }
+        }
     }
 }

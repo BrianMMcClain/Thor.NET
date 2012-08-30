@@ -2,7 +2,7 @@ using System;
 
 namespace Thor.Net.Models
 {
-    public class FoundryApplicationasdf : BaseFoundry
+    public class FoundryApplication : BaseFoundry
     {
         public FoundryTarget Target { get; set; }
         public DateTime DeployedOn { get; set; }
