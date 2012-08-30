@@ -1,5 +1,5 @@
 ﻿<Controls:MetroWindow 
-        x:Class="Thor.Net.MainWindow"
+        x:Class="Thor.Net.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -35,80 +35,17 @@
     <Grid>
         <TabControl>
             <TabItem Header="Clouds">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Controls:Tile Title="Robotech"
-                                       Count="8" >
-                        <Controls:MetroImage Source="{StaticResource appbar_cupcake}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="Another Cloud"
-                                       Count="32">
-                        <Controls:MetroImage Source="{StaticResource appbar_alien}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="Macross"
-                                       Count="11">
-                        <Controls:MetroImage Source="{StaticResource appbar_bath}" />
-                    </Controls:Tile>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
+
                 </StackPanel>
             </TabItem>
             <TabItem Header="Applications">
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Controls:Tile Title="Cool Application : 2 GB : 1 Instance : ASP.NET">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Cool Application : 2 GB : 3 Instances : ASP.NET">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Cool Application : 1 GB : 6 Instances : ASP.NET">
-                        </Controls:Tile>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Controls:Tile Title="Rouge : 256 MB : 4 Instances : Ruby on Rails">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Simple Rouge : 128 MB : 4 Instances : Ruby on Rails">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Ready Rouge : 512 MB : 4 Instances : Ruby on Rails">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Heavy Rouge : 1 GB : 2 Instances : Ruby on Sinatra">
-                        </Controls:Tile>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                        <Controls:Tile Title="Kick Ass App : 512 MB : 1 Instances : Grails">
-                        </Controls:Tile>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-
-
-                        <Controls:Tile Title="Rapid Rad App : 512 MB : 12 Instances : Node.js">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Busy Wizzy : 64 MB : 64 Instances : Node.js">
-                        </Controls:Tile>
-                        <Controls:Tile Title="Rockin Robin : 128 MB : 1 Instances : Node.js">
-                        </Controls:Tile>
-                    </StackPanel>
-
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ApplicationStackPanel">
+              
                 </StackPanel>
-
             </TabItem>
             <TabItem Header="Services">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Controls:Tile Title="mysql">
-                        <Controls:MetroImage Source="{StaticResource appbar_base}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="sql server">
-                        <Controls:MetroImage Source="{StaticResource appbar_alien}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="postgresql" >
-                        <Controls:MetroImage Source="{StaticResource appbar_arrow_up}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="sql server">
-                        <Controls:MetroImage Source="{StaticResource appbar_barcode}" />
-                    </Controls:Tile>
-                    <Controls:Tile Title="riak">
-                        <Controls:MetroImage Source="{StaticResource appbar_anchor}" />
-                    </Controls:Tile>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ServicesStackPanel">
                     
                 </StackPanel>
             </TabItem>

@@ -60,10 +60,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foundry\Foundry.csproj">
-      <Project>{45FC0604-CE5F-45DC-81D3-BD2D24D6DA33}</Project>
-      <Name>Foundry</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Thor.Net\Thor.Net.csproj">
       <Project>{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}</Project>
       <Name>Thor.Net</Name>
