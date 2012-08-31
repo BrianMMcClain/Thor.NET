@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Thor.Net.Properties {
+namespace Testing {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

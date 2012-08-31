@@ -124,11 +124,10 @@
     <Compile Include="Asgard\Jörð.cs" />
     <Compile Include="Models\BaseFoundry.cs" />
     <Compile Include="Models\FoundryApplication.cs" />
-    <Compile Include="Models\FoundryDeployments.cs" />
-    <Compile Include="Models\FoundryServices.cs" />
+    <Compile Include="Models\FoundryDeployment.cs" />
+    <Compile Include="Models\FoundryService.cs" />
     <Compile Include="Models\FoundryTarget.cs" />
     <Compile Include="Models\IBaseFoundry.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="ViewModels\Applications\AddViewModel.cs" />
     <Compile Include="ViewModels\Applications\InformationViewModel.cs" />
     <Compile Include="ViewModels\Applications\ManageViewModel.cs" />
@@ -163,23 +162,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <Resource Include="Properties\Settings.settings">

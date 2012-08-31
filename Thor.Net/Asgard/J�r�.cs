@@ -31,5 +31,24 @@ namespace Thor.Net.Asgard
             throw new NotImplementedException();
         }
 
+        public FoundryTarget PutFoundryTarget(FoundryTarget target)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List< FoundryApplication > GetFoundryApplications(Uri apiTarget)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FoundryApplication GetFoundryApplication()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FoundryDeployment> GetFoundryDeployment(FoundryApplication foundryApplication)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
