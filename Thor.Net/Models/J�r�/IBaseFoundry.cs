@@ -1,6 +1,6 @@
 using System;
 
-namespace Thor.Net.Models
+namespace Thor.Net.Models.Jörð
 {
     public interface IBaseFoundry
     {

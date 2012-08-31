@@ -1,17 +1,43 @@
 using System;
-using System.Collections.Generic;
+using AutoMapper;
+using ServiceStack.Text;
+using Thor.Net.Models;
+using Thor.Net.Models.Jörð;
+using Thor.Net.Properties;
 
 namespace Thor.Net.Asgard.Bridges
 {
-    public class Targets : BridgeBase
+    public class Targets
     {
-        public override bool PutFoundryItem<T>(T target)
-        {
+        //return !string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["local"]) &&
+        //           Convert.ToBoolean(ConfigurationManager.AppSettings["local"]);
 
-            return true;
+
+
+        public bool DeleteTarget(FoundryTarget target)
+        {
+            throw new NotImplementedException();
         }
 
+        public bool PutTarget(FoundryTarget target)
+        {
+            try
+            {
+                var foundry = Settings.Default.Foundry.FromJson<Foundry>();
 
+                foundry.Targets.Add(target);
 
+                Settings.Default.Foundry = foundry.ToJson();
+                Settings.Default.Save();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log message.
+
+                return false;
+            }
+        }
     }
 }

@@ -3,17 +3,14 @@ using System.Collections.Generic;
 
 namespace Thor.Net.Asgard.Bridges
 {
-    public class Services : BridgeBase
+    public class Services 
     {
         public T GetFoundryItem<T>(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public override List<T> GetFoundryItems<T>(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public bool PutFoundryItem<T>(T target)
         {
