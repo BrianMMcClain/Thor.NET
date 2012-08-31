@@ -5,9 +5,13 @@ namespace Thor.Net.Asgard.Bridges
 {
     public class Targets : BridgeBase
     {
-        public override List<T> GetFoundryItems<T>()
+        public override bool PutFoundryItem<T>(T target)
         {
-            return base.GetFoundryItems<T>();
+
+            return true;
         }
+
+
+
     }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Windows;
-using MahApps.Metro.Controls;
-using ServiceStack.Text;
-using Thor.Net.Models;
-using Thor.Net.Properties;
-
-namespace Thor.Net.Views
+﻿namespace Thor.Net.Views
 {
     public partial class MainWindow
     {

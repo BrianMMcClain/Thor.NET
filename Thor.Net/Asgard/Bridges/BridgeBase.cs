@@ -16,17 +16,17 @@ namespace Thor.Net.Asgard.Bridges
             throw new NotImplementedException();
         }
 
-        public virtual List<T> GetFoundryItems<T>(Guid Id)
+        public virtual List<T> GetFoundryItems<T>(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public bool PutFoundryItem<T>(T target)
+        public virtual bool PutFoundryItem<T>(T target)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteFoundryItem<T>(T target)
+        public virtual bool DeleteFoundryItem<T>(T target)
         {
             throw new NotImplementedException();
         }

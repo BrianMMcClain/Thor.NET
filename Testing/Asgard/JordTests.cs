@@ -31,7 +31,11 @@ namespace Testing.Asgard
                          };
         }
 
-     
+        [Test]
+        public void should_save_with_true()
+        {
+            bridge.PutFoundryItem(target).Should().BeTrue();
+        }
 
 
     }
