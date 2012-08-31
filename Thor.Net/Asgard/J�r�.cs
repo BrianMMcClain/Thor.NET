@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using Thor.Net.Models;
+using Thor.Net.Asgard.Bridges;
 
 namespace Thor.Net.Asgard
 {
@@ -18,37 +17,9 @@ namespace Thor.Net.Asgard
 
         public Jörð()
         {
-        
+            
         }
 
-        public List<FoundryTarget> GetFoundryTargets()
-        {
-            throw new NotImplementedException();
-        }
-
-        public FoundryTarget GetFoundryTarget(Uri apiTarget)
-        {
-            throw new NotImplementedException();
-        }
-
-        public FoundryTarget PutFoundryTarget(FoundryTarget target)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List< FoundryApplication > GetFoundryApplications(Uri apiTarget)
-        {
-            throw new NotImplementedException();
-        }
-
-        public FoundryApplication GetFoundryApplication()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FoundryDeployment> GetFoundryDeployment(FoundryApplication foundryApplication)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

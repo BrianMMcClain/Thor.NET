@@ -121,7 +121,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Asgard\Bridges\Applications.cs" />
+    <Compile Include="Asgard\Bridges\Deployments.cs" />
+    <Compile Include="Asgard\Bridges\IRainbowBridge.cs" />
     <Compile Include="Asgard\Jörð.cs" />
+    <Compile Include="Asgard\Bridges\Services.cs" />
+    <Compile Include="Asgard\Bridges\Targets.cs" />
     <Compile Include="Models\BaseFoundry.cs" />
     <Compile Include="Models\FoundryApplication.cs" />
     <Compile Include="Models\FoundryDeployment.cs" />

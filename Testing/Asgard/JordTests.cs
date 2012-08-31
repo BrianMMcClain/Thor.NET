@@ -29,17 +29,6 @@ namespace Testing.Asgard
             (new Jörð()).LocalAccessOnly.Should().BeTrue();
         }
 
-        //[Test]
-        //public void should_provide_a_requested_foundry_target()
-        //{
-        //    (new Jörð()).GetFoundryTarget(apiTarget).Should().NotBeNull();
-        //}
-
-        [Test]
-        public void should_retrieve_appropriate_target()
-        {
-
-            //(new Jörð().GetFoundryTarget(apiTarget).Path.ToString().Should().Be("api.target.com");
-        }
+      
     }
 }
