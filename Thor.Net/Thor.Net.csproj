@@ -122,6 +122,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Asgard\Bridges\Applications.cs" />
+    <Compile Include="Asgard\Bridges\BridgeBase.cs" />
     <Compile Include="Asgard\Bridges\Deployments.cs" />
     <Compile Include="Asgard\Bridges\IRainbowBridge.cs" />
     <Compile Include="Asgard\Jörð.cs" />

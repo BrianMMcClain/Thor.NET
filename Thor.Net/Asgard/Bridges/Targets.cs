@@ -3,28 +3,11 @@ using System.Collections.Generic;
 
 namespace Thor.Net.Asgard.Bridges
 {
-    public class Targets : IRainbowBridge
+    public class Targets : BridgeBase
     {
-
-
-        public T GetFoundryItem<T>(Guid id)
+        public override List<T> GetFoundryItems<T>()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<T> GetFoundryItems<T>(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool PutFoundryItem<T>(T target)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DeleteFoundryItem<T>(T target)
-        {
-            throw new NotImplementedException();
+            return base.GetFoundryItems<T>();
         }
     }
 }
