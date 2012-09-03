@@ -1,7 +1,5 @@
 using System;
-using AutoMapper;
-using ServiceStack.Text;
-using Thor.Net.Models;
+using System.Collections.Generic;
 using Thor.Net.Models.Jörð;
 using Thor.Net.Properties;
 
@@ -9,42 +7,56 @@ namespace Thor.Net.Asgard.Bridges
 {
     public class Targets
     {
-        //return !string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["local"]) &&
-        //           Convert.ToBoolean(ConfigurationManager.AppSettings["local"]);
-
-        private Settings _settings { get; set; }
-
-        public Targets(Settings settings)
+        private readonly ICuzSettingsIsSealedWrapper _wrapper;
+     
+        public Targets(ICuzSettingsIsSealedWrapper wrapper)
         {
-            _settings = settings;
+            _wrapper = wrapper;
         }
 
-        private void Save(Settings settings)
+        public List<FoundryTarget> GetTargets()
         {
-            _settings.Save();
+            try
+            {
+                return _wrapper.Get().Targets;
+            }
+            catch (Exception)
+            {
+                // Log Message.
+
+                throw;
+            }
         }
 
         public bool DeleteTarget(FoundryTarget target)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var foundry = _wrapper.Get();
+                foundry.Targets.Remove(target);
+                _wrapper.Save(foundry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log Message.
+
+                return false;
+            }
         }
 
         public bool PutTarget(FoundryTarget target)
         {
             try
             {
-                //var foundry = Settings.Default.Foundry;
-
-                //foundry.Targets.Add(target);
-
-                //Settings.Default.Foundry = foundry.ToJson();
-                //Settings.Default.Save();
-
+                var foundry = _wrapper.Get();
+                foundry.Targets.Add(target);
+                _wrapper.Save(foundry);
                 return true;
             }
             catch (Exception ex)
             {
-                // Log message.
+                // Log Message.
 
                 return false;
             }

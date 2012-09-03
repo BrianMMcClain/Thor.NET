@@ -1,8 +1,11 @@
 using System;
 using FluentAssertions;
+using NSubstitute;
 using NUnit.Framework;
 using Thor.Net.Asgard.Bridges;
+using Thor.Net.Models;
 using Thor.Net.Models.Jörð;
+using Thor.Net.Properties;
 
 namespace Testing.Asgard
 {
@@ -12,28 +15,54 @@ namespace Testing.Asgard
         protected FoundryTarget target;
         protected Targets targetsBridge;
         protected Guid targetId;
+        private ICuzSettingsIsSealedWrapper _wrapper;
 
         [TestFixtureSetUp]
         public void where_target()
         {
             // this is done in another part of the application, but is done here for testing specifically.
-           StaticTestData.MakeSureSettingsJsonFoundryExists();
+            StaticTestData.MakeSureSettingsJsonFoundryExists();
 
-            targetsBridge = new Targets();
+            _wrapper = Substitute.For<ICuzSettingsIsSealedWrapper>();
+
+            targetsBridge = new Targets(_wrapper);
             target = StaticTestData.SampleFoundryTarget();
-        }
 
-        [TestFixtureTearDown]
-        public void when_done()
-        {
-            targetsBridge.DeleteTarget(target);
+            _wrapper.Get().Returns((new Foundry()));
+            
         }
 
         [Test]
         public void should_put_target_in_with_true_result()
         {
-            targetsBridge.PutTarget(target).Should().Be(true);
+            var foundry = new Foundry();
+            foundry.Targets.Add(target);
+            targetsBridge.PutTarget(target).Should().BeTrue();
+
+            targetsBridge.DeleteTarget(target);
         }
 
+        [Test]
+        public void should_delete_target_after_put_with_true_result()
+        {
+            var foundry = new Foundry();
+            foundry.Targets.Add(target);
+
+            targetsBridge.PutTarget(target);
+            targetsBridge.DeleteTarget(target);
+
+            targetsBridge.GetTargets().Count.Should().Be(0);
+        }
+
+        [Test]
+        public void should_get_targets_results()
+        {
+            var targets = targetsBridge.GetTargets();
+            targetsBridge.PutTarget(target);
+
+            targets.Count.Should().Be(1);
+            
+            targetsBridge.DeleteTarget(target);
+        }
     }
 }
