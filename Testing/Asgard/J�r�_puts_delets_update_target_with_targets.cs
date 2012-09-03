@@ -1,7 +1,6 @@
 using System;
 using FluentAssertions;
 using NUnit.Framework;
-using Testing.Properties;
 using Thor.Net.Asgard.Bridges;
 using Thor.Net.Models.Jörð;
 

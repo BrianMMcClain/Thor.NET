@@ -12,7 +12,17 @@ namespace Thor.Net.Asgard.Bridges
         //return !string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["local"]) &&
         //           Convert.ToBoolean(ConfigurationManager.AppSettings["local"]);
 
+        private Settings _settings { get; set; }
 
+        public Targets(Settings settings)
+        {
+            _settings = settings;
+        }
+
+        private void Save(Settings settings)
+        {
+            _settings.Save();
+        }
 
         public bool DeleteTarget(FoundryTarget target)
         {
@@ -23,12 +33,12 @@ namespace Thor.Net.Asgard.Bridges
         {
             try
             {
-                var foundry = Settings.Default.Foundry.FromJson<Foundry>();
+                //var foundry = Settings.Default.Foundry;
 
-                foundry.Targets.Add(target);
+                //foundry.Targets.Add(target);
 
-                Settings.Default.Foundry = foundry.ToJson();
-                Settings.Default.Save();
+                //Settings.Default.Foundry = foundry.ToJson();
+                //Settings.Default.Save();
 
                 return true;
             }

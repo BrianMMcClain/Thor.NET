@@ -23,12 +23,5 @@ namespace Testing.Asgard
             var newTarget = new FoundryTarget();
             newTarget.Id.Should().NotBe(Guid.Empty);
         }
-
-        [Test]
-        public void target_should_have_date_stamp()
-        {
-            var newTarget = new FoundryTarget();
-            newTarget.Stamp.Should().Be(DateTime.Now);
-        }
     }
 }
