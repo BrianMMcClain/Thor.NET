@@ -1,9 +1,0 @@
-﻿<Window x:Class="Thor.MainWindow"
-         xmlns="http://schemas.codeplex.com/elysium/theme"
-       
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Title="MainWindow" Height="350" Width="525">
-    <av:Grid>
-        
-    </av:Grid>
-</Window>
