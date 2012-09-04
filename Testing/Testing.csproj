@@ -72,6 +72,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Thor.Asgard\Thor.Asgard.csproj">
+      <Project>{39A03181-1D02-4141-915F-23D262E2EA9B}</Project>
+      <Name>Thor.Asgard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Thor.Models\Thor.Models.csproj">
+      <Project>{14EFCA2F-91FD-43B6-9B33-0597F7E45361}</Project>
+      <Name>Thor.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Thor.Net\Thor.Net.csproj">
       <Project>{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}</Project>
       <Name>Thor.Net</Name>

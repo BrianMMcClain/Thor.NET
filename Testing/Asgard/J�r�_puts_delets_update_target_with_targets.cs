@@ -29,8 +29,7 @@ namespace Testing.Asgard
             target = StaticTestData.SampleFoundryTarget();
 
             _wrapper.Get().Returns((new Foundry()));
-            
-        }
+         }
 
         [Test]
         public void should_put_target_in_with_true_result()

@@ -1,4 +1,5 @@
 using ServiceStack.Text;
+using Thor.Asgard.Properties;
 using Thor.Net.Models;
 
 namespace Thor.Net.Properties
