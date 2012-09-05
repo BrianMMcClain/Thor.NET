@@ -33,19 +33,16 @@
 
     <Grid>
         <TabControl>
-            <TabItem Header="Clouds">
+            <TabItem Header="Clouds" Name="CloudsTab" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
-                    <ContentControl Name="CloudsContent"></ContentControl>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Applications">
+            <TabItem Header="Applications" Name="ApplicationsTab" >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ApplicationStackPanel">
-                    <ContentControl Name="ApplicationsContent"></ContentControl>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Services">
+            <TabItem Header="Services" Name="ServicesTab" >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ServicesStackPanel">
-                    <ContentControl Name="ServicesContent"></ContentControl>
                 </StackPanel>
             </TabItem>
         </TabControl>
