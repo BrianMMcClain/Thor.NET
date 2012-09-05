@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using MahApps.Metro.Controls;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -22,6 +11,10 @@ namespace Thor.Net.Views.Clouds
         public InformationView()
         {
             InitializeComponent();
+
+            ////testing a tile.
+            var asdf = new Tile { Content = "est" + "\nblasdgh", Title = "Test1", Count = "53" };
+            CloudStackPanel.Children.Add(asdf);
         }
     }
 }

@@ -19,7 +19,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-        
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -36,17 +35,17 @@
         <TabControl>
             <TabItem Header="Clouds">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
-
+                    <ContentControl Name="CloudsContent"></ContentControl>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Applications">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ApplicationStackPanel">
-              
+                    <ContentControl Name="ApplicationsContent"></ContentControl>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Services">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ServicesStackPanel">
-                    
+                    <ContentControl Name="ServicesContent"></ContentControl>
                 </StackPanel>
             </TabItem>
         </TabControl>

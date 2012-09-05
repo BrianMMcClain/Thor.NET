@@ -1,4 +1,7 @@
-﻿namespace Thor.Net.Views
+﻿using MahApps.Metro.Controls;
+using Thor.Net.Views.Clouds;
+
+namespace Thor.Net.Views
 {
     public partial class MainWindow
     {
@@ -28,6 +31,7 @@
 
             //MessageBox.Show("Settings was saved " + Settings.Default.FoundryTargets + "\n" +
             //    "\n\n...and serilized:\n" + serialized + "\n\n\nTarget Name: " + deserialized.Name + "\nType:" + deserialized.GetType());
+
         }
     }
 }

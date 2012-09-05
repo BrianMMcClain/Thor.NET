@@ -91,27 +91,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Applications\AddView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Applications\InformationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Applications\ManageView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Clouds\AddView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Clouds\InformationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Clouds\ManageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,30 +103,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\Applications\AddViewModel.cs" />
-    <Compile Include="ViewModels\Applications\InformationViewModel.cs" />
-    <Compile Include="ViewModels\Applications\ManageViewModel.cs" />
-    <Compile Include="ViewModels\Clouds\AddViewModel.cs" />
+    <Compile Include="ViewModels\Clouds\IInformationViewModel.cs" />
     <Compile Include="ViewModels\Clouds\InformationViewModel.cs" />
-    <Compile Include="ViewModels\Clouds\ManageViewModel.cs" />
+    <Compile Include="ViewModels\IMainWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\Applications\AddView.xaml.cs">
-      <DependentUpon>AddView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applications\InformationView.xaml.cs">
-      <DependentUpon>InformationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applications\ManageView.xaml.cs">
-      <DependentUpon>ManageView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Clouds\AddView.xaml.cs">
-      <DependentUpon>AddView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\Clouds\InformationView.xaml.cs">
       <DependentUpon>InformationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Clouds\ManageView.xaml.cs">
-      <DependentUpon>ManageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
