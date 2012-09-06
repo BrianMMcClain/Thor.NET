@@ -13,7 +13,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro.Resources;component/Icons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -21,9 +20,25 @@
     </UserControl.Resources>
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Name="AddCloudStackPanel">
-        <TextBox Margin="25, 15,0,0"  Controls:TextboxHelper.Watermark="Enter Target URI" Width="160"
+        <Grid>
+            
+            
+        </Grid>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Margin="25, 15,0,0">Target URI</Label>
+            <TextBox Margin="25, 15,0,0"  Controls:TextboxHelper.Watermark="Enter Target URI" Width="160"
                 VerticalContentAlignment="Center"/>
-        <TextBox Margin="25, 15,0,0"  Controls:TextboxHelper.Watermark="E-mail Address Username" Width="160"
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Margin="25, 15,0,0">Target URI</Label>
+            <TextBox Margin="25, 15,0,0"  Controls:TextboxHelper.Watermark="E-mail Address Username" Width="160"
                 VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Margin="25, 15,0,0">E-mail Username</Label>
+            <TextBox Margin="25, 15,0,0"  Controls:TextboxHelper.Watermark="E-mail Address Username" Width="160"
+                VerticalContentAlignment="Center"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>
