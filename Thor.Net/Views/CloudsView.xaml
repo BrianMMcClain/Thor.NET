@@ -6,7 +6,6 @@
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudsViewStackPanel">
-        <Controls:Tile Title="Add Cloud" Count="+"  Name="AddCloud">
-        </Controls:Tile>
+       
     </StackPanel>
 </UserControl>
