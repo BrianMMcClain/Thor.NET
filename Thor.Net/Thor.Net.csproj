@@ -87,6 +87,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\AddCloud.xaml.cs">
+      <DependentUpon>AddCloud.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ApplicationsView.xaml.cs">
       <DependentUpon>ApplicationsView.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddCloud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ApplicationsView.xaml">
       <SubType>Designer</SubType>

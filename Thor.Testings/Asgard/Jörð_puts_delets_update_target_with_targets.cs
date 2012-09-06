@@ -2,6 +2,7 @@ using System;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using Thor.Asgard.Bridges;
 using Thor.Net.Asgard.Bridges;
 using Thor.Net.Models;
 using Thor.Net.Models.Jörð;

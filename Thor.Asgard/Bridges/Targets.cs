@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Thor.Net.Models.Jörð;
 using Thor.Net.Properties;
 
-
-namespace Thor.Net.Asgard.Bridges
+namespace Thor.Asgard.Bridges
 {
     public class Targets
     {

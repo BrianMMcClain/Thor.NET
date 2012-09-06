@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using Thor.Asgard;
+using Thor.Asgard.Bridges;
+using Thor.Net.Models.Jörð;
 
 namespace Thor.Net.Views
 {
@@ -22,6 +16,27 @@ namespace Thor.Net.Views
         public CloudsView()
         {
             InitializeComponent();
+
+
+            var foundryTarget = new Targets(new SettingsWrapper());
+
+            foundryTarget.PutTarget(new FoundryTarget()
+            {
+                Name = "My Test"
+            });
+            foundryTarget.PutTarget(new FoundryTarget()
+            {
+                Name = "My Test"
+            });
+
+            foreach (var target in foundryTarget.GetTargets())
+            {
+                CloudsViewStackPanel.Children.Add(
+                    new Tile()
+                        {
+                            Title = target.Name
+                        });
+            }
         }
     }
 }

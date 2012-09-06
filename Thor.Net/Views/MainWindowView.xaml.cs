@@ -10,7 +10,7 @@ namespace Thor.Net.Views
             InitializeComponent();
 
             CloudStackPanel.Children.Add(new CloudsView());
-            ApplicationStackPanel.Children.Add(new CloudsView());
+            ApplicationStackPanel.Children.Add(new ApplicationsView());
             ServicesStackPanel.Children.Add(new ServicesView());
         }
     }

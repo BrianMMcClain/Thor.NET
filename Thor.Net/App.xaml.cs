@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-using Thor.Net.Properties;
+using Thor.Asgard;
 
 namespace Thor.Net
 {
@@ -10,7 +10,7 @@ namespace Thor.Net
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            SettingsWrapper.CreateEmptyFoundryField();
+            SettingsWrapper.CreateEmptyFoundryFieldIfEmpty();
 
             log.Debug("Application Started, logging tests starting.");
 
