@@ -1,7 +1,7 @@
 using System;
 using FluentAssertions;
 using NUnit.Framework;
-using Thor.Net.Models.Jörð;
+using Thor.Models.Jörð;
 
 namespace Thor.Testings.Asgard
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Thor.Net.Models.Jörð;
+using Thor.Models.Jörð;
 
-namespace Thor.Net.Models
+namespace Thor.Models
 {
     public class Foundry
     {

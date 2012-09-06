@@ -1,7 +1,6 @@
 using ServiceStack.Text;
 using Thor.Asgard.Properties;
-using Thor.Net.Models;
-using Thor.Net.Properties;
+using Thor.Models;
 
 namespace Thor.Asgard
 {

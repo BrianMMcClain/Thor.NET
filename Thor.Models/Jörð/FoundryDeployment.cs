@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Thor.Net.Models.Jörð
+namespace Thor.Models.Jörð
 {
     public class FoundryDeployment : BaseFoundry
     {

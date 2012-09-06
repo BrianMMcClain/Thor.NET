@@ -6,19 +6,19 @@ namespace Thor.Net
 {
     public partial class App : Application
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         protected override void OnStartup(StartupEventArgs e)
         {
             SettingsWrapper.CreateEmptyFoundryFieldIfEmpty();
 
-            log.Debug("Application Started, logging tests starting.");
+            Log.Debug("Application Started, logging tests starting.");
 
-            log.Debug("Debug logging");
-            log.Info("Info logging");
-            log.Warn("Warn logging");
-            log.Error("Error logging");
-            log.Fatal("Fatal logging");
+            Log.Debug("Debug logging");
+            Log.Info("Info logging");
+            Log.Warn("Warn logging");
+            Log.Error("Error logging");
+            Log.Fatal("Fatal logging");
 
             try
             {
@@ -26,14 +26,14 @@ namespace Thor.Net
             }
             catch (Exception ex)
             {
-                log.Debug("Debug error logging", ex);
-                log.Info("Info error logging", ex);
-                log.Warn("Warn error logging", ex);
-                log.Error("Error error logging", ex);
-                log.Fatal("Fatal error logging", ex);
+                Log.Debug("Debug error logging", ex);
+                Log.Info("Info error logging", ex);
+                Log.Warn("Warn error logging", ex);
+                Log.Error("Error error logging", ex);
+                Log.Fatal("Fatal error logging", ex);
             }
 
-            log.Debug("Logging test completed.");
+            Log.Debug("Logging test completed.");
 
             base.OnStartup(e);
         }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Thor.Net.Models.Jörð;
-using Thor.Net.Properties;
+using Thor.Models.Jörð;
 
 namespace Thor.Asgard.Bridges
 {
@@ -23,7 +22,6 @@ namespace Thor.Asgard.Bridges
             catch (Exception)
             {
                 // Log Message.
-
                 throw;
             }
         }
