@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("Thor.Net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Thor")]
+[assembly: AssemblyDescription("Thor .NET a Windows Client for Cloud Foundry")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Iron Foundry Organization")]
 [assembly: AssemblyProduct("Thor.Net")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
