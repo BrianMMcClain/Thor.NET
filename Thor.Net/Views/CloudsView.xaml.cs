@@ -23,11 +23,7 @@ namespace Thor.Net.Views
 
         private void LoadTargetsAndView()
         {
-            FoundryTargets = new Targets(new SettingsWrapper()).GetTargets();
-            if (FoundryTargets.Count < 1)
-                CloudsAddView.Visibility = Visibility.Visible;
-            else
-                CloudsListView.Visibility = Visibility.Visible;
+            CloudsListView.Visibility = Visibility.Visible;
         }
 
         private void LoadViews()
@@ -35,8 +31,8 @@ namespace Thor.Net.Views
             CloudsListView = new CloudsListView();
             CloudsAddView = new CloudsAddView();
 
-            CloudsInteractiveStackPanel.Children.Add(CloudsListView);
-            CloudsInteractiveStackPanel.Children.Add(CloudsAddView);
+            CloudsViewInteractiveStackPanel.Children.Add(CloudsListView);
+            CloudsViewInteractiveStackPanel.Children.Add(CloudsAddView);
 
             CloudsListView.Visibility = Visibility.Hidden;
             CloudsAddView.Visibility = Visibility.Hidden;

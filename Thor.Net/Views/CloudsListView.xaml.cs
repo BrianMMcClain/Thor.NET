@@ -15,6 +15,11 @@ namespace Thor.Net.Views
 
         private void AddCloudClick(object sender, RoutedEventArgs e)
         {
+            StackPanel parentWhta = this.Parent as StackPanel;
+            CloudsView cv = parentWhta.Parent as CloudsView;
+            
+            cv.CloudsAddView.Visibility = Visibility.Visible;
+            cv.CloudsListView.Visibility = Visibility.Hidden;
 
         }
     }

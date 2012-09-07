@@ -27,6 +27,8 @@
         <Controls:Tile Title="New..." Name="AddCloud" Margin="15, 15, 15, 0" Click="AddCloudClick">
             <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
         </Controls:Tile>
+        
+        <TextBlock Name="tempDelete"></TextBlock>
 
     </StackPanel>
 </UserControl>

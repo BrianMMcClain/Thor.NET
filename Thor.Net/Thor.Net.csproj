@@ -93,11 +93,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ApplicationsAddView.xaml.cs">
+      <DependentUpon>ApplicationsAddView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ApplicationsView.xaml.cs">
       <DependentUpon>ApplicationsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CloudsAddView.xaml.cs">
       <DependentUpon>CloudsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CloudsDetailView.xaml.cs">
+      <DependentUpon>CloudsDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CloudsListView.xaml.cs">
       <DependentUpon>CloudsListView.xaml</DependentUpon>
@@ -112,11 +118,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ApplicationsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ApplicationsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CloudsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CloudsDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +232,9 @@
     <Resource Include="Images\ico_push_on.png" />
     <Resource Include="Images\ico_services_off.png" />
     <Resource Include="Images\ico_services_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_512x512%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

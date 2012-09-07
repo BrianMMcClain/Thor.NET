@@ -6,10 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Thor.NET"
+        Title="Thor"
         MinHeight="768"
         MinWidth="1024"
-        Icon="../Images/hammer.ico"
+        Icon="/Thor.Net;component/Images/icon_512x512@2x.png"
         ShowTitleBar="True"
         ShowIconOnTitleBar="true">
     <Window.Resources>
