@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock>services</TextBlock>
+        <TextBlock Margin="25,15,0,0">Services will be coming soon!</TextBlock>
     </Grid>
 </UserControl>

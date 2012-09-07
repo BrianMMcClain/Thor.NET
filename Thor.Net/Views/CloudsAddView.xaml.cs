@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Thor.Net.Views
 {
     /// <summary>
-    /// Interaction logic for AddCloud.xaml
+    /// Interaction logic for CloudsAddView.xaml
     /// </summary>
-    public partial class AddCloud : UserControl
+    public partial class CloudsAddView : UserControl
     {
-        public AddCloud()
+        public CloudsAddView()
         {
             InitializeComponent();
         }

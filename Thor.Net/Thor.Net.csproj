@@ -93,11 +93,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\AddCloud.xaml.cs">
-      <DependentUpon>AddCloud.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ApplicationsView.xaml.cs">
       <DependentUpon>ApplicationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CloudsAddView.xaml.cs">
+      <DependentUpon>CloudsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CloudsListView.xaml.cs">
+      <DependentUpon>CloudsListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CloudsView.xaml.cs">
       <DependentUpon>CloudsView.xaml</DependentUpon>
@@ -109,11 +112,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\AddCloud.xaml">
+    <Page Include="Views\ApplicationsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ApplicationsView.xaml">
+    <Page Include="Views\CloudsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CloudsListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +207,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\hammer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\app.png" />
+    <Resource Include="Images\cloud.png" />
+    <Resource Include="Images\database.png" />
+    <Resource Include="Images\ico_info_off.png" />
+    <Resource Include="Images\ico_info_on.png" />
+    <Resource Include="Images\ico_push_off.png" />
+    <Resource Include="Images\ico_push_on.png" />
+    <Resource Include="Images\ico_services_off.png" />
+    <Resource Include="Images\ico_services_on.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

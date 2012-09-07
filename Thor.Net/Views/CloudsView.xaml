@@ -19,15 +19,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
-        <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Top"
-                    Name="CloudsViewStackPanel">
-        
-        </StackPanel>
-        <Controls:Tile Title="Add Cloud" Margin="15, 15, 0, 0">
-            <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
-        </Controls:Tile>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible" Name="CloudsInteractiveStackPanel">
+       
     </StackPanel>
 </UserControl>
