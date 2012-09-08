@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Thor.Models.Jörð;
 
 namespace Thor.Asgard.Bridges
@@ -24,6 +25,28 @@ namespace Thor.Asgard.Bridges
                 // Log Message.
                 throw;
             }
+        }
+
+        public bool ValidateTargetNameExists(string name)
+        {
+            var names = GetTargetNames();
+            return names.Count > 0 && names.Contains(name);
+        }
+
+        public bool ValidateTargetUriExists(Uri uri)
+        {
+            var uris = GetTargetUris();
+            return uris.Count > 0 && uris.Contains(uri);
+        }
+
+        private List<string> GetTargetNames()
+        {
+            return GetTargets().Select(foundryTarget => foundryTarget.Name).ToList();
+        }
+
+        private List<Uri> GetTargetUris()
+        {
+            return GetTargets().Select(foundryTarget => foundryTarget.Path).ToList();
         }
 
         public bool DeleteTarget(FoundryTarget target)
