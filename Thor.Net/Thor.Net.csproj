@@ -73,6 +73,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.0.9.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -93,19 +94,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\ApplicationsAddView.xaml.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsListView.xaml.cs">
+      <DependentUpon>ApplicationsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsDetailView.xaml.cs">
+      <DependentUpon>ApplicationsDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsAddView.xaml.cs">
       <DependentUpon>ApplicationsAddView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ApplicationsView.xaml.cs">
       <DependentUpon>ApplicationsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CloudsAddView.xaml.cs">
+    <Compile Include="Views\Clouds\CloudsAddView.xaml.cs">
       <DependentUpon>CloudsAddView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CloudsDetailView.xaml.cs">
+    <Compile Include="Views\Clouds\CloudsDetailView.xaml.cs">
       <DependentUpon>CloudsDetailView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CloudsListView.xaml.cs">
+    <Compile Include="Views\Clouds\CloudsListView.xaml.cs">
       <DependentUpon>CloudsListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CloudsView.xaml.cs">
@@ -118,7 +130,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ApplicationsAddView.xaml">
+    <Page Include="Views\Applications\ApplicationsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Applications\ApplicationsDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Applications\ApplicationsAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,15 +146,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CloudsAddView.xaml">
+    <Page Include="Views\Clouds\CloudsAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CloudsDetailView.xaml">
+    <Page Include="Views\Clouds\CloudsDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CloudsListView.xaml">
+    <Page Include="Views\Clouds\CloudsListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -235,6 +255,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon_512x512%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.en-US.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-HK.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
