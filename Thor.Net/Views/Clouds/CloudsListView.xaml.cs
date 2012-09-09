@@ -41,6 +41,8 @@ namespace Thor.Net.Views.Clouds
             var tiles = new List<Tile>();
             var targets = new Targets(new SettingsWrapper()).GetTargets();
 
+
+            CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
             foreach (var target in targets)
             {
                 var tile = new Tile() { Title = target.Name };

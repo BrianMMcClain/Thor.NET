@@ -17,15 +17,17 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Name="CloudsInteractiveStackPanel">
-        <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Top"
-                    Name="CloudsViewStackPanel">
-            <Controls:Tile Title="New..." Name="AddCloud" Margin="15, 15,0,0" Click="AddCloudClick">
-                <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
-            </Controls:Tile>
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudsInteractiveStackPanel">
+            <WrapPanel 
+                    Name="CloudsViewStackPanel"
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+                <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Click="AddCloudClick">
+                    <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
+                </Controls:Tile>
+            </WrapPanel>
         </StackPanel>
-        <ContentControl Name="sampleInput" />
-    </StackPanel>
+    </ScrollViewer>
 </UserControl>
