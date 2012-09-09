@@ -1,4 +1,4 @@
-Copyright [2012] [Tier 3 Inc.]
+Copyright 2012 Tier 3 Inc.
 
 Please also refer to docs/licenses for included software component
 licenses.
