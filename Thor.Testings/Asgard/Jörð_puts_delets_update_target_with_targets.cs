@@ -2,10 +2,10 @@ using System;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using Thor.Net.Asgard.Bridges;
-using Thor.Net.Models;
-using Thor.Net.Models.Jörð;
-using Thor.Net.Properties;
+using Thor.Asgard;
+using Thor.Asgard.Bridges;
+using Thor.Models;
+using Thor.Models.Jörð;
 
 namespace Thor.Testings.Asgard
 {

@@ -1,20 +1,19 @@
 using ServiceStack.Text;
 using Thor.Asgard.Properties;
-using Thor.Net.Models;
+using Thor.Models;
 
-namespace Thor.Net.Properties
+namespace Thor.Asgard
 {
     public class SettingsWrapper : ICuzSettingsIsSealedWrapper
     {
         public SettingsWrapper()
         {
-            CreateEmptyFoundryField();
+            CreateEmptyFoundryFieldIfEmpty();
         }
 
         public Foundry Get()
         {
-            if (string.IsNullOrWhiteSpace(Settings.Default.Foundry))
-                CreateEmptyFoundryField();
+            CreateEmptyFoundryFieldIfEmpty();
             return Settings.Default.Foundry.FromJson<Foundry>();
         }
 
@@ -26,13 +25,16 @@ namespace Thor.Net.Properties
 
         public void Delete(Foundry foundry)
         {
-            CreateEmptyFoundryField();
+            CreateEmptyFoundryFieldIfEmpty();
         }
 
-        public static void CreateEmptyFoundryField()
+        public static void CreateEmptyFoundryFieldIfEmpty()
         {
-            Settings.Default.Foundry = (new Foundry()).ToJson();
-            Settings.Default.Save();
+            if (string.IsNullOrWhiteSpace(Settings.Default.Foundry))
+            {
+                Settings.Default.Foundry = (new Foundry()).ToJson();
+                Settings.Default.Save();
+            }
         }
     }
 }

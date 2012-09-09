@@ -6,10 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Thor.NET"
+        Title="Thor"
         MinHeight="768"
         MinWidth="1024"
-        Icon="../mahapps.metro.logo2.ico"
+        Icon="/Thor.Net;component/Images/icon_512x512@2x.png"
         ShowTitleBar="True"
         ShowIconOnTitleBar="true">
     <Window.Resources>
@@ -19,7 +19,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-        
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -34,19 +33,17 @@
 
     <Grid>
         <TabControl>
-            <TabItem Header="Clouds">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
-
+            <TabItem Header="Clouds" Name="CloudsTab" >
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
+                  
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Applications">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ApplicationStackPanel">
-              
+            <TabItem Header="Applications" Name="ApplicationsTab" >
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ApplicationStackPanel">
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Services">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ServicesStackPanel">
-                    
+            <TabItem Header="Services" Name="ServicesTab" >
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ServicesStackPanel">
                 </StackPanel>
             </TabItem>
         </TabControl>

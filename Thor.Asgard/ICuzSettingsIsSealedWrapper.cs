@@ -1,6 +1,6 @@
-using Thor.Net.Models;
+using Thor.Models;
 
-namespace Thor.Net.Properties
+namespace Thor.Asgard
 {
     public interface ICuzSettingsIsSealedWrapper
     {

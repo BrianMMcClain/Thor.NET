@@ -51,6 +51,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\hammer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Thor.Net.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
@@ -67,6 +73,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.0.9.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -87,31 +94,71 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsListView.xaml.cs">
+      <DependentUpon>ApplicationsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsDetailView.xaml.cs">
+      <DependentUpon>ApplicationsDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Applications\ApplicationsAddView.xaml.cs">
+      <DependentUpon>ApplicationsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplicationsView.xaml.cs">
+      <DependentUpon>ApplicationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\CloudsAddView.xaml.cs">
+      <DependentUpon>CloudsAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\CloudsDetailView.xaml.cs">
+      <DependentUpon>CloudsDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\CloudsListView.xaml.cs">
+      <DependentUpon>CloudsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CloudsView.xaml.cs">
+      <DependentUpon>CloudsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Applications\AddView.xaml">
+    <Page Include="Views\Applications\ApplicationsListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Applications\InformationView.xaml">
+    <Page Include="Views\Applications\ApplicationsDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Applications\ManageView.xaml">
+    <Page Include="Views\Applications\ApplicationsAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Clouds\AddView.xaml">
+    <Page Include="Views\ApplicationsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Clouds\InformationView.xaml">
+    <Page Include="Views\Clouds\CloudsAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Clouds\ManageView.xaml">
+    <Page Include="Views\Clouds\CloudsDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clouds\CloudsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CloudsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,35 +170,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\Applications\AddViewModel.cs" />
-    <Compile Include="ViewModels\Applications\InformationViewModel.cs" />
-    <Compile Include="ViewModels\Applications\ManageViewModel.cs" />
-    <Compile Include="ViewModels\Clouds\AddViewModel.cs" />
-    <Compile Include="ViewModels\Clouds\InformationViewModel.cs" />
-    <Compile Include="ViewModels\Clouds\ManageViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\Applications\AddView.xaml.cs">
-      <DependentUpon>AddView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applications\InformationView.xaml.cs">
-      <DependentUpon>InformationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Applications\ManageView.xaml.cs">
-      <DependentUpon>ManageView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Clouds\AddView.xaml.cs">
-      <DependentUpon>AddView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Clouds\InformationView.xaml.cs">
-      <DependentUpon>InformationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Clouds\ManageView.xaml.cs">
-      <DependentUpon>ManageView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -172,9 +198,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="mahapps.metro.logo2.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -215,6 +238,32 @@
       <Project>{14EFCA2F-91FD-43B6-9B33-0597F7E45361}</Project>
       <Name>Thor.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hammer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\app.png" />
+    <Resource Include="Images\cloud.png" />
+    <Resource Include="Images\database.png" />
+    <Resource Include="Images\ico_info_off.png" />
+    <Resource Include="Images\ico_info_on.png" />
+    <Resource Include="Images\ico_push_off.png" />
+    <Resource Include="Images\ico_push_on.png" />
+    <Resource Include="Images\ico_services_off.png" />
+    <Resource Include="Images\ico_services_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_512x512%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.en-US.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-HK.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
