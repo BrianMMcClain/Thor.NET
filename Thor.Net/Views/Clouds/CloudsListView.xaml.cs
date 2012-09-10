@@ -24,15 +24,20 @@ namespace Thor.Net.Views.Clouds
         {
             try
             {
-                var cv = (this.Parent as StackPanel).Parent as CloudsView;
-                cv.CloudsAddView.Visibility = Visibility.Visible;
-                cv.CloudsListView.Visibility = Visibility.Hidden;
+                ShowCloudsAddView();
             }
             catch (Exception)
             {
                 // Log things.   
                 throw;
             }
+        }
+
+        private void ShowCloudsAddView()
+        {
+            var cv = (this.Parent as StackPanel).Parent as CloudsView;
+            cv.CloudsAddView.Visibility = Visibility.Visible;
+            cv.CloudsListView.Visibility = Visibility.Hidden;
         }
 
         public List<Tile> Tiles { get; set; }
