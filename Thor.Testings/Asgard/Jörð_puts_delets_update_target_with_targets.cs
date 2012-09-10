@@ -6,7 +6,6 @@ using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Models;
 using Thor.Models.Jord;
-using Thor.Models.Jörð;
 
 namespace Thor.Testings.Asgard
 {

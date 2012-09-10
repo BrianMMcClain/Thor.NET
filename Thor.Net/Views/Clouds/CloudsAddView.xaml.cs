@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Models.Jord;
-using Thor.Models.Jörð;
 
 namespace Thor.Net.Views.Clouds
 {

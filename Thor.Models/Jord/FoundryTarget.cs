@@ -1,5 +1,4 @@
 using System;
-using Thor.Models.Jörð;
 
 namespace Thor.Models.Jord
 {

@@ -1,4 +1,4 @@
-﻿namespace Thor.Models.Jörð
+﻿namespace Thor.Models.Jord
 {
     public class FoundryService : BaseFoundry
     {
