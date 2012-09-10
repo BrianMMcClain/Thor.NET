@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Models.Jord;
 
 namespace Thor.Net.Views.Clouds
 {
-    /// <summary>
-    /// Interaction logic for CloudsListView.xaml
-    /// </summary>
     public partial class CloudsListView : UserControl
     {
         public CloudsListView()
@@ -63,9 +59,8 @@ namespace Thor.Net.Views.Clouds
         private void TileOnClick(object sender, RoutedEventArgs routedEventArgs)
         {
             var tile = routedEventArgs.Source as Tile;
-            
-            //MessageBox.Show(routedEventArgs.OriginalSource + "\n" + tile.Title);
-
+            var target = new Targets(new SettingsWrapper()).GetTarget(tile.Name);
+            new SettingsWrapper().SetActiveFoundryTarget(target);
         }
 
         private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

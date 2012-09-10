@@ -1,6 +1,7 @@
 using ServiceStack.Text;
 using Thor.Asgard.Properties;
 using Thor.Models;
+using Thor.Models.Jord;
 
 namespace Thor.Asgard
 {
@@ -35,6 +36,17 @@ namespace Thor.Asgard
                 Settings.Default.Foundry = (new Foundry()).ToJson();
                 Settings.Default.Save();
             }
+        }
+
+        public void SetActiveFoundryTarget(FoundryTarget foundryTarget)
+        {
+            Settings.Default.FoundryActiveTarget = foundryTarget;
+            Settings.Default.Save();
+        }
+
+        public FoundryTarget GetActiveFoundryTarget(string foundryName)
+        {
+           return Settings.Default.FoundryActiveTarget;
         }
     }
 }

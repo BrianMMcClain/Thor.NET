@@ -27,6 +27,13 @@ namespace Thor.Asgard.Bridges
             }
         }
 
+        public FoundryTarget GetTarget(string targetName)
+        {
+            var targets = _wrapper.Get().Targets;
+            var target = targets.Find(x => x.Name == targetName);
+            return target;
+        }
+
         public bool ValidateTargetNameExists(string name)
         {
             var names = GetTargetNames();
