@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using Thor.Asgard;
-using Thor.Asgard.Bridges;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -21,32 +19,15 @@ namespace Thor.Net.Views.Clouds
             NavigationHelper.GetCloudsListView(this);
         }
 
-
-        private bool IfNameExists(string name)
-        {
-            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
-            TargetNameLabel.Content = nameExists ?
-                Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
-            return nameExists;
-        }
-
-        private bool IfUriExists(Uri uri)
-        {
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
-            TargetUriLabel.Content = uriExists ?
-                Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
-            return uriExists;
-        }
-
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                IfUriExists(new Uri(TargetUriTextBox.Text));
+            if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
+                NavigationHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            IfNameExists(TargetNameTextBox.Text);
+            NavigationHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel);
         }
     }
 }

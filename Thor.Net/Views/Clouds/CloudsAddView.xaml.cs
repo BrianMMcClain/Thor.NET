@@ -36,38 +36,23 @@ namespace Thor.Net.Views.Clouds
 
             var targetRepository = new Targets(new SettingsWrapper());
 
-            if (!IfNameExists(foundryTarget.Name) && !IfUriExists(foundryTarget.Path))
+            if (!NavigationHelper.IfNameExists(foundryTarget.Name, TargetNameLabel) && 
+                !NavigationHelper.IfUriExists(foundryTarget.Path, TargetUriLabel))
             {
                 targetRepository.PutTarget(foundryTarget);
                 NavigationHelper.GetCloudsListView(this);
             }
         }
 
-        private bool IfNameExists(string name)
-        {
-            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
-            TargetNameLabel.Content = nameExists ?
-                Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
-            return nameExists;
-        }
-
-        private bool IfUriExists(Uri uri)
-        {
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
-            TargetUriLabel.Content = uriExists ?
-                Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
-            return uriExists;
-        }
-
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                IfUriExists(new Uri(TargetUriTextBox.Text));
+            if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
+                NavigationHelper.IfUriExists(new Uri(TargetUriTextBox.Text));
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            IfNameExists(TargetNameTextBox.Text);
+            NavigationHelper.IfNameExists(TargetNameTextBox.Text);
         }
     }
 }
