@@ -41,12 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Foundry.cs" />
-    <Compile Include="Jörð\BaseFoundry.cs" />
-    <Compile Include="Jörð\FoundryApplication.cs" />
-    <Compile Include="Jörð\FoundryDeployment.cs" />
-    <Compile Include="Jörð\FoundryService.cs" />
-    <Compile Include="Jörð\FoundryTarget.cs" />
-    <Compile Include="Jörð\IBaseFoundry.cs" />
+    <Compile Include="Jord\BaseFoundry.cs" />
+    <Compile Include="Jord\FoundryApplication.cs" />
+    <Compile Include="Jord\FoundryDeployment.cs" />
+    <Compile Include="Jord\FoundryService.cs" />
+    <Compile Include="Jord\FoundryTarget.cs" />
+    <Compile Include="Jord\IBaseFoundry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

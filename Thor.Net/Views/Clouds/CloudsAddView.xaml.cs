@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Models.Jord;
 using Thor.Models.Jörð;
 
 namespace Thor.Net.Views.Clouds
@@ -47,12 +48,12 @@ namespace Thor.Net.Views.Clouds
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                NavigationHelper.IfUriExists(new Uri(TargetUriTextBox.Text));
+                NavigationHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.IfNameExists(TargetNameTextBox.Text);
+            NavigationHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel);
         }
     }
 }

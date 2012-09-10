@@ -1,7 +1,7 @@
 ﻿using System;
 using ServiceStack.Text;
 using Thor.Models;
-using Thor.Models.Jörð;
+using Thor.Models.Jord;
 using Thor.Testings.Properties;
 
 namespace Thor.Testings.Asgard

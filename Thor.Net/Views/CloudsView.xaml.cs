@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Models.Jord;
 using Thor.Models.Jörð;
 using Thor.Net.Views.Clouds;
 
