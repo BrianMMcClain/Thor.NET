@@ -123,6 +123,7 @@
     <Compile Include="Views\CloudsView.xaml.cs">
       <DependentUpon>CloudsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Clouds\NavigationHelper.cs" />
     <Compile Include="Views\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>

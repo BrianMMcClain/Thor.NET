@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Thor.Asgard;
+using Thor.Asgard.Bridges;
 
-namespace Thor.Net.Views
+namespace Thor.Net.Views.Clouds
 {
     /// <summary>
     /// Interaction logic for CloudsDetailView.xaml
@@ -22,6 +14,39 @@ namespace Thor.Net.Views
         public CloudsDetailView()
         {
             InitializeComponent();
+        }
+
+        private void AddCloudButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.GetCloudsListView(this);
+        }
+
+
+        private bool IfNameExists(string name)
+        {
+            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
+            TargetNameLabel.Content = nameExists ?
+                Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
+            return nameExists;
+        }
+
+        private bool IfUriExists(Uri uri)
+        {
+            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
+            TargetUriLabel.Content = uriExists ?
+                Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
+            return uriExists;
+        }
+
+        private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TargetUriTextBox.Text))
+                IfUriExists(new Uri(TargetUriTextBox.Text));
+        }
+
+        private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            IfNameExists(TargetNameTextBox.Text);
         }
     }
 }

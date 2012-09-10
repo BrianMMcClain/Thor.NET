@@ -69,8 +69,8 @@
                     Width="150"
                     Height="35" IsDefault="True" />
             <Button Grid.Column="2" Grid.Row="3"
-                    Name="CancelButton"
-                    Content="Cancel" 
+                    Name="CloudListViewButton"
+                    Content="View Cloud List" 
                     Margin="15,15,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="CancelButtonClick"

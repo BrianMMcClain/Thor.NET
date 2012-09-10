@@ -19,15 +19,7 @@ namespace Thor.Net.Views.Clouds
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            GetCloudsListView();
-        }
-
-        private void GetCloudsListView()
-        {
-            this.Visibility = Visibility.Hidden;
-            var window = this.Parent as StackPanel;
-            var parentWindow = window.Parent as CloudsView;
-            parentWindow.CloudsListView.Visibility = Visibility.Visible;
+            NavigationHelper.GetCloudsListView(this);
         }
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
@@ -47,7 +39,7 @@ namespace Thor.Net.Views.Clouds
             if (!IfNameExists(foundryTarget.Name) && !IfUriExists(foundryTarget.Path))
             {
                 targetRepository.PutTarget(foundryTarget);
-                GetCloudsListView();
+                NavigationHelper.GetCloudsListView(this);
             }
         }
 
