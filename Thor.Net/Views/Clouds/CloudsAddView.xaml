@@ -15,8 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-
-        <Grid Margin="15,15,0,0">
+        <Grid Margin="15,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -30,7 +29,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
-            
+
             <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                 <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
                 <TextBox 
@@ -77,6 +76,4 @@
                     Width="150"
                     Height="35" IsCancel="True" />
         </Grid>
-
-   
 </UserControl>

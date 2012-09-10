@@ -32,7 +32,7 @@
     </Controls:MetroWindow.WindowCommands>
 
     <Grid>
-        <TabControl>
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TabItem Header="Clouds" Name="CloudsTab" >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Name="CloudStackPanel">
                   
