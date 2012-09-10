@@ -18,18 +18,18 @@ namespace Thor.Net.Views.Clouds
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
+            NavigationCloudsHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                NavigationHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
+                NavigationCloudsHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel);
+            NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel);
         }
     }
 }

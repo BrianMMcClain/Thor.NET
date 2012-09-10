@@ -2,10 +2,11 @@
 using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Net.Views.Clouds;
 
-namespace Thor.Net.Views.Clouds
+namespace Thor.Net.Views.Applications
 {
-    public class NavigationHelper
+    public class NavigationApplicationsHelper
     {
         private static void ShowCloudsView(UserControl showThisCloudView, StackPanel parentPanel)
         {
@@ -15,17 +16,17 @@ namespace Thor.Net.Views.Clouds
 
         public static void LoadListView(StackPanel parentPanel)
         {
-            ShowCloudsView(new CloudsListView(), parentPanel);
+            ShowCloudsView(new ApplicationsListView(), parentPanel);
         }
 
         public static void LoadDetailView(StackPanel parentPanel)
         {
-            ShowCloudsView(new CloudsDetailView(), parentPanel);
+            ShowCloudsView(new ApplicationsDetailView(), parentPanel);
         }
 
         public static void LoadAddView(StackPanel parentPanel)
         {
-            ShowCloudsView(new CloudsAddView(), parentPanel);
+            ShowCloudsView(new ApplicationsAddView(), parentPanel);
         }
 
         public static bool IfNameExists(string name, Label label)

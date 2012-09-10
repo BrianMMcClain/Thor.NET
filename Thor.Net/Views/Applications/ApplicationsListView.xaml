@@ -27,7 +27,7 @@
                     Orientation="Horizontal" 
                     HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch">
-                <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Click="AddCloudClick" Background="Green">
+                <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Background="Green">
                     <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
                 </Controls:Tile>
             </WrapPanel>

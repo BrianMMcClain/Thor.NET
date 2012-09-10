@@ -12,7 +12,7 @@ namespace Thor.Net.Views
         public CloudsView()
         {
             InitializeComponent();
-            NavigationHelper.LoadListView(CloudsViewInteractiveStackPanel);
+            NavigationCloudsHelper.LoadListView(CloudsViewInteractiveStackPanel);
         }
     }
 }

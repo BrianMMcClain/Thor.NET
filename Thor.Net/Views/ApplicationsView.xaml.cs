@@ -10,6 +10,7 @@ namespace Thor.Net.Views
         public ApplicationsView()
         {
             InitializeComponent();
+            NavigationApplicationsHelper.LoadListView(new ApplicationsListView());
         }
     }
 }

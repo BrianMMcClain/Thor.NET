@@ -19,7 +19,7 @@ namespace Thor.Net.Views.Clouds
         {
             try
             {
-                NavigationHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
+                NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
             }
             catch (Exception)
             {
@@ -55,7 +55,7 @@ namespace Thor.Net.Views.Clouds
             var tile = routedEventArgs.Source as Tile;
             var target = new Targets(new SettingsWrapper()).GetTarget(tile.Name);
             new SettingsWrapper().SetActiveFoundryTarget(target);
-            NavigationHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
+            NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
