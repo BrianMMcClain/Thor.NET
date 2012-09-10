@@ -14,9 +14,11 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
         }
 
+        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
+
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.GetCloudsListView(this);
+            NavigationHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)

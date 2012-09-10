@@ -14,9 +14,11 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
         }
 
+        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
+
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.GetCloudsListView(this);
+            NavigationHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
@@ -38,7 +40,8 @@ namespace Thor.Net.Views.Clouds
             {
                 targetRepository.PutTarget(foundryTarget);
                 ClearCloudsAddViewForm();
-                NavigationHelper.GetCloudsListView(this);
+
+                NavigationHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Thor.Net.Views.ApplicationsListView"
+﻿<UserControl x:Class="Thor.Net.Views.Services.ServicesListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,7 +28,7 @@
                     HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch">
                 <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Click="AddCloudClick" Background="Green">
-                    <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
+                    <Image Source="/Thor.Net;component/Images/database.png" Stretch="None" />
                 </Controls:Tile>
             </WrapPanel>
         </StackPanel>

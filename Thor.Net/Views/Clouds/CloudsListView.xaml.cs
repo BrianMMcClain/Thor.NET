@@ -5,7 +5,6 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Models.Jord;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -20,7 +19,7 @@ namespace Thor.Net.Views.Clouds
         {
             try
             {
-                ShowCloudsAddView();
+                NavigationHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
             }
             catch (Exception)
             {
@@ -29,12 +28,7 @@ namespace Thor.Net.Views.Clouds
             }
         }
 
-        private void ShowCloudsAddView()
-        {
-            var cv = (this.Parent as StackPanel).Parent as CloudsView;
-            cv.CloudsAddView.Visibility = Visibility.Visible;
-            cv.CloudsListView.Visibility = Visibility.Hidden;
-        }
+        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
 
         public List<Tile> Tiles { get; set; }
 
@@ -46,7 +40,7 @@ namespace Thor.Net.Views.Clouds
             CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
             foreach (var target in targets)
             {
-                var tile = new Tile() { Title = target.Name};
+                var tile = new Tile() { Title = target.Name };
                 tile.Click += TileOnClick;
                 tile.Margin = new Thickness(15, 15, 0, 0);
                 CloudsViewStackPanel.Children.Add(tile);
@@ -61,6 +55,7 @@ namespace Thor.Net.Views.Clouds
             var tile = routedEventArgs.Source as Tile;
             var target = new Targets(new SettingsWrapper()).GetTarget(tile.Name);
             new SettingsWrapper().SetActiveFoundryTarget(target);
+            NavigationHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
