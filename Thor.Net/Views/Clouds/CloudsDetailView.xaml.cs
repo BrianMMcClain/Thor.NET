@@ -18,9 +18,9 @@ namespace Thor.Net.Views.Clouds
 
             LoadActiveFoundryTarget();
 
-            for (int i = 0; i < 88; i++)
+            for (int i = 0; i < 8; i++)
             {
-                ApplicationWrapperPanel.Children.Add(new Tile() { Title = "Test" });
+                CloudTargetApplications.Children.Add(new CloudsAppDetails());
             }
         }
 

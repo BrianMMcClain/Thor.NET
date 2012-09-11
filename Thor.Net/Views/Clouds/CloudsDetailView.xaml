@@ -16,54 +16,53 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Margin="25,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+            </Grid.RowDefinitions>
 
-    <Grid Margin="25,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
+            <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold" Margin="1,0,-1,0">Cloud Target</TextBlock>
 
-        <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold" Margin="1,0,-1,0">Cloud Target</TextBlock>
-
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-            <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
-            <TextBox 
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
+                <TextBox 
                     Name="TargetNameTextBox"
                     Grid.Column="0" Grid.Row="1" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetNameTextBoxLostFocus" GotFocus="TargetNameTextBoxGotFocus" />
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
-            <TextBox 
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
+                <TextBox 
                     Name="TargetUriTextBox"
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" GotFocus="TargetUriTextBoxGotFocus" />
-        </StackPanel>
+            </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
-            <TextBox 
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
+                <TextBox 
                     Name="UsernameTextBox" 
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="UsernameTextBoxLostFocus" GotFocus="UsernameTextBoxGotFocus" />
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
-            <PasswordBox 
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
+                <PasswordBox 
                     Name="PasswordTextBox"
                     Margin="15,0,0,0" 
                     Width="170" LostFocus="PasswordTextBoxLostFocus" GotFocus="PasswordTextBoxGotFocus" />
-        </StackPanel>
-        <Button Grid.Column="1" Grid.Row="3" 
+            </StackPanel>
+            <Button Grid.Column="1" Grid.Row="3" 
                     Name="Delete"
                     Content="Delete" 
                     Margin="15,15,0,0" 
@@ -71,7 +70,7 @@
                     Click="DeleteCloudTarget"
                     Width="150"
                     Height="35" IsDefault="True" />
-        <Button Grid.Column="2" Grid.Row="3" 
+            <Button Grid.Column="2" Grid.Row="3" 
                     Name="CloudListViewButton"
                     Content="View Clouds" 
                     Margin="15,15,0,0" 
@@ -79,17 +78,15 @@
                     Click="AddCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
-        <TextBlock Text="To edit the cloud target, just type the changes you want and they'll save automatically" 
+            <TextBlock Text="To edit the cloud target, just type the changes you want and they'll save automatically" 
                    TextWrapping="Wrap"
                    Grid.Column="2" 
                    Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
-        <ScrollViewer Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <WrapPanel 
-                        Name="ApplicationWrapperPanel"
-                       
-                        HorizontalAlignment="Stretch" 
-                        VerticalAlignment="Top">
-            </WrapPanel>
+        </Grid>
+        <ScrollViewer Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" 
+                      Margin="15,15,0,0"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical" Name="CloudTargetApplications"></StackPanel>
         </ScrollViewer>
-    </Grid>
+    </StackPanel>
 </UserControl>
