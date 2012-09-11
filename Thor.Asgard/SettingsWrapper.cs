@@ -44,7 +44,7 @@ namespace Thor.Asgard
             Settings.Default.Save();
         }
 
-        public FoundryTarget GetActiveFoundryTarget(string foundryName)
+        public FoundryTarget GetActiveFoundryTarget()
         {
            return Settings.Default.FoundryActiveTarget;
         }

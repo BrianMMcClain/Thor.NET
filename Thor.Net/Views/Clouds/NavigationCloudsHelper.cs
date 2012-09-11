@@ -28,6 +28,11 @@ namespace Thor.Net.Views.Clouds
             ShowCloudsView(new CloudsAddView(), parentPanel);
         }
 
+        public static void LoadDeleteConfirmationView(StackPanel parentPanel)
+        {
+            ShowCloudsView(new CloudsDeleteConfirmationView(), parentPanel);
+        }
+
         public static bool IfNameExists(string name, Label label)
         {
             var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);

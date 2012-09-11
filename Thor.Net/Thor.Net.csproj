@@ -115,6 +115,9 @@
     <Compile Include="Views\Clouds\CloudsAddView.xaml.cs">
       <DependentUpon>CloudsAddView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Clouds\CloudsDeleteConfirmationView.xaml.cs">
+      <DependentUpon>CloudsDeleteConfirmationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clouds\CloudsDetailView.xaml.cs">
       <DependentUpon>CloudsDetailView.xaml</DependentUpon>
     </Compile>
@@ -128,7 +131,7 @@
     <Compile Include="Views\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Services\NavigationCloudsHelper.cs" />
+    <Compile Include="Views\Services\NavigationServicesHelper.cs" />
     <Compile Include="Views\Services\ServicesListView.xaml.cs">
       <DependentUpon>ServicesListView.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Clouds\CloudsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clouds\CloudsDeleteConfirmationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

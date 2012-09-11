@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Thor.Net.Views.Services
 {
-    /// <summary>
-    /// Interaction logic for ServicesListView.xaml
-    /// </summary>
     public partial class ServicesListView : UserControl
     {
         public ServicesListView()
         {
             InitializeComponent();
+        }
+
+        private void AddCloud_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "Almost available, help us out on the Thor Project on Github at https://github.com/IronFoundry/Thor.NET.");
         }
     }
 }

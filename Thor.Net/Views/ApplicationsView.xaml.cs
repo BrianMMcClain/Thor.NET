@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Thor.Net.Views.Applications;
 
 namespace Thor.Net.Views
 {
@@ -10,7 +11,7 @@ namespace Thor.Net.Views
         public ApplicationsView()
         {
             InitializeComponent();
-            NavigationApplicationsHelper.LoadListView(new ApplicationsListView());
+            NavigationApplicationsHelper.LoadListView(ApplicationsViewInteractiveStackPanel);
         }
     }
 }

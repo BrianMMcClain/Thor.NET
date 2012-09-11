@@ -53,9 +53,9 @@ namespace Thor.Net.Views.Clouds
         private void TileOnClick(object sender, RoutedEventArgs routedEventArgs)
         {
             var tile = routedEventArgs.Source as Tile;
-            var target = new Targets(new SettingsWrapper()).GetTarget(tile.Name);
+            var target = new Targets(new SettingsWrapper()).GetTarget(tile.Title);
             new SettingsWrapper().SetActiveFoundryTarget(target);
-            NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
+            NavigationCloudsHelper.LoadDetailView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
