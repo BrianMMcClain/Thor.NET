@@ -34,5 +34,49 @@ namespace Thor.Net.Properties {
                 this["Foundry"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Thor.Models.Jord.FoundryTarget FoundryActiveTarget {
+            get {
+                return ((global::Thor.Models.Jord.FoundryTarget)(this["FoundryActiveTarget"]));
+            }
+            set {
+                this["FoundryActiveTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Thor.Models.Jord.FoundryApplication FoundryActiveApplication {
+            get {
+                return ((global::Thor.Models.Jord.FoundryApplication)(this["FoundryActiveApplication"]));
+            }
+            set {
+                this["FoundryActiveApplication"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Thor.Models.Jord.FoundryDeployment FoundryActiveDeployment {
+            get {
+                return ((global::Thor.Models.Jord.FoundryDeployment)(this["FoundryActiveDeployment"]));
+            }
+            set {
+                this["FoundryActiveDeployment"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Thor.Models.Jord.FoundryService FoundryActiveService {
+            get {
+                return ((global::Thor.Models.Jord.FoundryService)(this["FoundryActiveService"]));
+            }
+            set {
+                this["FoundryActiveService"] = value;
+            }
+        }
     }
 }

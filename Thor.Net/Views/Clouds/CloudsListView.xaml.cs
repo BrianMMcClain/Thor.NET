@@ -5,13 +5,9 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Models.Jörð;
 
 namespace Thor.Net.Views.Clouds
 {
-    /// <summary>
-    /// Interaction logic for CloudsListView.xaml
-    /// </summary>
     public partial class CloudsListView : UserControl
     {
         public CloudsListView()
@@ -23,9 +19,7 @@ namespace Thor.Net.Views.Clouds
         {
             try
             {
-                var cv = (this.Parent as StackPanel).Parent as CloudsView;
-                cv.CloudsAddView.Visibility = Visibility.Visible;
-                cv.CloudsListView.Visibility = Visibility.Hidden;
+                NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
             }
             catch (Exception)
             {
@@ -34,6 +28,8 @@ namespace Thor.Net.Views.Clouds
             }
         }
 
+        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
+
         public List<Tile> Tiles { get; set; }
 
         private void RefreshTargetTiles()
@@ -41,14 +37,12 @@ namespace Thor.Net.Views.Clouds
             var tiles = new List<Tile>();
             var targets = new Targets(new SettingsWrapper()).GetTargets();
 
-
             CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
             foreach (var target in targets)
             {
                 var tile = new Tile() { Title = target.Name };
                 tile.Click += TileOnClick;
                 tile.Margin = new Thickness(15, 15, 0, 0);
-
                 CloudsViewStackPanel.Children.Add(tile);
                 tiles.Add(tile);
             }
@@ -59,12 +53,16 @@ namespace Thor.Net.Views.Clouds
         private void TileOnClick(object sender, RoutedEventArgs routedEventArgs)
         {
             var tile = routedEventArgs.Source as Tile;
-            MessageBox.Show(routedEventArgs.OriginalSource + "\n" + tile.Title);
+            var target = new Targets(new SettingsWrapper()).GetTarget(tile.Title);
+            new SettingsWrapper().SetActiveFoundryTarget(target);
+            NavigationCloudsHelper.LoadDetailView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             RefreshTargetTiles();
         }
+
+        
     }
 }

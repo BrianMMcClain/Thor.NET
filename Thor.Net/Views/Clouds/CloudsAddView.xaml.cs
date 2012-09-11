@@ -3,13 +3,10 @@ using System.Windows;
 using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Models.Jörð;
+using Thor.Models.Jord;
 
 namespace Thor.Net.Views.Clouds
 {
-    /// <summary>
-    /// Interaction logic for CloudsAddView.xaml
-    /// </summary>
     public partial class CloudsAddView : UserControl
     {
         public CloudsAddView()
@@ -17,17 +14,11 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
         }
 
+        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
+
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            GetCloudsListView();
-        }
-
-        private void GetCloudsListView()
-        {
-            this.Visibility = Visibility.Hidden;
-            var window = this.Parent as StackPanel;
-            var parentWindow = window.Parent as CloudsView;
-            parentWindow.CloudsListView.Visibility = Visibility.Visible;
+            NavigationCloudsHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
@@ -44,38 +35,33 @@ namespace Thor.Net.Views.Clouds
 
             var targetRepository = new Targets(new SettingsWrapper());
 
-            if (!IfNameExists(foundryTarget.Name) && !IfUriExists(foundryTarget.Path))
+            if (!NavigationCloudsHelper.IfNameExists(foundryTarget.Name, TargetNameLabel) &&
+                !NavigationCloudsHelper.IfUriExists(foundryTarget.Path, TargetUriLabel))
             {
                 targetRepository.PutTarget(foundryTarget);
-                GetCloudsListView();
+                ClearCloudsAddViewForm();
+
+                NavigationCloudsHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
             }
         }
 
-        private bool IfNameExists(string name)
+        private void ClearCloudsAddViewForm()
         {
-            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
-            TargetNameLabel.Content = nameExists ?
-                Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
-            return nameExists;
-        }
-
-        private bool IfUriExists(Uri uri)
-        {
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
-            TargetUriLabel.Content = uriExists ?
-                Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
-            return uriExists;
+            TargetNameTextBox.Text = string.Empty;
+            UsernameTextBox.Text = string.Empty;
+            PasswordTextBox.Password = string.Empty;
+            TargetUriTextBox.Text = string.Empty;
         }
 
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                IfUriExists(new Uri(TargetUriTextBox.Text));
+            if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
+                NavigationCloudsHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-            IfNameExists(TargetNameTextBox.Text);
+            NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel);
         }
     }
 }

@@ -63,15 +63,15 @@
                     Width="170"/>
             </StackPanel>
             <Button Grid.Column="1" Grid.Row="3" 
-                    Name="AddCloudButton"
-                    Content="Add Cloud" 
+                    Name="PushApplication"
+                    Content="Push Application" 
                     Margin="15,15,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Width="150"
                     Height="35" Click="AddCloudButtonClick" />
             <Button Grid.Column="2" Grid.Row="3"
-                    Name="CancelButton"
-                    Content="Cancel" 
+                    Name="ViewApplicationList"
+                    Content="View Applications" 
                     Margin="15,15,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Width="150"

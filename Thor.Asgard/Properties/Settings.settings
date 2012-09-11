@@ -5,5 +5,17 @@
     <Setting Name="Foundry" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="FoundryActiveTarget" Type="Thor.Models.Jord.FoundryTarget" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FoundryActiveApplication" Type="Thor.Models.Jord.FoundryApplication" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FoundryActiveDeployment" Type="Thor.Models.Jord.FoundryDeployment" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FoundryActiveService" Type="Thor.Models.Jord.FoundryService" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

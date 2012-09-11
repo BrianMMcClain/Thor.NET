@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Models;
-using Thor.Models.Jörð;
+using Thor.Models.Jord;
 
 namespace Thor.Testings.Asgard
 {

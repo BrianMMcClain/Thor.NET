@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Thor.Models.Jörð;
+using Thor.Models.Jord;
 
 namespace Thor.Models
 {

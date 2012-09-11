@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Thor.Models.Jörğ;
+using Thor.Models.Jord;
 
 namespace Thor.Asgard.Bridges
 {
@@ -25,6 +25,13 @@ namespace Thor.Asgard.Bridges
                 // Log Message.
                 throw;
             }
+        }
+
+        public FoundryTarget GetTarget(string targetName)
+        {
+            var targets = _wrapper.Get().Targets;
+            var target = targets.Find(x => x.Name == targetName);
+            return target;
         }
 
         public bool ValidateTargetNameExists(string name)

@@ -1,6 +1,6 @@
 using System;
 
-namespace Thor.Models.Jörð
+namespace Thor.Models.Jord
 {
     public class FoundryTarget : BaseFoundry
     {
