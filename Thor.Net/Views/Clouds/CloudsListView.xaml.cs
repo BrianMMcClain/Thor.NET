@@ -62,5 +62,7 @@ namespace Thor.Net.Views.Clouds
         {
             RefreshTargetTiles();
         }
+
+        
     }
 }

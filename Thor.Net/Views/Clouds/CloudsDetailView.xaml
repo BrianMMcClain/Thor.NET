@@ -17,8 +17,9 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Margin="25,15,0,0">
+    <Grid Margin="25,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -28,6 +29,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold" Margin="1,0,-1,0">Cloud Target</TextBlock>
@@ -81,7 +83,13 @@
                    TextWrapping="Wrap"
                    Grid.Column="2" 
                    Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
+        <ScrollViewer Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <WrapPanel 
+                        Name="ApplicationWrapperPanel"
+                       
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Top">
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
-
-
 </UserControl>

@@ -62,8 +62,10 @@
                     Width="170"/>
         </StackPanel>
         <Button Grid.Column="1" Grid.Row="3" 
-                    Name="Save"
-                    Content="Save" 
+                    Name="Delete"
+                    Content="Delete" 
+                    Foreground="Crimson"
+                    FontWeight="Bold"
                     Margin="15,15,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="DeleteCloudButtonClick"
@@ -77,5 +79,11 @@
                     Click="DeleteCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
+
+        <TextBlock Text="Click delete to confirm the removal of this Cloud Target." 
+                   Foreground="Crimson"
+                   TextWrapping="Wrap"
+                   Grid.Column="2" 
+                   Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
     </Grid>
 </UserControl>

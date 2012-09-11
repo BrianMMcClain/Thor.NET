@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Models.Jord;
@@ -16,6 +17,11 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
 
             LoadActiveFoundryTarget();
+
+            for (int i = 0; i < 88; i++)
+            {
+                ApplicationWrapperPanel.Children.Add(new Tile() { Title = "Test" });
+            }
         }
 
         public void LoadActiveFoundryTarget()
