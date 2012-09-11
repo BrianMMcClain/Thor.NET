@@ -6,7 +6,7 @@ using Thor.Models.Jord;
 namespace Thor.Testings.Asgard
 {
     [TestFixture]
-    public class Jörð_targets_entity
+    public class Jord_targets_entity
     {
         protected FoundryTarget target;
         protected Guid targetId;
