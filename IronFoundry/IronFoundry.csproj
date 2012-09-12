@@ -69,6 +69,8 @@
     <Compile Include="Types\Framework.cs" />
     <Compile Include="Types\IMergeable.cs" />
     <Compile Include="Types\Info.cs" />
+    <Compile Include="Types\InfoLimits.cs" />
+    <Compile Include="Types\InfoUsage.cs" />
     <Compile Include="Types\Instance.cs" />
     <Compile Include="Types\Limits.cs" />
     <Compile Include="Types\Message.cs" />
