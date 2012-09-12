@@ -43,8 +43,15 @@ namespace Thor.Net.Views.Clouds
                     var appDetail =
                         new CloudsAppDetails
                                         {
-                                            ApplicationTile = { Title = application.Name, Count = GetInstanceCount(application) }
+                                            ApplicationTile =
+                                                {
+                                                    Title = application.Name, 
+                                                    Count = GetInstanceCount(application),
+                                                }                              
                                         };
+                    appDetail.ApplicationInformationTextBlock.Text =
+                        Properties.Resources.Memory + application.Resources.Memory + "\n\n" + "stuff";
+                    
 
                     CloudTargetApplications.Children.Add(appDetail);
                 }

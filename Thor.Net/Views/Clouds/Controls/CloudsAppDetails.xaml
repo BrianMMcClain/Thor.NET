@@ -26,7 +26,7 @@
         </Controls:Tile>
         <StackPanel Orientation="Vertical" Background="WhiteSmoke" Margin="15,15,0,0">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Margin="15,15,0,0" >
-                <TextBlock Margin="15,10,15,15" Name="Memory" Foreground="RosyBrown">blagh d blagh</TextBlock>
+                <TextBlock Margin="15,10,15,15" Name="ApplicationInformationTextBlock" Foreground="RosyBrown">blagh d blagh</TextBlock>
             </StackPanel>
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button Name="EditApplicationButton"
@@ -34,13 +34,13 @@
                     Margin="15,10,15,15"
                     Style="{DynamicResource SquareButtonStyle}" 
                     Width="150"
-                    Height="35" Click="EditApplicationButtonClick" />
+                    Height="35" Click="EditApplicationButtonClick" Visibility="Hidden" />
                 <Button Name="DeleteApplicationButton"
                     Content="Delete" 
                     Margin="15,10,15,15"
                     Style="{DynamicResource SquareButtonStyle}" 
                     Width="150"
-                    Height="35" Click="DeleteApplicationButtonClick" />
+                    Height="35" Click="DeleteApplicationButtonClick" Visibility="Hidden" />
             </StackPanel>
         </StackPanel>
     </StackPanel>
