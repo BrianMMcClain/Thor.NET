@@ -44,7 +44,7 @@ namespace Thor.Net.Views.Clouds
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                if (!NavigationCloudsHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel))
+                if (!NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))
                     SaveCloudTarget();
         }
 
@@ -83,8 +83,8 @@ namespace Thor.Net.Views.Clouds
 
             var targetRepository = new Targets(new SettingsWrapper());
 
-            if (!NavigationCloudsHelper.IfNameExists(foundryTarget.Name, TargetNameLabel) &&
-                !NavigationCloudsHelper.IfUriExists(foundryTarget.Path, TargetUriLabel))
+            if (!NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel) &&
+                !NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))
             {
                 targetRepository.DeleteTarget(_tempFoundryTarget);
                 targetRepository.PutTarget(foundryTarget);

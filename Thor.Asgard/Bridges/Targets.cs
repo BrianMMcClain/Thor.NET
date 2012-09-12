@@ -58,10 +58,12 @@ namespace Thor.Asgard.Bridges
 
         public bool DeleteTarget(FoundryTarget target)
         {
+
             try
             {
                 var foundry = _wrapper.Get();
-                foundry.Targets.Remove(target);
+                var verifiedTargetToDelete = foundry.Targets.Single(x => x.Name == target.Name);
+                foundry.Targets.Remove(verifiedTargetToDelete);
                 _wrapper.Save(foundry);
                 return true;
             }

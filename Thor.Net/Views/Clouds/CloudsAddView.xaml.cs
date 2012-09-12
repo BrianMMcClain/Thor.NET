@@ -23,21 +23,21 @@ namespace Thor.Net.Views.Clouds
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
         {
-            var foundryTarget = new FoundryTarget()
-            {
-                Created = DateTime.Now,
-                Name = TargetNameTextBox.Text,
-                Username = UsernameTextBox.Text,
-                Password = PasswordTextBox.Password,
-                Path = new Uri(TargetUriTextBox.Text),
-                Stamp = DateTime.Now
-            };
+var targetRepository = new Targets(new SettingsWrapper());
 
-            var targetRepository = new Targets(new SettingsWrapper());
-
-            if (!NavigationCloudsHelper.IfNameExists(foundryTarget.Name, TargetNameLabel) &&
-                !NavigationCloudsHelper.IfUriExists(foundryTarget.Path, TargetUriLabel))
+            if (!NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel) &&
+                !NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))
             {
+                var foundryTarget = new FoundryTarget()
+                {
+                    Created = DateTime.Now,
+                    Name = TargetNameTextBox.Text,
+                    Username = UsernameTextBox.Text,
+                    Password = PasswordTextBox.Password,
+                    Path = new Uri(TargetUriTextBox.Text),
+                    Stamp = DateTime.Now
+                };
+
                 targetRepository.PutTarget(foundryTarget);
                 ClearCloudsAddViewForm();
 
@@ -56,7 +56,7 @@ namespace Thor.Net.Views.Clouds
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                NavigationCloudsHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
+                NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)

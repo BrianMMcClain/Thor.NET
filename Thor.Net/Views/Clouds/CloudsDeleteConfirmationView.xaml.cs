@@ -2,20 +2,20 @@
 using System.Windows;
 using System.Windows.Controls;
 using Thor.Asgard;
+using Thor.Asgard.Bridges;
+using Thor.Models.Jord;
 
 namespace Thor.Net.Views.Clouds
 {
-    /// <summary>
-    /// Interaction logic for CloudsDeleteConfirmationView.xaml
-    /// </summary>
     public partial class CloudsDeleteConfirmationView : UserControl
     {
         public CloudsDeleteConfirmationView()
         {
             InitializeComponent();
-
             LoadActiveFoundryTarget();
         }
+
+        public CloudsView ParentCloudsView { get { return ((Parent as StackPanel).Parent as CloudsView); } }
 
         public void LoadActiveFoundryTarget()
         {
@@ -29,13 +29,24 @@ namespace Thor.Net.Views.Clouds
 
         private void DeleteCloudButtonClick(object sender, RoutedEventArgs e)
         {
+            var foundryTarget = new FoundryTarget()
+            {
+                Created = DateTime.Now,
+                Name = TargetNameTextBox.Text,
+                Username = UsernameTextBox.Text,
+                Password = PasswordTextBox.Password,
+                Path = new Uri(TargetUriTextBox.Text),
+                Stamp = DateTime.Now
+            };
 
+            new Targets(new SettingsWrapper()).DeleteTarget(foundryTarget);
+            NavigationCloudsHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         private void TargetUriTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TargetUriTextBox.Text))
-                NavigationCloudsHelper.IfUriExists(new Uri(TargetUriTextBox.Text), TargetUriLabel);
+                NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel);
         }
 
         private void TargetNameTextBoxLostFocus(object sender, RoutedEventArgs e)
