@@ -10,7 +10,7 @@
     {
         public string Framework { get; set; }
         public string Runtime { get; set; }
-        public uint DefaultMemoryMB { get; set; }
+        public uint DefaultMemoryMb { get; set; }
     }
 
     public static class FrameworkDetetctor
@@ -33,42 +33,42 @@
          * 
          * Preliminary framework / runtime detection
          */
-        private static readonly IDictionary<string, DetetectedFramework> frameworks =
+        private static readonly IDictionary<string, DetetectedFramework> Frameworks =
             new Dictionary<string, DetetectedFramework> 
             {
-              { "ASP.NET 4.0",      new DetetectedFramework { Framework = "aspdotnet", Runtime = "aspdotnet40", DefaultMemoryMB = 64 } },
-              { "Django",           new DetetectedFramework { Framework = "django", Runtime = "python2", DefaultMemoryMB = 128 } },
-              { "Erlang/OTP Rebar", new DetetectedFramework { Framework = "otp_rebar", Runtime = "erlangR14B02", DefaultMemoryMB = 64 } },
-              { "Grails",           new DetetectedFramework { Framework = "grails", Runtime = "java", DefaultMemoryMB = 512 } },
-              { "JavaWeb",          new DetetectedFramework { Framework = "java_web", Runtime = "java", DefaultMemoryMB = 512 } },
-              { "Lift",             new DetetectedFramework { Framework = "lift", Runtime = "java", DefaultMemoryMB = 512 } },
-              { "Node",             new DetetectedFramework { Framework = "node", Runtime = "node", DefaultMemoryMB = 64 } }, // TODO Runtime
-              { "PHP",              new DetetectedFramework { Framework = "php", Runtime = "php", DefaultMemoryMB = 128 } },
-              { "Rack",             new DetetectedFramework { Framework = "rack", Runtime = "ruby19", DefaultMemoryMB = 128 } }, // TODO Runtime
-              { "Rails",            new DetetectedFramework { Framework = "rails3", Runtime = "ruby19", DefaultMemoryMB = 256 } },
-              { "Sinatra",          new DetetectedFramework { Framework = "sinatra", Runtime = "ruby19", DefaultMemoryMB = 64 } }, // TODO Runtime
-              { "Spring",           new DetetectedFramework { Framework = "spring", Runtime = "java", DefaultMemoryMB = 512 } },
-              { "Standalone",       new DetetectedFramework { Framework = "standalone", DefaultMemoryMB = 64 } },
-              { "WSGI",             new DetetectedFramework { Framework = "wsgi", Runtime = "python2", DefaultMemoryMB = 64 } },
+              { "ASP.NET 4.0",      new DetetectedFramework { Framework = "aspdotnet", Runtime = "aspdotnet40", DefaultMemoryMb = 64 } },
+              { "Django",           new DetetectedFramework { Framework = "django", Runtime = "python2", DefaultMemoryMb = 128 } },
+              { "Erlang/OTP Rebar", new DetetectedFramework { Framework = "otp_rebar", Runtime = "erlangR14B02", DefaultMemoryMb = 64 } },
+              { "Grails",           new DetetectedFramework { Framework = "grails", Runtime = "java", DefaultMemoryMb = 512 } },
+              { "JavaWeb",          new DetetectedFramework { Framework = "java_web", Runtime = "java", DefaultMemoryMb = 512 } },
+              { "Lift",             new DetetectedFramework { Framework = "lift", Runtime = "java", DefaultMemoryMb = 512 } },
+              { "Node",             new DetetectedFramework { Framework = "node", Runtime = "node", DefaultMemoryMb = 64 } }, // TODO Runtime
+              { "PHP",              new DetetectedFramework { Framework = "php", Runtime = "php", DefaultMemoryMb = 128 } },
+              { "Rack",             new DetetectedFramework { Framework = "rack", Runtime = "ruby19", DefaultMemoryMb = 128 } }, // TODO Runtime
+              { "Rails",            new DetetectedFramework { Framework = "rails3", Runtime = "ruby19", DefaultMemoryMb = 256 } },
+              { "Sinatra",          new DetetectedFramework { Framework = "sinatra", Runtime = "ruby19", DefaultMemoryMb = 64 } }, // TODO Runtime
+              { "Spring",           new DetetectedFramework { Framework = "spring", Runtime = "java", DefaultMemoryMb = 512 } },
+              { "Standalone",       new DetetectedFramework { Framework = "standalone", DefaultMemoryMb = 64 } },
+              { "WSGI",             new DetetectedFramework { Framework = "wsgi", Runtime = "python2", DefaultMemoryMb = 64 } },
             };
 
-        private static readonly Regex grailsJarRegex = new Regex(@"WEB-INF[/\\]lib[/\\]grails-web.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
-        private static readonly Regex liftJarRegex = new Regex(@"WEB-INF\/lib\/lift-webkit.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
-        private static readonly Regex springDirRegex = new Regex(@"WEB-INF\/classes\/org\/springframework", RegexOptions.CultureInvariant | RegexOptions.Compiled);
-        private static readonly Regex springJarRegex1 = new Regex(@"WEB-INF\/lib\/spring-core.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
-        private static readonly Regex springJarRegex2 = new Regex(@"WEB-INF\/lib\/org\.springframework\.core.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
-        private static readonly Regex sinatraRegex = new Regex(@"^\s*require[\s\(]*['""]sinatra['""]", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex GrailsJarRegex = new Regex(@"WEB-INF[/\\]lib[/\\]grails-web.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex LiftJarRegex = new Regex(@"WEB-INF\/lib\/lift-webkit.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex SpringDirRegex = new Regex(@"WEB-INF\/classes\/org\/springframework", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex SpringJarRegex1 = new Regex(@"WEB-INF\/lib\/spring-core.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex SpringJarRegex2 = new Regex(@"WEB-INF\/lib\/org\.springframework\.core.*\.jar", RegexOptions.CultureInvariant | RegexOptions.Compiled);
+        private static readonly Regex SinatraRegex = new Regex(@"^\s*require[\s\(]*['""]sinatra['""]", RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
         public static DetetectedFramework Detect(DirectoryInfo path)
         {
             if (AppFileExists(path, @"config\environment.rb"))
             {
-                return frameworks["Rails"];
+                return Frameworks["Rails"];
             }
 
             if (AppFileExists(path, "config.ru"))
             {
-                return frameworks["Rack"];
+                return Frameworks["Rack"];
             }
 
             FileInfo firstWarFilePath = DirGlob(path, "*.war").FirstOrDefault();
@@ -87,10 +87,10 @@
             {
                 foreach (var rubyFile in rubyFiles)
                 {
-                    string text = File.ReadAllText(rubyFile.FullName);
-                    if (sinatraRegex.IsMatch(text))
+                    var text = File.ReadAllText(rubyFile.FullName);
+                    if (SinatraRegex.IsMatch(text))
                     {
-                        return frameworks["Sinatra"];
+                        return Frameworks["Sinatra"];
                     }
                 }
             }
@@ -98,18 +98,18 @@
             if (AppFileExists(path, "server.js") || AppFileExists(path, "app.js") ||
                 AppFileExists(path, "index.js") || AppFileExists(path, "main.js"))
             {
-                return frameworks["Node"];
+                return Frameworks["Node"];
             }
 
             if (AppFileExists(path, "Web.config"))
             {
-                return frameworks["ASP.NET 4.0"];
+                return Frameworks["ASP.NET 4.0"];
             }
 
             var phpFiles = DirGlob(path, "*.php");
             if (false == phpFiles.IsNullOrEmpty())
             {
-                return frameworks["PHP"];
+                return Frameworks["PHP"];
             }
 
             var erlangPath = new DirectoryInfo(Path.Combine(path.FullName, "releases"));
@@ -117,20 +117,20 @@
             var erlBootFiles = DirGlob(erlangPath, "*.boot", true);
             if (false == erlRelFiles.IsNullOrEmpty() || false == erlBootFiles.IsNullOrEmpty())
             {
-                return frameworks["Erlang/OTP Rebar"];
+                return Frameworks["Erlang/OTP Rebar"];
             }
 
             if (AppFileExists(path, "manage.py") || AppFileExists(path, "settings.py"))
             {
-                return frameworks["Django"];
+                return Frameworks["Django"];
             }
 
             if (AppFileExists(path, "wsgi.py"))
             {
-                return frameworks["WSGI"];
+                return Frameworks["WSGI"];
             }
 
-            return frameworks["Standalone"];
+            return Frameworks["Standalone"];
         }
 
         private static DetetectedFramework DetectFrameworkFromPath(DirectoryInfo appPath)
@@ -147,12 +147,8 @@
             }
             else
             {
-                var zipContents = new List<string>();
-                var zf = new ZipFile(warFile.FullName);
-                foreach (ZipEntry entry in zf)
-                {
-                    zipContents.Add(entry.Name);
-                }
+                var zipFile = new ZipFile(warFile.FullName);
+                var zipContents = (from ZipEntry entry in zipFile select entry.Name).ToList();
                 contents = zipContents;
             }
 
@@ -160,42 +156,42 @@
             {
                 foreach (string name in contents)
                 {
-                    if (grailsJarRegex.IsMatch(name))
+                    if (GrailsJarRegex.IsMatch(name))
                     {
-                        return frameworks["Grails"];
+                        return Frameworks["Grails"];
                     }
-                    if (liftJarRegex.IsMatch(name))
+                    if (LiftJarRegex.IsMatch(name))
                     {
-                        return frameworks["Lift"];
+                        return Frameworks["Lift"];
                     }
-                    if (springDirRegex.IsMatch(name) ||
-                        springJarRegex1.IsMatch(name) ||
-                        springJarRegex2.IsMatch(name))
+                    if (SpringDirRegex.IsMatch(name) ||
+                        SpringJarRegex1.IsMatch(name) ||
+                        SpringJarRegex2.IsMatch(name))
                     {
-                        return frameworks["Spring"];
+                        return Frameworks["Spring"];
                     }
                 }
             }
 
-            return frameworks["JavaWeb"];
+            return Frameworks["JavaWeb"];
         }
 
         private static IEnumerable<FileInfo> DirGlob(DirectoryInfo path, string glob, bool recursive = false)
         {
-            IEnumerable<FileInfo> rv = null;
+            IEnumerable<FileInfo> fileInfos = null;
 
             if (path.Exists)
             {
-                SearchOption searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                rv = Directory.GetFiles(path.FullName, glob, searchOption).Select(f => new FileInfo(f));
+                var searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                fileInfos = Directory.GetFiles(path.FullName, glob, searchOption).Select(f => new FileInfo(f));
             }
 
-            return rv;
+            return fileInfos;
         }
 
-        private static bool AppFileExists(DirectoryInfo path, string relativeFilePath)
+        private static bool AppFileExists(FileSystemInfo path, string relativeFilePath)
         {
-            string pathToFile = Path.Combine(path.FullName, relativeFilePath);
+            var pathToFile = Path.Combine(path.FullName, relativeFilePath);
             return File.Exists(pathToFile);
         }
     }

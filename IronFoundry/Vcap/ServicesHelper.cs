@@ -1,23 +1,21 @@
 ﻿namespace IronFoundry.Vcap
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using IronFoundry.Types;
+    using Types;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using RestSharp;
 
     internal class ServicesHelper : BaseVmcHelper
     {
-        public ServicesHelper(VcapUser proxyUser, VcapCredentialManager credMgr)
-            : base(proxyUser, credMgr) { }
+        public ServicesHelper(VcapUser proxyUser, VcapCredentialManager credentialManager)
+            : base(proxyUser, credentialManager) { }
 
         public IEnumerable<SystemService> GetSystemServices()
         {
-            VcapRequest r = BuildVcapRequest(Constants.GLOBAL_SERVICES_PATH);
-            IRestResponse response = r.Execute();
-
+            var request = BuildVcapRequest(Constants.GlobalServicesPath);
+            var response = request.Execute();
             var list = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, SystemService>>>>(response.Content);
 
             var dataStores = from val in list.Values
@@ -25,13 +23,13 @@
                              from val2 in val1.Values
                              select val2;
             
-            return dataStores.ToList(); 
+            return dataStores.ToList();
         }
 
         public IEnumerable<ProvisionedService> GetProvisionedServices()
         {            
-            VcapRequest r = BuildVcapRequest(Constants.SERVICES_PATH);
-            return r.Execute<ProvisionedService[]>();
+            var request = BuildVcapRequest(Constants.ServicesPath);
+            return request.Execute<ProvisionedService[]>();
         }
 
         public void CreateService(string serviceName, string provisionedServiceName)
@@ -49,26 +47,26 @@
                     vendor  = service.Vendor,
                     version = service.Version,
                 };
-                var r = BuildVcapJsonRequest(Method.POST, Constants.SERVICES_PATH);
-                r.AddBody(data);
-                r.Execute();
+                var jsonRequest = BuildVcapJsonRequest(Method.POST, Constants.ServicesPath);
+                jsonRequest.AddBody(data);
+                jsonRequest.Execute();
             }
         }
 
         public void DeleteService(string provisionedServiceName)
         {
-            var request = BuildVcapJsonRequest(Method.DELETE, Constants.SERVICES_PATH, provisionedServiceName);
+            var request = BuildVcapJsonRequest(Method.DELETE, Constants.ServicesPath, provisionedServiceName);
             request.Execute();
         }
 
         public void BindService(string provisionedServiceName, string appName)
         {
-            var apps = new AppsHelper(proxyUser, credMgr);
+            var apps = new AppsHelper(proxyUser, credentialManager);
 
-            Application app = apps.GetApplication(appName);
+            var app = apps.GetApplication(appName);
             app.Services.Add(provisionedServiceName);
 
-            var request = BuildVcapJsonRequest(Method.PUT, Constants.APPS_PATH, app.Name);
+            var request = BuildVcapJsonRequest(Method.PUT, Constants.AppsPath, app.Name);
             request.AddBody(app);
             request.Execute();
 
@@ -82,17 +80,17 @@
 
         public void UnbindService(string provisionedServiceName, string appName)
         {
-            var apps = new AppsHelper(proxyUser, credMgr);
+            var apps = new AppsHelper(proxyUser, credentialManager);
             string appJson = apps.GetApplicationJson(appName);
             var appParsed = JObject.Parse(appJson);
             var services = (JArray)appParsed["services"];
             appParsed["services"] = new JArray(services.Where(s => ((string)s) != provisionedServiceName));
 
-            var r = BuildVcapJsonRequest(Method.PUT, Constants.APPS_PATH, appName);
-            r.AddBody(appParsed);
-            r.Execute();
+            var jsonRequest = BuildVcapJsonRequest(Method.PUT, Constants.AppsPath, appName);
+            jsonRequest.AddBody(appParsed);
+            jsonRequest.Execute();
 
-            apps = new AppsHelper(proxyUser, credMgr);
+            apps = new AppsHelper(proxyUser, credentialManager);
             apps.Restart(appName);
         }
     }

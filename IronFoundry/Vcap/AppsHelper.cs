@@ -17,8 +17,8 @@ namespace IronFoundry.Vcap
 
     internal class AppsHelper : BaseVmcHelper
     {
-        public AppsHelper(VcapUser proxyUser, VcapCredentialManager credMgr)
-            : base(proxyUser, credMgr) { }
+        public AppsHelper(VcapUser proxyUser, VcapCredentialManager credentialManager)
+            : base(proxyUser, credentialManager) { }
 
         public void Start(string applicationName)
         {
@@ -68,13 +68,13 @@ namespace IronFoundry.Vcap
 
         public void Delete(Application application)
         {
-            var r = BuildVcapJsonRequest(Method.DELETE, Constants.APPS_PATH, application.Name);
+            var r = BuildVcapJsonRequest(Method.DELETE, Constants.AppsPath, application.Name);
             r.Execute();
         }
 
         public void UpdateApplication(Application application)
         {
-            var r = BuildVcapJsonRequest(Method.PUT, Constants.APPS_PATH, application.Name);
+            var r = BuildVcapJsonRequest(Method.PUT, Constants.AppsPath, application.Name);
             r.AddBody(application);
             var response = r.Execute<VcapResponse>();
 
@@ -86,7 +86,7 @@ namespace IronFoundry.Vcap
 
         public byte[] Files(string name, string path, ushort instance)
         {
-            var r = base.BuildVcapRequest(Constants.APPS_PATH, name, "instances", instance, "files", path);
+            var r = base.BuildVcapRequest(Constants.AppsPath, name, "instances", instance, "files", path);
             IRestResponse response = r.Execute();
             return response.RawBytes;
         }
@@ -132,7 +132,7 @@ namespace IronFoundry.Vcap
                         Resources = new AppResources { Memory = memoryMB },
                     };
 
-                    var r = BuildVcapJsonRequest(Method.POST, Constants.APPS_PATH);
+                    var r = BuildVcapJsonRequest(Method.POST, Constants.AppsPath);
                     r.AddBody(manifest);
                     r.Execute();
 
@@ -140,7 +140,7 @@ namespace IronFoundry.Vcap
 
                     Application app = GetApplication(name);
                     app.Start();
-                    r = BuildVcapJsonRequest(Method.PUT, Constants.APPS_PATH, name);
+                    r = BuildVcapJsonRequest(Method.PUT, Constants.AppsPath, name);
                     r.AddBody(app);
                     r.Execute();
 
@@ -150,7 +150,7 @@ namespace IronFoundry.Vcap
                     {
                         foreach (string serviceName in provisionedServiceNames)
                         {
-                            var servicesHelper = new ServicesHelper(proxyUser, credMgr);
+                            var servicesHelper = new ServicesHelper(proxyUser, credentialManager);
                             servicesHelper.BindService(serviceName, app.Name);
                         }
                     }
@@ -174,13 +174,13 @@ namespace IronFoundry.Vcap
 
         public string GetAppCrash(string name)
         {
-            var r = base.BuildVcapRequest(Constants.APPS_PATH, name, "crashes");
+            var r = base.BuildVcapRequest(Constants.AppsPath, name, "crashes");
             return r.Execute().Content;
         }
 
         public IEnumerable<Crash> GetAppCrash(Application app)
         {
-            var r = base.BuildVcapRequest(Constants.APPS_PATH, app.Name, "crashes");
+            var r = base.BuildVcapRequest(Constants.AppsPath, app.Name, "crashes");
             return r.Execute<Crash[]>();
         }
 
@@ -259,7 +259,7 @@ namespace IronFoundry.Vcap
 
                     var zipper = new FastZip();
                     zipper.CreateZip(uploadFile, explodeDir.FullName, true, String.Empty);
-                    var request = base.BuildVcapJsonRequest(Method.PUT, Constants.APPS_PATH, name, "application");
+                    var request = base.BuildVcapJsonRequest(Method.PUT, Constants.AppsPath, name, "application");
                     request.AddFile("application", uploadFile);
                     request.AddParameter("resources", JsonConvert.SerializeObject(appcloudResources.ToArrayOrNull()));
                     IRestResponse response = request.Execute();
@@ -281,7 +281,7 @@ namespace IronFoundry.Vcap
                 sent in with the upload if resources were removed.
                 E.g. [{:sha1 => xxx, :size => xxx, :fn => filename}]
              */
-            var r = base.BuildVcapJsonRequest(Method.POST, Constants.RESOURCES_PATH);
+            var r = base.BuildVcapJsonRequest(Method.POST, Constants.ResourcesPath);
             r.AddBody(resourceAry);
             IRestResponse response = r.Execute();
             return JsonConvert.DeserializeObject<Resource[]>(response.Content);

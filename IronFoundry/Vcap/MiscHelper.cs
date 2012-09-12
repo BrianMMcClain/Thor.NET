@@ -1,30 +1,30 @@
 ﻿namespace IronFoundry.Vcap
 {
     using System;
-    using IronFoundry.Types;
+    using Types;
 
     internal class MiscHelper : BaseVmcHelper
     {
-        public MiscHelper(VcapUser proxyUser, VcapCredentialManager credMgr)
-            : base(proxyUser, credMgr) { }
+        public MiscHelper(VcapUser proxyUser, VcapCredentialManager credentialManager)
+            : base(proxyUser, credentialManager) { }
 
         public Info GetInfo()
         {
-            VcapRequest r = BuildVcapRequest(Constants.INFO_PATH);
-            return r.Execute<Info>();
+            var request = BuildVcapRequest(Constants.InfoPath);
+            return request.Execute<Info>();
         }
 
         internal VcapRequest BuildInfoRequest()
         {
-            return BuildVcapRequest(Constants.INFO_PATH);
+            return BuildVcapRequest(Constants.InfoPath);
         }
 
         public void Target(Uri uri)
         {
             // "target" does the same thing as "info", but not logged in
             // considered valid if name, build, version and support are all non-null
-            VcapRequest request = BuildVcapRequest(false, uri, Constants.INFO_PATH);
-            Info info = request.Execute<Info>();
+            var request = BuildVcapRequest(false, uri, Constants.InfoPath);
+            var info = request.Execute<Info>();
 
             var success = info != null &&
                           !string.IsNullOrWhiteSpace(info.Name) &&
@@ -34,8 +34,8 @@
 
             if (success)
             {
-                credMgr.SetTarget(uri);
-                credMgr.StoreTarget();
+                credentialManager.SetTarget(uri);
+                credentialManager.StoreTarget();
             }
             else
             {

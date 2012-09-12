@@ -1,6 +1,6 @@
 ﻿namespace IronFoundry.Vcap
 {
-    using IronFoundry.Types;
+    using Types;
 
     public class VcapClientResult
     {
@@ -42,7 +42,7 @@
             get { return success; }
         }
 
-        public T GetResponseMessage<T>() where T: Message
+        public T GetResponseMessage<T>() where T : Message
         {
             return (T)responseMessage;
         }
@@ -51,18 +51,7 @@
         {
             get
             {
-                string rv;
-
-                if (null == vcapResponse)
-                {
-                    rv = message;
-                }
-                else
-                {
-                    rv = vcapResponse.Description; // TODO
-                }
-
-                return rv;
+                return null == vcapResponse ? message : vcapResponse.Description;
             }
         }
     }

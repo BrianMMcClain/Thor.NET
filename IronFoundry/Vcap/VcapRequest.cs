@@ -1,19 +1,18 @@
-﻿using IronFoundry.Properties;
-
-namespace IronFoundry.Vcap
+﻿namespace IronFoundry.Vcap
 {
+    using Properties;
     using System;
     using System.Collections;
     using System.Linq;
     using System.Net;
-    using IronFoundry.Utilities;
+    using Utilities;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using RestSharp;
 
     public abstract class VcapRequestBase
     {
-        private static readonly ushort[] VMC_HTTP_ERROR_CODES =
+        private static readonly ushort[] VmcHttpErrorCodes =
         {
             (ushort)HttpStatusCode.BadRequest,              // 400
             (ushort)HttpStatusCode.Forbidden,               // 403
@@ -27,32 +26,32 @@ namespace IronFoundry.Vcap
             (ushort)HttpStatusCode.HttpVersionNotSupported, // 505
         };
 
-        private readonly VcapCredentialManager credentialManager;
-        private readonly RestClient client;
-        private readonly string proxyUserEmail;
+        private readonly VcapCredentialManager _credentialManager;
+        private readonly RestClient _client;
+        private readonly string _proxyUserEmail;
 
-        private string requestHostHeader;
+        private string _requestHostHeader;
         protected RestRequest request;
 
         protected VcapRequestBase(string proxyUserEmail, VcapCredentialManager credentialManager)
         {
-            this.proxyUserEmail = proxyUserEmail;
-            this.credentialManager = credentialManager;
-            client = BuildClient();
+            _proxyUserEmail = proxyUserEmail;
+            _credentialManager = credentialManager;
+            _client = BuildClient();
         }
 
         protected VcapRequestBase(string proxyUserEmail, VcapCredentialManager credentialManager, bool useAuthentication, Uri uri = null)
         {
-            this.proxyUserEmail = proxyUserEmail;
-            this.credentialManager = credentialManager;
-            client = BuildClient(useAuthentication, uri);
+            _proxyUserEmail = proxyUserEmail;
+            _credentialManager = credentialManager;
+            _client = BuildClient(useAuthentication, uri);
         }
 
         public string ErrorMessage { get; protected set; }
 
         public IRestResponse Execute()
         {
-            IRestResponse response = client.Execute(request);
+            var response = _client.Execute(request);
             ProcessResponse(response);
             ErrorMessage = response.ErrorMessage;
             return response;
@@ -60,17 +59,14 @@ namespace IronFoundry.Vcap
 
         public TResponse Execute<TResponse>()
         {
-            IRestResponse response = client.Execute(request);
+            var response = _client.Execute(request);
             ProcessResponse(response);
             ErrorMessage = response.ErrorMessage;
             if (string.IsNullOrWhiteSpace(response.Content))
             {
                 return default(TResponse);
             }
-            else
-            {
-                return JsonConvert.DeserializeObject<TResponse>(response.Content);
-            }
+            return JsonConvert.DeserializeObject<TResponse>(response.Content);
         }
 
         protected RestRequest BuildRequest(Method method, params object[] args)
@@ -80,9 +76,9 @@ namespace IronFoundry.Vcap
 
         protected RestRequest BuildRequest(Method method, DataFormat format, params object[] args)
         {
-            RestRequest rv = BuildRestRequest(method);
-            rv.RequestFormat = format;
-            return ProcessRequestArgs(rv, args);
+            RestRequest restRequest = BuildRestRequest(method);
+            restRequest.RequestFormat = format;
+            return ProcessRequestArgs(restRequest, args);
         }
 
         private RestRequest BuildRestRequest(Method method)
@@ -94,9 +90,9 @@ namespace IronFoundry.Vcap
                 JsonSerializer = serializer,
             };
 
-            if (null != requestHostHeader)
+            if (null != _requestHostHeader)
             {
-                rv.AddHeader("Host", requestHostHeader);
+                rv.AddHeader("Host", _requestHostHeader);
             }
 
             return rv;
@@ -109,17 +105,13 @@ namespace IronFoundry.Vcap
 
         private RestClient BuildClient(bool useAuth, Uri uri = null)
         {
-            Uri currentTargetUri = uri;
-            if (null == currentTargetUri)
+            var currentTargetUri = uri ?? _credentialManager.CurrentTarget;
+            var baseUrl = currentTargetUri.AbsoluteUri;
+            
+            if (null != _credentialManager.CurrentTargetIP)
             {
-                currentTargetUri = credentialManager.CurrentTarget;
-            }
-
-            string baseUrl = currentTargetUri.AbsoluteUri;
-            if (null != credentialManager.CurrentTargetIP)
-            {
-                baseUrl = String.Format("{0}://{1}", Uri.UriSchemeHttp, credentialManager.CurrentTargetIP.ToString());
-                requestHostHeader = currentTargetUri.Host;
+                baseUrl = String.Format("{0}://{1}", Uri.UriSchemeHttp, _credentialManager.CurrentTargetIP.ToString());
+                _requestHostHeader = currentTargetUri.Host;
             }
 
             var deserializer = new NewtonsoftJsonDeserializer();
@@ -131,14 +123,14 @@ namespace IronFoundry.Vcap
             rv.RemoveHandler(NewtonsoftJsonDeserializer.JsonContentType);
             rv.AddHandler(NewtonsoftJsonDeserializer.JsonContentType, deserializer);
 
-            if (useAuth && credentialManager.HasToken)
+            if (useAuth && _credentialManager.HasToken)
             {
-                rv.AddDefaultHeader("AUTHORIZATION", credentialManager.CurrentToken);
+                rv.AddDefaultHeader("AUTHORIZATION", _credentialManager.CurrentToken);
             }
 
-            if (false == string.IsNullOrWhiteSpace(proxyUserEmail))
+            if (false == string.IsNullOrWhiteSpace(_proxyUserEmail))
             {
-                rv.AddDefaultHeader("PROXY-USER", proxyUserEmail);
+                rv.AddDefaultHeader("PROXY-USER", _proxyUserEmail);
             }
 
             return rv;
@@ -149,11 +141,11 @@ namespace IronFoundry.Vcap
             if (response.ErrorException != null)
             {
                 throw new VcapException(
-                    String.Format(Resources.VcapRequest_RestException_Fmt, client.BaseUrl, request.Resource),
+                    String.Format(Resources.VcapRequest_RestException_Fmt, _client.BaseUrl, request.Resource),
                     response.ErrorException);
             }
 
-            if (VMC_HTTP_ERROR_CODES.Contains((ushort)response.StatusCode))
+            if (VmcHttpErrorCodes.Contains((ushort)response.StatusCode))
             {
                 Exception parseException = null;
                 string errorMessage = null;
@@ -165,7 +157,7 @@ namespace IronFoundry.Vcap
                 {
                     try
                     {
-                        JObject parsed = JObject.Parse(response.Content);
+                        var parsed = JObject.Parse(response.Content);
                         JToken codeToken;
                         JToken descToken;
                         if (parsed.TryGetValue("code", out codeToken) && parsed.TryGetValue("description", out descToken))
@@ -189,20 +181,16 @@ namespace IronFoundry.Vcap
                         response.StatusCode, Environment.NewLine, response.Content, Environment.NewLine, parseException.Message);
                     throw new VcapException(errorMessage, parseException);
                 }
-                else
+
+                switch (response.StatusCode)
                 {
-                    if (response.StatusCode == HttpStatusCode.BadRequest || response.StatusCode == HttpStatusCode.NotFound)
-                    {
+                    case HttpStatusCode.NotFound:
+                    case HttpStatusCode.BadRequest:
                         throw new VcapNotFoundException(errorMessage);
-                    }
-                    else if (response.StatusCode == HttpStatusCode.Forbidden)
-                    {
+                    case HttpStatusCode.Forbidden:
                         throw new VcapAuthException(errorMessage);
-                    }
-                    else
-                    {
+                    default:
                         throw new VcapException(errorMessage);
-                    }
                 }
             }
         }
@@ -222,7 +210,7 @@ namespace IronFoundry.Vcap
 
         internal RestClient Client
         {
-            get { return client; }
+            get { return _client; }
         }
 
         internal RestRequest Request
@@ -232,7 +220,7 @@ namespace IronFoundry.Vcap
 
         internal string RequestHostHeader
         {
-            get { return requestHostHeader; }
+            get { return _requestHostHeader; }
         }
     }
 
@@ -258,17 +246,17 @@ namespace IronFoundry.Vcap
 
         public void AddBody(object body)
         {
-            this.request.AddBody(body);
+            request.AddBody(body);
         }
 
         public void AddParameter(string param, object value)
         {
-            this.request.AddParameter(param, value);
+            request.AddParameter(param, value);
         }
 
         public void AddFile(string name, string path)
         {
-            this.request.AddFile(name, path);
+            request.AddFile(name, path);
         }
     }
 }

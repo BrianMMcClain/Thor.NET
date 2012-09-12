@@ -7,12 +7,12 @@
     [Serializable, Obsolete]
     public class CloudUrl : EntityBase, IMergeable<CloudUrl>
     {
-        private string serverName;
-        private string url;
-        private bool isConfigurable;
-        private bool isRemovable;
-        private bool isDefault;
-        private bool isMicroCloud;
+        private string _serverName;
+        private string _url;
+        private bool _isConfigurable;
+        private bool _isRemovable;
+        private bool _isDefault;
+        private bool _isMicroCloud;
         
         private static SafeObservableCollection<CloudUrl> defaultCloudUrls = new SafeObservableCollection<CloudUrl>
         {
@@ -24,38 +24,38 @@
 
         public string ServerName
         {
-            get { return this.serverName; }
-            set { this.serverName = value; RaisePropertyChanged("ServerName"); }
+            get { return _serverName; }
+            set { _serverName = value; RaisePropertyChanged("ServerName"); }
         }
 
         public string Url
         {
-            get { return this.url; }
-            set { this.url = value; RaisePropertyChanged("Url"); }
+            get { return _url; }
+            set { _url = value; RaisePropertyChanged("Url"); }
         }
 
         public bool IsConfigurable
         {
-            get { return this.isConfigurable; }
-            set { this.isConfigurable = value; RaisePropertyChanged("IsConfigurable"); }
+            get { return _isConfigurable; }
+            set { _isConfigurable = value; RaisePropertyChanged("IsConfigurable"); }
         }
 
         public bool IsRemovable
         {
-            get { return this.isRemovable; }
-            set { this.isRemovable = value; RaisePropertyChanged("IsRemovable"); }
+            get { return _isRemovable; }
+            set { _isRemovable = value; RaisePropertyChanged("IsRemovable"); }
         }
 
         public bool IsDefault
         {
-            get { return this.isDefault; }
-            set { this.isDefault = value; RaisePropertyChanged("IsDefault"); }
+            get { return _isDefault; }
+            set { _isDefault = value; RaisePropertyChanged("IsDefault"); }
         }
 
         public bool IsMicroCloud
         {
-            get { return this.isMicroCloud; }
-            set { this.isMicroCloud = value; RaisePropertyChanged("IsMicroCloud"); }
+            get { return _isMicroCloud; }
+            set { _isMicroCloud = value; RaisePropertyChanged("IsMicroCloud"); }
         }
 
         public static SafeObservableCollection<CloudUrl> DefaultCloudUrls
@@ -65,11 +65,11 @@
     
         public void Merge(CloudUrl obj)
         {
-            this.Url            = obj.Url;
-            this.IsConfigurable = obj.IsConfigurable;
-            this.IsRemovable    = obj.IsRemovable;
-            this.IsDefault      = obj.IsDefault;
-            this.IsMicroCloud   = obj.IsMicroCloud;
+            Url            = obj.Url;
+            IsConfigurable = obj.IsConfigurable;
+            IsRemovable    = obj.IsRemovable;
+            IsDefault      = obj.IsDefault;
+            IsMicroCloud   = obj.IsMicroCloud;
         }
     }
 

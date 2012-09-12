@@ -8,13 +8,13 @@ namespace IronFoundry.Utilities
     {
         public override Type BindToType(string assemblyName, string typeName)
         {
-            ResolveEventHandler handler = new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            var handler = new ResolveEventHandler(CurrentDomainAssemblyResolve);
             AppDomain.CurrentDomain.AssemblyResolve += handler;
 
             Type returnedType;
             try
             {
-                AssemblyName asmName = new AssemblyName(assemblyName);
+                var asmName = new AssemblyName(assemblyName);
                 var assembly = Assembly.Load(asmName);
                 returnedType = assembly.GetType(typeName);
             }
@@ -30,10 +30,10 @@ namespace IronFoundry.Utilities
             return returnedType;
         }
 
-        Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        static Assembly CurrentDomainAssemblyResolve(object sender, ResolveEventArgs args)
         {
-            string truncatedAssemblyName = args.Name.Split(',')[0];
-            Assembly assembly = Assembly.Load(truncatedAssemblyName);
+            var truncatedAssemblyName = args.Name.Split(',')[0];
+            var assembly = Assembly.Load(truncatedAssemblyName);
             return assembly;
         }
     }

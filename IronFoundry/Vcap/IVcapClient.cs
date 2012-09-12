@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Net;
-    using IronFoundry.Types;
+    using Types;
 
     public interface IVcapClient
     {
@@ -27,7 +27,7 @@
         IEnumerable<VcapUser> GetUsers();
 
         void Push(string name, string deployFQDN, ushort instances, DirectoryInfo path,
-            uint memoryMB, string[] provisionedServiceNames);
+            uint memoryMb, string[] provisionedServiceNames);
 
         void Update(string appname, DirectoryInfo di);
 
@@ -45,10 +45,10 @@
         void Start(Application app);
         void Start(string appName);
 
-        void Restart(Application app);
+        void Restart(Application application);
         void Restart(string appName);
 
-        void Delete(Application app);
+        void Delete(Application application);
         void Delete(string appName);
 
         Application GetApplication(string appName);
@@ -59,9 +59,7 @@
         string GetLogs(Application application, ushort instanceNumber);
 
         IEnumerable<StatInfo> GetStats(Application application);
-
         IEnumerable<ExternalInstance> GetInstances(Application application);
-
         IEnumerable<Crash> GetAppCrash(Application application);
 
         void UpdateApplication(Application application);

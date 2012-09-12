@@ -19,10 +19,7 @@
             {
                 throw new ArgumentNullException("file");
             }
-            else
-            {
-                File = file;
-            }
+            File = file;
         }
 
         public bool IsFile

@@ -6,16 +6,16 @@ namespace IronFoundry.Types
     [Serializable, Obsolete]
     public class Preferences
     {             
-        private SafeObservableCollection<Cloud> clouds;
-        private SafeObservableCollection<CloudUrl> cloudUrls;
+        private SafeObservableCollection<Cloud> _clouds;
+        private SafeObservableCollection<CloudUrl> _cloudUrls;
 
         public SafeObservableCollection<Cloud> Clouds 
         {
-            get { return this.clouds; }
+            get { return this._clouds; }
             set
             {
-                this.clouds = value.DeepCopy();
-                foreach (var cloud in this.clouds)
+                this._clouds = value.DeepCopy();
+                foreach (var cloud in this._clouds)
                 {
                     cloud.Services.Clear();
                     cloud.Applications.Clear();
@@ -28,10 +28,10 @@ namespace IronFoundry.Types
 
         public SafeObservableCollection<CloudUrl> CloudUrls
         {
-            get { return this.cloudUrls; }
+            get { return _cloudUrls; }
             set
             {
-                this.cloudUrls = value.DeepCopy();
+                _cloudUrls = value.DeepCopy();
             }
         }
     }

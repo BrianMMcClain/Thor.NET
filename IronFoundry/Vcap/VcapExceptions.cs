@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
 
     [Serializable]
-    public class VcapException : Exception, ISerializable
+    public class VcapException : Exception
     {
         public VcapException() { }
 

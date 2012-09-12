@@ -12,14 +12,14 @@
     {
         public const string JsonContentType = "application/json"; 
 
-        private readonly Newtonsoft.Json.JsonSerializer serializer;
+        private readonly Newtonsoft.Json.JsonSerializer _serializer;
         
         /// <summary>
         /// Default serializer
         /// </summary>
         public NewtonsoftJsonSerializer()
         {
-            serializer = new Newtonsoft.Json.JsonSerializer
+            _serializer = new Newtonsoft.Json.JsonSerializer
             {
                 MissingMemberHandling = MissingMemberHandling.Ignore,
                 NullValueHandling = NullValueHandling.Include,
@@ -41,7 +41,7 @@
                     jsonTextWriter.Formatting = Formatting.Indented;
                     jsonTextWriter.QuoteChar = '"';
 
-                    serializer.Serialize(jsonTextWriter, obj);
+                    _serializer.Serialize(jsonTextWriter, obj);
 
                     return stringWriter.ToString();
                 }

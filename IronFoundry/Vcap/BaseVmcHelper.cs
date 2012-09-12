@@ -2,71 +2,71 @@
 {
     using System;
     using System.Collections.Generic;
-    using IronFoundry.Types;
+    using Types;
     using Newtonsoft.Json;
     using RestSharp;
 
     internal abstract class BaseVmcHelper
     {
-        protected readonly VcapCredentialManager credMgr;
+        protected readonly VcapCredentialManager credentialManager;
         protected readonly VcapUser proxyUser;
 
-        public BaseVmcHelper(VcapUser proxyUser, VcapCredentialManager credMgr)
+        public BaseVmcHelper(VcapUser proxyUser, VcapCredentialManager credentialManager)
         {
             this.proxyUser = proxyUser;
-            this.credMgr = credMgr;
+            this.credentialManager = credentialManager;
         }
 
         public string GetApplicationJson(string name)
         {
-            VcapRequest r = BuildVcapRequest(Constants.APPS_PATH, name);
-            return r.Execute().Content;
+            var request = BuildVcapRequest(Constants.AppsPath, name);
+            return request.Execute().Content;
         }
 
         public Application GetApplication(string name)
         {
-            string json = GetApplicationJson(name);
+            var json = GetApplicationJson(name);
             return JsonConvert.DeserializeObject<Application>(json);
         }
 
         public IEnumerable<Application> GetApplications(string proxy_user = null)
         {
-            VcapRequest r = BuildVcapRequest(Constants.APPS_PATH);
-            return r.Execute<Application[]>();
+            var request = BuildVcapRequest(Constants.AppsPath);
+            return request.Execute<Application[]>();
         }
 
         protected bool AppExists(string name)
         {
-            bool rv = true;
+            var returnValue = true;
             try
             {
-                string appJson = GetApplicationJson(name);
+                var appJson = GetApplicationJson(name);
             }
             catch (VcapNotFoundException)
             {
-                rv = false;
+                returnValue = false;
             }
-            return rv;
+            return returnValue;
         }
 
         protected VcapRequest BuildVcapRequest(params object[] resourceParams)
         {
-            return new VcapRequest(ProxyUserEmail, credMgr, resourceParams);
+            return new VcapRequest(ProxyUserEmail, credentialManager, resourceParams);
         }
 
         protected VcapRequest BuildVcapRequest(bool useAuth, Uri uri, params object[] resourceParams)
         {
-            return new VcapRequest(ProxyUserEmail, credMgr, useAuth, uri, resourceParams);
+            return new VcapRequest(ProxyUserEmail, credentialManager, useAuth, uri, resourceParams);
         }
 
         protected VcapRequest BuildVcapRequest(Method method, params string[] resourceParams)
         {
-            return new VcapRequest(ProxyUserEmail, credMgr, method, resourceParams);
+            return new VcapRequest(ProxyUserEmail, credentialManager, method, resourceParams);
         }
 
         protected VcapJsonRequest BuildVcapJsonRequest(Method method, params string[] resourceParams)
         {
-            return new VcapJsonRequest(ProxyUserEmail, credMgr, method, resourceParams);
+            return new VcapJsonRequest(ProxyUserEmail, credentialManager, method, resourceParams);
         }
 
         private string ProxyUserEmail

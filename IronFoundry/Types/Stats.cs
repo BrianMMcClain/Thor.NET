@@ -1,6 +1,5 @@
 ﻿namespace IronFoundry.Types
 {
-    using System;
     using Newtonsoft.Json;
 
     public class Stats : Message

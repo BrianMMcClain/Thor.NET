@@ -6,97 +6,97 @@ namespace IronFoundry.Types
     [Serializable]
     public class Instance : EntityBase, IMergeable<Instance>
     {
-        private int id;
-        private string state;
-        private int cores;
-        private long memoryQuota;
-        private long diskQuota;
-        private string host;
-        private float cpu;
-        private long memory;
-        private long disk;
-        private TimeSpan uptime;
-        private Application parent;
+        private int _id;
+        private string _state;
+        private int _cores;
+        private long _memoryQuota;
+        private long _diskQuota;
+        private string _host;
+        private float _cpu;
+        private long _memory;
+        private long _disk;
+        private TimeSpan _uptime;
+        private Application _parent;
 
-        public int ID {
-            get { return this.id; }
-            set { this.id = value; RaisePropertyChanged("ID"); }
+        public int Id {
+            get { return _id; }
+            set { _id = value; RaisePropertyChanged("ID"); }
         }
         public string State
         {
-            get { return this.state; }
-            set { this.state = value; RaisePropertyChanged("State"); }
+            get { return _state; }
+            set { _state = value; RaisePropertyChanged("State"); }
         }
         public int Cores
         {
-            get { return this.cores; }
-            set { this.cores = value; RaisePropertyChanged("Cores"); }
+            get { return _cores; }
+            set { _cores = value; RaisePropertyChanged("Cores"); }
         }
         public long MemoryQuota
         {
-            get { return this.memoryQuota; }
-            set { this.memoryQuota = value; RaisePropertyChanged("MemoryQuota"); }
+            get { return _memoryQuota; }
+            set { _memoryQuota = value; RaisePropertyChanged("MemoryQuota"); }
         }
         public long DiskQuota
         {
-            get { return this.diskQuota; }
-            set { this.diskQuota = value; RaisePropertyChanged("DiskQuota"); }
+            get { return _diskQuota; }
+            set { _diskQuota = value; RaisePropertyChanged("DiskQuota"); }
         }
         public string Host
         {
-            get { return this.host; }
-            set { this.host = value; RaisePropertyChanged("Host"); }
+            get { return _host; }
+            set { _host = value; RaisePropertyChanged("Host"); }
         }
         public float Cpu
         {
-            get { return this.cpu; }
-            set { this.cpu = value; RaisePropertyChanged("Cpu"); }
+            get { return _cpu; }
+            set { _cpu = value; RaisePropertyChanged("Cpu"); }
         }
         public long Memory
         {
-            get { return this.memory; }
-            set { this.memory = value; RaisePropertyChanged("Memory"); }
+            get { return _memory; }
+            set { _memory = value; RaisePropertyChanged("Memory"); }
         }
         public long Disk
         {
-            get { return this.disk; }
-            set { this.disk = value; RaisePropertyChanged("Disk"); }
+            get { return _disk; }
+            set { _disk = value; RaisePropertyChanged("Disk"); }
         }
         public TimeSpan Uptime
         {
-            get { return this.uptime; }
-            set { this.uptime = value; RaisePropertyChanged("Uptime"); }
+            get { return _uptime; }
+            set { _uptime = value; RaisePropertyChanged("Uptime"); }
         }
         public Application Parent
         {
-            get { return this.parent; }
-            set { this.parent = value; RaisePropertyChanged("Parent"); }
+            get { return _parent; }
+            set { _parent = value; RaisePropertyChanged("Parent"); }
         }
 
         public void Merge(Instance obj)
         {
-            this.Cores = obj.Cores;
-            this.MemoryQuota = obj.MemoryQuota;
-            this.DiskQuota = obj.DiskQuota;
-            this.Host = obj.Host;
-            this.Cpu = obj.Cpu;
-            this.Memory = obj.Memory;
-            this.Disk = obj.Disk;
-            this.Uptime = obj.Uptime;
-            this.State = obj.State;
+            Cores = obj.Cores;
+            MemoryQuota = obj.MemoryQuota;
+            DiskQuota = obj.DiskQuota;
+            Host = obj.Host;
+            Cpu = obj.Cpu;
+            Memory = obj.Memory;
+            Disk = obj.Disk;
+            Uptime = obj.Uptime;
+            State = obj.State;
         }
     }
 
     public class InstanceEqualityComparer : IEqualityComparer<Instance>
     {
-        public bool Equals(Instance c1, Instance c2)
+        public bool Equals(Instance instanceOne, Instance instanceTwo)
         {
-            return c1.ID.Equals(c2.ID);
+            return instanceOne.Id.Equals(instanceTwo.Id);
         }
 
-        public int GetHashCode(Instance c)
+        public int GetHashCode(Instance instance)
         {
-            return c.ID.GetHashCode();
+            return instance.Id.GetHashCode();
         }
     }
 }

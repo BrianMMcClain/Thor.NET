@@ -7,24 +7,24 @@
     [Serializable]
     public class Cloud : EntityBase, IEquatable<Cloud>, IMergeable<Cloud>
     {
-        private readonly Guid id;
-        private string serverName;
-        private string hostName;
-        private string email;
-        private string password;
-        private string url;
-        private bool isConnected;
-        private bool isDisconnected;
-        private int timeoutStart;
-        private int timeoutStop;
-        private string accessToken;
+        private readonly Guid _id;
+        private string _serverName;
+        private string _hostName;
+        private string _email;
+        private string _password;
+        private string _url;
+        private bool _isConnected;
+        private bool _isDisconnected;
+        private int _timeoutStart;
+        private int _timeoutStop;
+        private string _accessToken;
 
-        private SafeObservableCollection<Application> applications = new SafeObservableCollection<Application>();
+        private SafeObservableCollection<Application> _applications = new SafeObservableCollection<Application>();
 
-        private SafeObservableCollection<SystemService> availableServices =
+        private SafeObservableCollection<SystemService> _availableServices =
             new SafeObservableCollection<SystemService>();
 
-        private SafeObservableCollection<ProvisionedService> services =
+        private SafeObservableCollection<ProvisionedService> _services =
             new SafeObservableCollection<ProvisionedService>();
 
         public Cloud() : this(Guid.NewGuid())
@@ -33,11 +33,10 @@
 
         public Cloud(Guid id)
         {
-            applications.CollectionChanged += (s, e) => RaisePropertyChanged("Applications");
-            services.CollectionChanged += (s, e) => RaisePropertyChanged("Services");
-            availableServices.CollectionChanged += (s, e) => RaisePropertyChanged("AvailableServices");
+            _applications.CollectionChanged += (s, e) => RaisePropertyChanged("Applications");
+            _services.CollectionChanged += (s, e) => RaisePropertyChanged("Services");
+            _availableServices.CollectionChanged += (s, e) => RaisePropertyChanged("AvailableServices");
 
-            id = id;
             TimeoutStart = 600;
             TimeoutStop = 60;
             IsConnected = false;
@@ -58,87 +57,87 @@
 
         public Guid ID
         {
-            get { return id; }
+            get { return _id; }
         }
 
         public string ServerName
         {
-            get { return serverName; }
+            get { return _serverName; }
             set
             {
-                serverName = value;
+                _serverName = value;
                 RaisePropertyChanged("ServerName");
             }
         }
 
         public string HostName
         {
-            get { return hostName; }
+            get { return _hostName; }
             set
             {
-                hostName = value;
+                _hostName = value;
                 RaisePropertyChanged("HostName");
             }
         }
 
         public string Email
         {
-            get { return email; }
+            get { return _email; }
             set
             {
-                email = value;
+                _email = value;
                 RaisePropertyChanged("Email");
             }
         }
 
         public string Password
         {
-            get { return password; }
+            get { return _password; }
             set
             {
-                password = value;
+                _password = value;
                 RaisePropertyChanged("Password");
             }
         }
 
         public string Url
         {
-            get { return url; }
+            get { return _url; }
             set
             {
-                url = value;
+                _url = value;
                 RaisePropertyChanged("Url");
             }
         }
 
         public int TimeoutStart
         {
-            get { return timeoutStart; }
+            get { return _timeoutStart; }
             set
             {
-                timeoutStart = value;
+                _timeoutStart = value;
                 RaisePropertyChanged("TimeoutStart");
             }
         }
 
         public int TimeoutStop
         {
-            get { return timeoutStop; }
+            get { return _timeoutStop; }
             set
             {
-                timeoutStop = value;
+                _timeoutStop = value;
                 RaisePropertyChanged("TimeoutStop");
             }
         }
 
         public string AccessToken
         {
-            get { return accessToken; }
+            get { return _accessToken; }
             set
             {
-                accessToken = value;
+                _accessToken = value;
                 RaisePropertyChanged("AccessToken");
-                if (!String.IsNullOrEmpty(accessToken))
+                if (!String.IsNullOrEmpty(_accessToken))
                 {
                     IsConnected = true;
                     IsDisconnected = false;
@@ -153,20 +152,20 @@
 
         public bool IsConnected
         {
-            get { return isConnected; }
+            get { return _isConnected; }
             set
             {
-                isConnected = value;
+                _isConnected = value;
                 RaisePropertyChanged("IsConnected");
             }
         }
 
         public bool IsDisconnected
         {
-            get { return isDisconnected; }
+            get { return _isDisconnected; }
             set
             {
-                isDisconnected = value;
+                _isDisconnected = value;
                 RaisePropertyChanged("IsDisconnected");
             }
         }
@@ -175,11 +174,11 @@
         {
             get
             {
-                if (applications == null)
+                if (_applications == null)
                 {
-                    applications = new SafeObservableCollection<Application>();
+                    _applications = new SafeObservableCollection<Application>();
                 }
-                return applications;
+                return _applications;
             }
         }
 
@@ -187,11 +186,11 @@
         {
             get
             {
-                if (services == null)
+                if (_services == null)
                 {
-                    services = new SafeObservableCollection<ProvisionedService>();
+                    _services = new SafeObservableCollection<ProvisionedService>();
                 }
-                return services;
+                return _services;
             }
         }
 
@@ -199,11 +198,11 @@
         {
             get
             {
-                if (availableServices == null)
+                if (_availableServices == null)
                 {
-                    availableServices = new SafeObservableCollection<SystemService>();
+                    _availableServices = new SafeObservableCollection<SystemService>();
                 }
-                return availableServices;
+                return _availableServices;
             }
         }
 
