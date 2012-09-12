@@ -17,21 +17,19 @@
     </UserControl.Resources>
     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
         <TextBlock Grid.Row="0" Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
-
         <StackPanel Orientation="Horizontal">
-
-            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
+            <StackPanel Orientation="Vertical">
+                <Label Margin="15,15,0,0" Content="Cloud" Name="TargetNameLabel" />
                 <TextBox 
                     Name="TargetNameTextBox"
-                    Grid.Column="0" Grid.Row="1" Margin="15,0,0,0" Width="170" 
+                    Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetNameTextBoxLostFocus" />
             </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="25,0,0,0">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
+            <StackPanel Orientation="Vertical" >
+                <Label Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
                 <TextBox 
                     Name="TargetUriTextBox"
-                    Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
+                    Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" />
             </StackPanel>
         </StackPanel>
@@ -43,7 +41,7 @@
                     Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" />
             </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+            <StackPanel Orientation="Vertical">
                 <Label Margin="15,15,0,0" Content="Password" />
                 <PasswordBox 
                     Name="PasswordTextBox"

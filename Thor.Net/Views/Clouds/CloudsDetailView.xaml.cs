@@ -4,7 +4,9 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
+using Application = IronFoundry.Types.Application;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -17,11 +19,6 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
 
             LoadActiveFoundryTarget();
-
-            for (int i = 0; i < 8; i++)
-            {
-                CloudTargetApplications.Children.Add(new CloudsAppDetails());
-            }
         }
 
         public void LoadActiveFoundryTarget()
@@ -32,6 +29,42 @@ namespace Thor.Net.Views.Clouds
             TargetNameTextBox.Text = target.Name;
             TargetUriTextBox.Text = target.Path.ToString();
             UsernameTextBox.Text = target.Username;
+
+            // TODO: Make this an asynchronous call
+            try
+            {
+                // temporary pre-error handling & validation.
+                var paas = new PaasTarget(target.Username, target.Password, target.Path);
+                new SettingsWrapper().SetActiveFoundryTarget(Mappers.Map.PaasTargetToFoundryTarget(paas, target));
+
+                var applications = paas.CloudApplications;
+                foreach (var application in applications)
+                {
+                    var appDetail =
+                        new CloudsAppDetails
+                                        {
+                                            ApplicationTile = { Title = application.Name, Count = GetInstanceCount(application) }
+                                        };
+
+                    CloudTargetApplications.Children.Add(appDetail);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Logging here.
+                // Temporarily ignoring exceptions until I can look at and determine the unique results from Cloud Foundry.
+                MessageBox.Show("This cloud was not found: " + ex.Message);
+            }
+        }
+
+        private static string GetInstanceCount(Application application)
+        {
+            string instanceCount = "0";
+            if (application.RunningInstances != null)
+            {
+                instanceCount = application.RunningInstances.ToString();
+            }
+            return instanceCount;
         }
 
         public CloudsView ParentCloudsView { get { return ((Parent as StackPanel).Parent as CloudsView); } }

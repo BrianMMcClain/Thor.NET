@@ -16,23 +16,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <Grid Margin="25,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold" Margin="1,0,-1,0">Cloud Target</TextBlock>
-
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+        <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Cloud Target</TextBlock>
+        <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                 <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
                 <TextBox 
@@ -47,7 +33,8 @@
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" GotFocus="TargetUriTextBoxGotFocus" />
             </StackPanel>
-
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                 <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
                 <TextBox 
@@ -62,6 +49,8 @@
                     Margin="15,0,0,0" 
                     Width="170" LostFocus="PasswordTextBoxLostFocus" GotFocus="PasswordTextBoxGotFocus" />
             </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
             <Button Grid.Column="1" Grid.Row="3" 
                     Name="Delete"
                     Content="Delete" 
@@ -78,11 +67,13 @@
                     Click="AddCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
-            <TextBlock Text="To edit the cloud target, just type the changes you want and they'll save automatically" 
+        </StackPanel>
+
+        <TextBlock Text="To edit the cloud target, just type the changes you want and they'll save automatically" 
                    TextWrapping="Wrap"
                    Grid.Column="2" 
                    Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
-        </Grid>
+
         <ScrollViewer Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" 
                       Margin="15,15,0,0"
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

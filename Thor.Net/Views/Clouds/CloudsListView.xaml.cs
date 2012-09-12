@@ -68,20 +68,7 @@ namespace Thor.Net.Views.Clouds
         {
             var tile = routedEventArgs.Source as Tile;
             var target = new Targets(new SettingsWrapper()).GetTarget(tile.Title);
-
             new SettingsWrapper().SetActiveFoundryTarget(target);
-            try
-            {
-                // temporary pre-error handling & validation.
-                var paas = new PaasTarget(target.Username, target.Password, target.Path);
-                new SettingsWrapper().SetActiveFoundryTarget(Mappers.Map.PaasTargetToFoundryTarget(paas, target));
-            }
-            catch (Exception ex)
-            {
-                // Logging here.
-                // Temporarily ignoring exceptions until I can look at and determine the unique results from Cloud Foundry.
-            }
-            
             NavigationCloudsHelper.LoadDetailView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
     }
