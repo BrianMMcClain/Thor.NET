@@ -50,6 +50,8 @@
     <Compile Include="Bridges\Services.cs" />
     <Compile Include="Bridges\Targets.cs" />
     <Compile Include="ICuzSettingsIsSealedWrapper.cs" />
+    <Compile Include="Mjolner\Mjolner.cs" />
+    <Compile Include="Mjolner\Thunder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
