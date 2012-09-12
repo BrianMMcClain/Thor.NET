@@ -63,6 +63,10 @@ namespace Thor.Net.Views.Clouds
             RefreshTargetTiles();
         }
 
-        
+        public void AsynchronousUpdate()
+        {
+
+
+        }
     }
 }
