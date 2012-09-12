@@ -13,5 +13,10 @@ namespace Thor.Net.Views
             ApplicationStackPanel.Children.Add(new ApplicationsView());
             ServicesStackPanel.Children.Add(new ServicesView());
         }
+
+        private void SettingsButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Available soon.");
+        }
     }
 }

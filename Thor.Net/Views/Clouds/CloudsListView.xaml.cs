@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
+using Thor.Asgard.Mjolner;
+using Thor.Net.Views.Clouds.Controls;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -13,6 +16,7 @@ namespace Thor.Net.Views.Clouds
         public CloudsListView()
         {
             InitializeComponent();
+            RefreshTargetTiles();
         }
 
         private void AddCloudClick(object sender, RoutedEventArgs e)
@@ -40,11 +44,21 @@ namespace Thor.Net.Views.Clouds
             CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
             foreach (var target in targets)
             {
-                var tile = new Tile() { Title = target.Name };
-                tile.Click += TileOnClick;
-                tile.Margin = new Thickness(15, 15, 0, 0);
-                CloudsViewStackPanel.Children.Add(tile);
-                tiles.Add(tile);
+                var cloudTile = new CloudTile {CloudTarget = {Title = target.Name}};
+                
+                if(target.Applications != null)
+                {
+                    var apps = target.Applications as List<object>;
+                    if (apps != null && apps.Count > 0)
+                    {
+                        cloudTile.Applications.Text = apps.Count.ToString(CultureInfo.InvariantCulture);
+                        cloudTile.Apps.Text = "Apps";
+                    }
+                }
+
+                cloudTile.CloudTarget.Click += TileOnClick;
+                CloudsViewStackPanel.Children.Add(cloudTile);
+                tiles.Add(cloudTile.CloudTarget);
             }
 
             Tiles = tiles;
@@ -54,19 +68,10 @@ namespace Thor.Net.Views.Clouds
         {
             var tile = routedEventArgs.Source as Tile;
             var target = new Targets(new SettingsWrapper()).GetTarget(tile.Title);
-            new SettingsWrapper().SetActiveFoundryTarget(target);
+            var paas = new PaasTarget(target.Username, target.Password, target.Path);
+           
+            new SettingsWrapper().SetActiveFoundryTarget(Mappers.Map.PaasTargetToFoundryTarget(paas, target));
             NavigationCloudsHelper.LoadDetailView(ParentCloudsView.CloudsViewInteractiveStackPanel);
-        }
-
-        private void UserControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            RefreshTargetTiles();
-        }
-
-        public void AsynchronousUpdate()
-        {
-
-
         }
     }
 }

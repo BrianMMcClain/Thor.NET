@@ -27,7 +27,7 @@
 
     <Controls:MetroWindow.WindowCommands>
         <Controls:WindowCommands>
-            <Button Content="settings" />
+            <Button Name="Settings" Content="settings" Click="SettingsButtonClick" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
 

@@ -15,20 +15,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-        <Grid Margin="25,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
-            </Grid.RowDefinitions>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
 
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
+        <StackPanel Orientation="Horizontal">
 
             <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                 <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
@@ -37,32 +27,35 @@
                     Grid.Column="0" Grid.Row="1" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetNameTextBoxLostFocus" />
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+            <StackPanel Orientation="Vertical" Margin="25,0,0,0">
                 <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
                 <TextBox 
                     Name="TargetUriTextBox"
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" />
             </StackPanel>
-
-            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" >
+                <Label Margin="15,15,0,0" Content="Username (E-mail)" />
                 <TextBox 
                     Name="UsernameTextBox" 
-                    Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
+                    Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" />
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
+            <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+                <Label Margin="15,15,0,0" Content="Password" />
                 <PasswordBox 
                     Name="PasswordTextBox"
                     Margin="15,0,0,0" 
                     Width="170"/>
             </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Grid.Column="1" Grid.Row="3" 
                     Name="AddCloudButton"
                     Content="Add Cloud" 
-                    Margin="15,15,0,0" 
+                    Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="AddCloudButtonClick"
                     Width="150"
@@ -70,10 +63,12 @@
             <Button Grid.Column="2" Grid.Row="3"
                     Name="CloudListViewButton"
                     Content="View Clouds" 
-                    Margin="15,15,0,0" 
+                    Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="CancelButtonClick"
                     Width="150"
                     Height="35" IsCancel="True" />
-        </Grid>
+        </StackPanel>
+    </StackPanel>
+
 </UserControl>
