@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
@@ -42,16 +44,24 @@ namespace Thor.Net.Views.Clouds
                 {
                     var appDetail =
                         new CloudsAppDetails
-                                        {
-                                            ApplicationTile =
-                                                {
-                                                    Title = application.Name, 
-                                                    Count = GetInstanceCount(application),
-                                                }                              
-                                        };
-                    appDetail.ApplicationInformationTextBlock.Text =
-                        Properties.Resources.Memory + application.Resources.Memory + "\n\n" + "stuff";
-                    
+                            {
+                                ApplicationTile =
+                                    {
+                                        Title = application.Name,
+                                        Count = GetInstanceCount(application),
+                                    },
+                                ApplicationInformationTextBlock =
+                                    {
+                                        Text =
+                                            Properties.Resources.ApplicationMemory + application.Resources.Memory + "\n" +
+                                            Properties.Resources.ApplicationDisk + application.Resources.Disk + "\n" +
+                                            Properties.Resources.ApplicationStack + application.State + "\n" +
+                                            Properties.Resources.ApplicationModel + application.Staging.Model + "\n" +
+                                            Properties.Resources.ApplicationStack + application.Staging.Stack + "\n" +
+                                            Properties.Resources.ApplicationUris + GetUris(application.Uris)
+                                    }
+                            };
+
 
                     CloudTargetApplications.Children.Add(appDetail);
                 }
@@ -62,6 +72,11 @@ namespace Thor.Net.Views.Clouds
                 // Temporarily ignoring exceptions until I can look at and determine the unique results from Cloud Foundry.
                 MessageBox.Show("This cloud was not found: " + ex.Message);
             }
+        }
+
+        private string GetUris(IEnumerable<string> uris)
+        {
+            return uris.Aggregate(string.Empty, (current, uri) => current + " " + uri);
         }
 
         private static string GetInstanceCount(Application application)

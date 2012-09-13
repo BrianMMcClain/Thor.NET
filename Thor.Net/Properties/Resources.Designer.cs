@@ -61,11 +61,65 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disk: .
+        /// </summary>
+        public static string ApplicationDisk {
+            get {
+                return ResourceManager.GetString("ApplicationDisk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Memory: .
         /// </summary>
-        public static string Memory {
+        public static string ApplicationMemory {
             get {
-                return ResourceManager.GetString("Memory", resourceCulture);
+                return ResourceManager.GetString("ApplicationMemory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model: .
+        /// </summary>
+        public static string ApplicationModel {
+            get {
+                return ResourceManager.GetString("ApplicationModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: .
+        /// </summary>
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Framework Stack: .
+        /// </summary>
+        public static string ApplicationStack {
+            get {
+                return ResourceManager.GetString("ApplicationStack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State: .
+        /// </summary>
+        public static string ApplicationState {
+            get {
+                return ResourceManager.GetString("ApplicationState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URI(s): .
+        /// </summary>
+        public static string ApplicationUris {
+            get {
+                return ResourceManager.GetString("ApplicationUris", resourceCulture);
             }
         }
         

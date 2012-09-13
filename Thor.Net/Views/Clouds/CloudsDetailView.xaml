@@ -16,8 +16,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
-        <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,15,0,0">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel Orientation="Vertical">
                 <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Cloud Target</TextBlock>
                 <StackPanel Orientation="Horizontal">
@@ -53,38 +54,39 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button Grid.Column="1" Grid.Row="3" 
-                    Name="Delete"
-                    Content="Delete" 
-                    Margin="15,15,0,0" 
-                    Style="{DynamicResource SquareButtonStyle}" 
-                    Click="DeleteCloudTarget"
-                    Width="150"
-                    Height="35" IsDefault="True" />
-                    <Button Grid.Column="2" Grid.Row="3" 
-                    Name="CloudListViewButton"
-                    Content="View Clouds" 
-                    Margin="15,15,0,0" 
-                    Style="{DynamicResource SquareButtonStyle}" 
-                    Click="AddCloudButtonClick"
-                    Width="150"
-                    Height="35" IsDefault="True" />
+                    <Button 
+                        Name="Delete"
+                        Content="Delete" 
+                        Margin="15,15,0,0" 
+                        Style="{DynamicResource SquareButtonStyle}" 
+                        Click="DeleteCloudTarget"
+                        Width="150"
+                        Height="35" IsDefault="True" />
+                    <Button
+                        Name="CloudListViewButton"
+                        Content="View Clouds" 
+                        Margin="15,15,0,0" 
+                        Style="{DynamicResource SquareButtonStyle}" 
+                        Click="AddCloudButtonClick"
+                        Width="150"
+                        Height="35" IsDefault="True" />
                 </StackPanel>
                 <TextBlock Text="To edit the cloud target, just type the changes you want and they'll save automatically" 
-                   TextWrapping="Wrap"
-                   Grid.Column="2" 
-                   Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
+                           TextWrapping="Wrap"
+                           Margin="10,10,0,0" 
+                           Name="LabelDirections" 
+                           MaxWidth="150" />
             </StackPanel>
-
-            <StackPanel Orientation="Vertical">
-                <ScrollViewer Margin="15,15,0,0"
-                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="CloudTargetApplications"></StackPanel>
-                </ScrollViewer>
-            </StackPanel>
+            <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="CloudTargetApplications">
+                    <WrapPanel 
+                        Name="CloudTargetApplicationWrap"
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch">
+                    </WrapPanel>
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
-
-
-
     </StackPanel>
 </UserControl>
