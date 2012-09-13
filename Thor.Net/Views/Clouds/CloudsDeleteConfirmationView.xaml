@@ -17,51 +17,42 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid Margin="25,15,0,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
-        </Grid.RowDefinitions>
-
+    <StackPanel Orientation="Vertical" Margin="20,15,0,0">
         <TextBlock Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold" Margin="1,0,-1,0">Cloud Target</TextBlock>
-
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-            <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
-            <TextBox 
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud" Name="TargetNameLabel" />
+                <TextBox 
                     Name="TargetNameTextBox"
                     Grid.Column="0" Grid.Row="1" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetNameTextBoxLostFocus" />
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
-            <TextBox 
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
+                <TextBox 
                     Name="TargetUriTextBox"
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" />
+            </StackPanel>
         </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
-            <TextBox 
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
+                <TextBox 
                     Name="UsernameTextBox" 
                     Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
                     VerticalContentAlignment="Center" />
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
-            <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
-            <PasswordBox 
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
+                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
+                <PasswordBox 
                     Name="PasswordTextBox"
                     Margin="15,0,0,0" 
                     Width="170"/>
+            </StackPanel>
         </StackPanel>
-        <Button Grid.Column="1" Grid.Row="3" 
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <Button Grid.Column="1" Grid.Row="3" 
                     Name="Delete"
                     Content="Delete" 
                     Foreground="Crimson"
@@ -71,7 +62,7 @@
                     Click="DeleteCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
-        <Button Grid.Column="2" Grid.Row="3" 
+            <Button Grid.Column="2" Grid.Row="3" 
                     Name="CloudListViewButton"
                     Content="View Clouds" 
                     Margin="15,15,0,0" 
@@ -79,11 +70,11 @@
                     Click="DeleteCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
-
-        <TextBlock Text="Click delete to confirm the removal of this Cloud Target." 
+            <TextBlock Text="Click delete to confirm the removal of this Cloud Target." 
                    Foreground="Crimson"
                    TextWrapping="Wrap"
                    Grid.Column="2" 
                    Grid.Row="1" Margin="10,10,0,0" Name="LabelDirections" MaxWidth="150" />
-    </Grid>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

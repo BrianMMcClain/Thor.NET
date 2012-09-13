@@ -18,30 +18,21 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-        <Controls:Tile Title="Application" Count="3"  Background="RosyBrown" Margin="15,15,0,0">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">
+        <Controls:Tile Name="ApplicationTile" Title="Application" Count="3"  Background="RosyBrown" Margin="15,15,0,0">
             <StackPanel>
                 <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
             </StackPanel>
         </Controls:Tile>
-        <StackPanel Orientation="Vertical" Background="WhiteSmoke" Margin="15,15,0,0">
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Margin="15,15,0,0" >
-                <TextBlock Margin="15,10,15,15" Name="Instances" Foreground="RosyBrown" FontSize="28">Instances: 3</TextBlock>
-                <TextBlock Margin="15,10,15,15" Name="Memory" Foreground="RosyBrown" FontSize="28">Memory: 256 MB</TextBlock>
-            </StackPanel>
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button Name="EditApplicationButton"
-                    Content="Edit" 
-                    Margin="15,10,15,15"
-                    Style="{DynamicResource SquareButtonStyle}" 
-                    Width="150"
-                    Height="35" Click="EditApplicationButtonClick" />
-                <Button Name="DeleteApplicationButton"
-                    Content="Delete" 
-                    Margin="15,10,15,15"
-                    Style="{DynamicResource SquareButtonStyle}" 
-                    Width="150"
-                    Height="35" Click="DeleteApplicationButtonClick" />
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Stretch" Background="WhiteSmoke" Margin="15,15,0,0">
+            <StackPanel 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Stretch" 
+                Orientation="Horizontal" 
+                Margin="15,15,0,0" 
+                MinWidth="360">
+                <TextBlock Margin="15,10,15,15" Name="ApplicationInformationTextBlock" Foreground="RosyBrown" >blagh d blagh</TextBlock>
             </StackPanel>
         </StackPanel>
     </StackPanel>

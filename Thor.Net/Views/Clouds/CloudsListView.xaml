@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d" 
-             IsVisibleChanged="UserControlIsVisibleChanged">
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -26,7 +25,7 @@
                     Name="CloudsViewStackPanel"
                     Orientation="Horizontal" 
                     HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch">
+                    VerticalAlignment="Stretch">
                 <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Click="AddCloudClick" Background="Green">
                     <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
                 </Controls:Tile>

@@ -94,6 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Mappers\Map.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,7 +116,7 @@
     <Compile Include="Views\Clouds\CloudsAddView.xaml.cs">
       <DependentUpon>CloudsAddView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Clouds\CloudsAppDetails.xaml.cs">
+    <Compile Include="Views\Clouds\Controls\CloudsAppDetails.xaml.cs">
       <DependentUpon>CloudsAppDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Clouds\CloudsDeleteConfirmationView.xaml.cs">
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="Views\CloudsView.xaml.cs">
       <DependentUpon>CloudsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clouds\Controls\CloudTile.xaml.cs">
+      <DependentUpon>CloudTile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Clouds\NavigationCloudsHelper.cs" />
     <Compile Include="Views\ServicesView.xaml.cs">
@@ -162,7 +166,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Clouds\CloudsAppDetails.xaml">
+    <Page Include="Views\Clouds\Controls\CloudsAppDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CloudsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clouds\Controls\CloudTile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -254,6 +262,10 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IronFoundry\IronFoundry.csproj">
+      <Project>{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}</Project>
+      <Name>IronFoundry</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Thor.Asgard\Thor.Asgard.csproj">
       <Project>{39A03181-1D02-4141-915F-23D262E2EA9B}</Project>
       <Name>Thor.Asgard</Name>

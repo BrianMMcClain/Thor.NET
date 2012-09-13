@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 
-namespace Thor.Net.Asgard.Bridges
+namespace Thor.Asgard.Bridges
 {
     public class Services 
     {
@@ -9,8 +8,6 @@ namespace Thor.Net.Asgard.Bridges
         {
             throw new NotImplementedException();
         }
-
-      
 
         public bool PutFoundryItem<T>(T target)
         {

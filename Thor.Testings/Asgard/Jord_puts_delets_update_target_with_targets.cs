@@ -10,7 +10,7 @@ using Thor.Models.Jord;
 namespace Thor.Testings.Asgard
 {
     [TestFixture]
-    public class Jörð_puts_delets_update_target_with_targets
+    public class Jord_puts_delets_update_target_with_targets
     {
         protected FoundryTarget target;
         protected Targets targetsBridge;

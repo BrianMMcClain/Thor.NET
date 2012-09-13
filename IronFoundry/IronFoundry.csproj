@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IronFoundry</RootNamespace>
+    <AssemblyName>IronFoundry</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.9\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\ExtensionMethods.cs" />
+    <Compile Include="Extensions\ObjectExtensionMethods.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\SafeObservableCollection.cs" />
+    <Compile Include="Types\AccessToken.cs" />
+    <Compile Include="Types\Application.cs" />
+    <Compile Include="Types\Cloud.cs" />
+    <Compile Include="Types\CloudUrl.cs" />
+    <Compile Include="Types\Crash.cs" />
+    <Compile Include="Types\EntityBase.cs" />
+    <Compile Include="Types\ExternalInstance.cs" />
+    <Compile Include="Types\Framework.cs" />
+    <Compile Include="Types\IMergeable.cs" />
+    <Compile Include="Types\Info.cs" />
+    <Compile Include="Types\InfoLimits.cs" />
+    <Compile Include="Types\InfoUsage.cs" />
+    <Compile Include="Types\Instance.cs" />
+    <Compile Include="Types\Limits.cs" />
+    <Compile Include="Types\Message.cs" />
+    <Compile Include="Types\Preferences.cs" />
+    <Compile Include="Types\PreferencesV2.cs" />
+    <Compile Include="Types\ProvisionedService.cs" />
+    <Compile Include="Types\StatInfo.cs" />
+    <Compile Include="Types\Stats.cs" />
+    <Compile Include="Types\SystemService.cs" />
+    <Compile Include="Types\Usage.cs" />
+    <Compile Include="Extensions\UriExtensionMethods.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\CustomSerializationBinder.cs" />
+    <Compile Include="Utilities\NewtonsoftJsonDeserializer.cs" />
+    <Compile Include="Utilities\NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Types\VcapResponse.cs" />
+    <Compile Include="Types\VcapUser.cs" />
+    <Compile Include="Types\VcapUserApp.cs" />
+    <Compile Include="vcap\AppsHelper.cs" />
+    <Compile Include="vcap\BaseVmcHelper.cs" />
+    <Compile Include="vcap\Constants.cs" />
+    <Compile Include="vcap\Entities.cs" />
+    <Compile Include="vcap\FrameworkDetetctor.cs" />
+    <Compile Include="vcap\InfoHelper.cs" />
+    <Compile Include="vcap\IVcapClient.cs" />
+    <Compile Include="vcap\MiscHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vcap\ServicesHelper.cs" />
+    <Compile Include="vcap\UserHelper.cs" />
+    <Compile Include="vcap\VcapClient.cs" />
+    <Compile Include="vcap\VcapClientResult.cs" />
+    <Compile Include="vcap\VcapCredentialManager.cs" />
+    <Compile Include="vcap\VcapExceptions.cs" />
+    <Compile Include="vcap\VcapFilesResult.cs" />
+    <Compile Include="vcap\VcapRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

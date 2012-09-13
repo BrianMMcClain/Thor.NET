@@ -41,9 +41,15 @@ namespace Thor.Net.Views.Clouds
             return nameExists;
         }
 
-        public static bool IfUriExists(Uri uri, Label label)
+        public static bool IfUriExists(string uri, Label label)
         {
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
+            if(string.IsNullOrWhiteSpace(uri))
+            {
+                label.Content = Properties.Resources.TargetUri;
+                return false;
+            }
+
+            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(new Uri(uri));
             label.Content = uriExists ?
                 Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
             return uriExists;
