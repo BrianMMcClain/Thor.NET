@@ -77,10 +77,9 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <ScrollViewer Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" 
-                      Margin="15,15,0,0"
+                <ScrollViewer Margin="15,15,0,0"
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <StackPanel Orientation="Vertical" Name="CloudTargetApplications"></StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="CloudTargetApplications"></StackPanel>
                 </ScrollViewer>
             </StackPanel>
         </StackPanel>

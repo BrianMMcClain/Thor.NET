@@ -164,6 +164,5 @@ namespace Thor.Net.Views.Clouds
         {
             SetTempFoundryTarget();
         }
-
     }
 }
