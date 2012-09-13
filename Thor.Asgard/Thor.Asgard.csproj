@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bridges\Applications.cs" />
+    <Compile Include="Bridges\Applications2.cs" />
     <Compile Include="Bridges\Deployments.cs" />
     <Compile Include="Bridges\RainbowBridge.cs" />
     <Compile Include="Bridges\Services.cs" />

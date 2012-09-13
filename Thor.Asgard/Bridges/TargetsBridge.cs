@@ -5,26 +5,18 @@ using Thor.Models.Jord;
 
 namespace Thor.Asgard.Bridges
 {
-    public class Targets
+    public class TargetsBridge
     {
         private readonly ICuzSettingsIsSealedWrapper _wrapper;
      
-        public Targets(ICuzSettingsIsSealedWrapper wrapper)
+        public TargetsBridge(ICuzSettingsIsSealedWrapper wrapper)
         {
             _wrapper = wrapper;
         }
 
         public List<FoundryTarget> GetTargets()
         {
-            try
-            {
-                return _wrapper.Get().Targets;
-            }
-            catch (Exception)
-            {
-                // Log Message.
-                throw;
-            }
+            return _wrapper.Get().Targets;
         }
 
         public FoundryTarget GetTarget(string targetName)

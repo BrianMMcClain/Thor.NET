@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 
-namespace Thor.Net.Asgard.Bridges
+namespace Thor.Asgard.Bridges
 {
-    public class Deployments 
+    public class DeploymentsBridge
     {
        
 

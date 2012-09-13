@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Thor.Models.Jord
 {
@@ -20,5 +22,10 @@ namespace Thor.Models.Jord
         public string Name { get; set; }
         public string Notes { get; set; }
         public DateTime Stamp { get; set; }
+
+        private List<string> GetBaseFoundryNames(IBaseFoundry baseFoundry, IEnumerable<IBaseFoundry> baseFoundries )
+        {
+            return baseFoundries.Select(foundryApplication => baseFoundry.Name).ToList();
+        }
     }
 }

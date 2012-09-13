@@ -2,7 +2,7 @@ using System;
 
 namespace Thor.Asgard.Bridges
 {
-    public class Services 
+    public class ServicesBridge
     {
         public T GetFoundryItem<T>(Guid id)
         {
