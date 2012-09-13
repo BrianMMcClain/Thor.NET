@@ -39,7 +39,7 @@ namespace Thor.Net.Views.Clouds
                 Stamp = DateTime.Now
             };
 
-            new Targets(new SettingsWrapper()).DeleteTarget(foundryTarget);
+            new TargetsBridge(new SettingsWrapper()).DeleteTarget(foundryTarget);
             NavigationCloudsHelper.LoadListView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 

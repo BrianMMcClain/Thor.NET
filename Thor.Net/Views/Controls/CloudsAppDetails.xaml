@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="Thor.Net.Views.Applications.ApplicationsListView"
+﻿<UserControl x:Class="Thor.Net.Views.Controls.CloudsAppDetails"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d" >
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,27 +17,23 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <StackPanel Orientation="Vertical" 
-                    HorizontalAlignment="Stretch" 
-                    VerticalAlignment="Stretch" 
-                    Name="CloudsInteractiveStackPanel">
-            <WrapPanel 
-                    Name="CloudsViewStackPanel"
-                    Orientation="Horizontal" 
-                    HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch">
-                <Controls:Tile Title="New..." Name="AddCloud" Margin="15,15,0,0" Background="Green">
-                    <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
-                </Controls:Tile>
-            </WrapPanel>
 
-            <Button 
-                Name="Refresh" 
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">
+        <Controls:Tile Name="ApplicationTile" Title="Application" Count="3"  Background="RosyBrown" Margin="15,15,0,0">
+            <StackPanel>
+                <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
+            </StackPanel>
+        </Controls:Tile>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Stretch" Background="WhiteSmoke" Margin="15,15,0,0">
+            <StackPanel 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Stretch" 
+                Orientation="Horizontal" 
                 Margin="15,15,0,0" 
-                Width="150" 
-                HorizontalAlignment="Right" 
-                Content="Refresh" Click="RefreshButtonClick"></Button>
+                MinWidth="360">
+                <TextBlock Margin="15,10,15,15" Name="ApplicationInformationTextBlock" Foreground="RosyBrown" >blagh d blagh</TextBlock>
+            </StackPanel>
         </StackPanel>
-    </ScrollViewer>
+    </StackPanel>
 </UserControl>

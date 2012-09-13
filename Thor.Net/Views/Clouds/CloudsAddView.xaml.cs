@@ -23,7 +23,7 @@ namespace Thor.Net.Views.Clouds
 
         private void AddCloudButtonClick(object sender, RoutedEventArgs e)
         {
-var targetRepository = new Targets(new SettingsWrapper());
+var targetRepository = new TargetsBridge(new SettingsWrapper());
 
             if (!NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel) &&
                 !NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))

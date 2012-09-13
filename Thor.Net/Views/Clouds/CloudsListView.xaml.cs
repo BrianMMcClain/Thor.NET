@@ -6,8 +6,7 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Asgard.Mjolner;
-using Thor.Net.Views.Clouds.Controls;
+using Thor.Net.Views.Controls;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -39,7 +38,7 @@ namespace Thor.Net.Views.Clouds
         private void RefreshTargetTiles()
         {
             var tiles = new List<Tile>();
-            var targets = new Targets(new SettingsWrapper()).GetTargets();
+            var targets = new TargetsBridge(new SettingsWrapper()).GetTargets();
 
             CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
             foreach (var target in targets)
@@ -67,7 +66,7 @@ namespace Thor.Net.Views.Clouds
         private void TileOnClick(object sender, RoutedEventArgs routedEventArgs)
         {
             var tile = routedEventArgs.Source as Tile;
-            var target = new Targets(new SettingsWrapper()).GetTarget(tile.Title);
+            var target = new TargetsBridge(new SettingsWrapper()).GetTarget(tile.Title);
             new SettingsWrapper().SetActiveFoundryTarget(target);
             NavigationCloudsHelper.LoadDetailView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }

@@ -8,6 +8,7 @@ using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
+using Thor.Net.Views.Controls;
 using Application = IronFoundry.Types.Application;
 
 namespace Thor.Net.Views.Clouds
@@ -136,7 +137,7 @@ namespace Thor.Net.Views.Clouds
                 Stamp = DateTime.Now
             };
 
-            var targetRepository = new Targets(new SettingsWrapper());
+            var targetRepository = new TargetsBridge(new SettingsWrapper());
 
             if (!NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel) &&
                 !NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))
