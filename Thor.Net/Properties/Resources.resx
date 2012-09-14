@@ -117,26 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplicationCloudTargetName" xml:space="preserve">
+    <value>Cloud </value>
+  </data>
   <data name="ApplicationDisk" xml:space="preserve">
-    <value>Disk: </value>
+    <value>Disk </value>
+  </data>
+  <data name="ApplicationInstanceCount" xml:space="preserve">
+    <value>Instances </value>
   </data>
   <data name="ApplicationMemory" xml:space="preserve">
-    <value>Memory: </value>
+    <value>Memory </value>
   </data>
   <data name="ApplicationModel" xml:space="preserve">
-    <value>Model: </value>
+    <value>Model </value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Name: </value>
+    <value>Name </value>
   </data>
   <data name="ApplicationStack" xml:space="preserve">
-    <value>Framework Stack: </value>
+    <value>Framework Stack </value>
   </data>
   <data name="ApplicationState" xml:space="preserve">
-    <value>State: </value>
+    <value>State </value>
+  </data>
+  <data name="ApplicationUptime" xml:space="preserve">
+    <value>Peak Uptime </value>
   </data>
   <data name="ApplicationUris" xml:space="preserve">
-    <value>URI(s): </value>
+    <value>URI(s) </value>
   </data>
   <data name="TargetDuplicateName" xml:space="preserve">
     <value>This name has already been entered as a cloud target name.</value>

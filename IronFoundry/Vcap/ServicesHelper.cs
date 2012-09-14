@@ -1,8 +1,9 @@
-﻿namespace IronFoundry.Vcap
+﻿using IronFoundry.Model;
+
+namespace IronFoundry.Vcap
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Types;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using RestSharp;

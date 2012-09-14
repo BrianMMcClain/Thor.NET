@@ -1,9 +1,10 @@
-﻿namespace System.Collections.ObjectModel
+﻿using IronFoundry.Model;
+
+namespace System.Collections.ObjectModel
 {
     using Generic;
     using Specialized;
     using Linq;
-    using IronFoundry.Types;
 
     [Serializable]
     public class SafeObservableCollection<T> : ObservableCollection<T>

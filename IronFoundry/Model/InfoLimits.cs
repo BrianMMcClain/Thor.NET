@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace IronFoundry.Types
+namespace IronFoundry.Model
 {
     public class InfoLimits : EntityBase
     {

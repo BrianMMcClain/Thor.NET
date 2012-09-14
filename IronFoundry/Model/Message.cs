@@ -1,7 +1,7 @@
-﻿namespace IronFoundry.Types
-{
-    using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
+namespace IronFoundry.Model
+{
     public abstract class Message : EntityBase
     {
         public const string ReceiveOnly = "RECEIVE_ONLY";

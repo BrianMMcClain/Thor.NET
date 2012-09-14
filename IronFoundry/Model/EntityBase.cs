@@ -1,9 +1,9 @@
-﻿namespace IronFoundry.Types
-{
-    using System;
-    using System.ComponentModel;
-    using Newtonsoft.Json;
+﻿using System;
+using System.ComponentModel;
+using Newtonsoft.Json;
 
+namespace IronFoundry.Model
+{
     [Serializable]
     public abstract class EntityBase : INotifyPropertyChanged
     {

@@ -20,15 +20,7 @@ namespace Thor.Net.Views.Clouds
 
         private void AddCloudClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
-            }
-            catch (Exception)
-            {
-                // Log things.   
-                throw;
-            }
+            NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
 
         public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }

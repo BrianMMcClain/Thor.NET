@@ -1,7 +1,7 @@
-﻿namespace IronFoundry.Types
-{
-    using System;
+﻿using System;
 
+namespace IronFoundry.Model
+{
     public class AccessToken
     {
         private readonly Uri uri;

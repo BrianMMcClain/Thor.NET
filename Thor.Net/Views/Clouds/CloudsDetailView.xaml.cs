@@ -9,7 +9,7 @@ using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
 using Thor.Net.Views.Controls;
-using Application = IronFoundry.Types.Application;
+using Application = IronFoundry.Model.Application;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -49,7 +49,7 @@ namespace Thor.Net.Views.Clouds
                                 ApplicationTile =
                                     {
                                         Title = application.Name,
-                                        Count = GetInstanceCount(application),
+                                        Count = FoundryApplication.GetInstanceCount(application),
                                     },
                                 ApplicationInformationTextBlock =
                                     {
@@ -78,16 +78,6 @@ namespace Thor.Net.Views.Clouds
         private string GetUris(IEnumerable<string> uris)
         {
             return uris.Aggregate(string.Empty, (current, uri) => current + " " + uri);
-        }
-
-        private static string GetInstanceCount(Application application)
-        {
-            string instanceCount = "0";
-            if (application.RunningInstances != null)
-            {
-                instanceCount = application.RunningInstances.ToString();
-            }
-            return instanceCount;
         }
 
         public CloudsView ParentCloudsView { get { return ((Parent as StackPanel).Parent as CloudsView); } }

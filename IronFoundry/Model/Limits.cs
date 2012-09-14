@@ -1,7 +1,7 @@
-﻿namespace IronFoundry.Types
-{
-    using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
+namespace IronFoundry.Model
+{
     public class Limits : EntityBase
     {
         [JsonProperty(PropertyName = "mem")]

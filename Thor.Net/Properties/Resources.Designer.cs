@@ -61,7 +61,16 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disk: .
+        ///   Looks up a localized string similar to Cloud .
+        /// </summary>
+        public static string ApplicationCloudTargetName {
+            get {
+                return ResourceManager.GetString("ApplicationCloudTargetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disk .
         /// </summary>
         public static string ApplicationDisk {
             get {
@@ -70,7 +79,16 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Memory: .
+        ///   Looks up a localized string similar to Instances .
+        /// </summary>
+        public static string ApplicationInstanceCount {
+            get {
+                return ResourceManager.GetString("ApplicationInstanceCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Memory .
         /// </summary>
         public static string ApplicationMemory {
             get {
@@ -79,7 +97,7 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Model: .
+        ///   Looks up a localized string similar to Model .
         /// </summary>
         public static string ApplicationModel {
             get {
@@ -88,7 +106,7 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name: .
+        ///   Looks up a localized string similar to Name .
         /// </summary>
         public static string ApplicationName {
             get {
@@ -97,7 +115,7 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Framework Stack: .
+        ///   Looks up a localized string similar to Framework Stack .
         /// </summary>
         public static string ApplicationStack {
             get {
@@ -106,7 +124,7 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State: .
+        ///   Looks up a localized string similar to State .
         /// </summary>
         public static string ApplicationState {
             get {
@@ -115,7 +133,16 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to URI(s): .
+        ///   Looks up a localized string similar to Peak Uptime .
+        /// </summary>
+        public static string ApplicationUptime {
+            get {
+                return ResourceManager.GetString("ApplicationUptime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URI(s) .
         /// </summary>
         public static string ApplicationUris {
             get {

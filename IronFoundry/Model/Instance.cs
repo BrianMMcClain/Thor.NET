@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IronFoundry.Types
+namespace IronFoundry.Model
 { 
     [Serializable]
     public class Instance : EntityBase, IMergeable<Instance>

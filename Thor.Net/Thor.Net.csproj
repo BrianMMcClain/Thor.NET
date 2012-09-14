@@ -116,6 +116,9 @@
     <Compile Include="Views\Clouds\CloudsAddView.xaml.cs">
       <DependentUpon>CloudsAddView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\ApplicationTile.xaml.cs">
+      <DependentUpon>ApplicationTile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\CloudsAppDetails.xaml.cs">
       <DependentUpon>CloudsAppDetails.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Clouds\CloudsAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\ApplicationTile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

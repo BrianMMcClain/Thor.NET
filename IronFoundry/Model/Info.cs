@@ -1,8 +1,8 @@
-﻿namespace IronFoundry.Types
-{
-    using System.Collections.Generic;
-    using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
+namespace IronFoundry.Model
+{
     public class Info : Message
     {
         [JsonProperty(PropertyName = "name")]

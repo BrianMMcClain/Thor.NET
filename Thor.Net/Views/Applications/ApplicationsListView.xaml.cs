@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
-using IronFoundry.Types;
-using MahApps.Metro.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
@@ -24,31 +23,64 @@ namespace Thor.Net.Views.Applications
             get { return ((this.Parent as StackPanel).Parent as CloudsView); }
         }
 
-        public List<Tile> Tiles { get; set; }
-
         private void RefreshTargetTiles()
         {
-            var tiles = new List<Tile>();
             var applications = new ApplicationsBridge(new SettingsWrapper()).GetApplications();
-            CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
+            FillView(applications);
         }
 
-        private void RefreshButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        private void FillView(IEnumerable<FoundryApplication> applications)
         {
-            var targets = (new TargetsBridge(new SettingsWrapper())).GetTargets();
-            var applications = (new ApplicationsBridge(new SettingsWrapper())).GetApplications();
+            CloudsViewStackPanel.Children.RemoveRange(1, CloudsViewStackPanel.Children.Count - 1);
+            foreach (var application in applications)
+            {
+                var cloudTile =
+                    new ApplicationTile
+                        {
+                            CloudApplication = { Title = application.Name + " @ " + application.Target.Name },
+                            AppsInfo = { Text = GetCollectedInfo(application) }
+                        };
+
+                cloudTile.CloudApplication.Click += CloudApplicationOnClick;
+                CloudsViewStackPanel.Children.Add(cloudTile);
+            }
+        }
+
+        private string GetCollectedInfo(FoundryApplication application)
+        {
+            const string lineBreak = "\n";
+            var collectedInfo = Properties.Resources.ApplicationMemory + lineBreak + application.Resources.Memory +
+                                lineBreak;
+
+            return collectedInfo;
+        }
+
+        private void CloudApplicationOnClick(object sender, RoutedEventArgs routedEventArgs)
+        {
+            // Show details screen.
+           // throw new NotImplementedException();
+        }
+
+        private void RefreshButtonClick(object sender, RoutedEventArgs e)
+        {
+            var settingsWrapper = new SettingsWrapper();
+            var targets = (new TargetsBridge(settingsWrapper)).GetTargets();
+            var applicationsBridge = new ApplicationsBridge(settingsWrapper);
+            var applications = (applicationsBridge).GetApplications();
 
             foreach (var target in targets)
             {
                 var paas = new PaasTarget(target.Username, target.Password, target.Path);
 
-                foreach (Application cloudApplication in paas.CloudApplications)
+                foreach (var cloudApplication in paas.CloudApplications)
                 {
-
+                    var foundryApplication = Mappers.Map. FoundryApplicationMap(target, cloudApplication);
+                    applications.Add(foundryApplication);
+                    applicationsBridge.PutApplication(foundryApplication);
                 }
             }
+
+            FillView(applications);
         }
-
-
     }
 }

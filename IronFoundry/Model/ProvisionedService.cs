@@ -1,9 +1,9 @@
-﻿namespace IronFoundry.Types
-{
-    using System;
-    using System.Collections.Generic;
-    using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
+namespace IronFoundry.Model
+{
     [Serializable]
     public class ProvisionedService : EntityBase, IMergeable<ProvisionedService>
     {        

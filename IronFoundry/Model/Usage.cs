@@ -1,9 +1,9 @@
-﻿namespace IronFoundry.Types
-{
-    using System;
-    using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
-     public class Usage
+namespace IronFoundry.Model
+{
+    public class Usage
      {
         [JsonProperty(PropertyName="time")]
         public DateTime CurrentTime { get; set; }

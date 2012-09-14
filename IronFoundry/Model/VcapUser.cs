@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace IronFoundry.Types
+namespace IronFoundry.Model
 {
     [Serializable]
     public class VcapUser

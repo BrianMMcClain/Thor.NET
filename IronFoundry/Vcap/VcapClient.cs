@@ -1,4 +1,6 @@
-﻿namespace IronFoundry.Vcap
+﻿using IronFoundry.Model;
+
+namespace IronFoundry.Vcap
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +8,6 @@
     using System.Net;
     using System.Text;
     using System.Text.RegularExpressions;
-    using Types;
 
     public class VcapClient : IVcapClient
     {

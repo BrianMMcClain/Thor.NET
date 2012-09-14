@@ -1,4 +1,4 @@
-﻿namespace IronFoundry.Types
+﻿namespace IronFoundry.Model
 {
     public interface IMergeable<T>
     {

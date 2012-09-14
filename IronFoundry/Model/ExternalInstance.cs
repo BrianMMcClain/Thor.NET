@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
-using IronFoundry;
+﻿using Newtonsoft.Json;
 
-namespace IronFoundry.Types
+namespace IronFoundry.Model
 {
     public class ExternalInstance : EntityBase
     {
