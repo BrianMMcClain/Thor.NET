@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Net.Views.Clouds;
 
 namespace Thor.Net.Views.Applications
 {

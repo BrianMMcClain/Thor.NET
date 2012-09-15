@@ -151,6 +151,15 @@ namespace Thor.Net.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to That feature isn&apos;t available just yet, but it will be coming soon. To help out and see the roadmap of the project check out the project at http://ironfoundry.org/Thor..
+        /// </summary>
+        public static string NotAvailableYetJoinThorProject {
+            get {
+                return ResourceManager.GetString("NotAvailableYetJoinThorProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This name has already been entered as a cloud target name..
         /// </summary>
         public static string TargetDuplicateName {

@@ -147,6 +147,9 @@
   <data name="ApplicationUris" xml:space="preserve">
     <value>URI(s) </value>
   </data>
+  <data name="NotAvailableYetJoinThorProject" xml:space="preserve">
+    <value>That feature isn't available just yet, but it will be coming soon. To help out and see the roadmap of the project check out the project at http://ironfoundry.org/Thor.</value>
+  </data>
   <data name="TargetDuplicateName" xml:space="preserve">
     <value>This name has already been entered as a cloud target name.</value>
   </data>
