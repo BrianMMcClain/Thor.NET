@@ -59,10 +59,9 @@ namespace Thor.Asgard.Bridges
                 _wrapper.Save(foundry);
                 return true;
             }
-            catch (Exception ex)
+            catch // (Exception ex)
             {
                 // Log Message.
-
                 return false;
             }
         }
@@ -76,7 +75,7 @@ namespace Thor.Asgard.Bridges
                 _wrapper.Save(foundry);
                 return true;
             }
-            catch (Exception ex)
+            catch // (Exception ex)
             {
                 // Log Message.
 
