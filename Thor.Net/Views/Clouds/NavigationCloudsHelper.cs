@@ -35,7 +35,7 @@ namespace Thor.Net.Views.Clouds
 
         public static bool IfNameExists(string name, Label label)
         {
-            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
+            var nameExists = new TargetsBridge(new SettingsWrapper()).ValidateTargetNameExists(name);
             label.Content = nameExists ?
                 Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
             return nameExists;
@@ -49,7 +49,7 @@ namespace Thor.Net.Views.Clouds
                 return false;
             }
 
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(new Uri(uri));
+            var uriExists = new TargetsBridge(new SettingsWrapper()).ValidateTargetUriExists(new Uri(uri));
             label.Content = uriExists ?
                 Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
             return uriExists;

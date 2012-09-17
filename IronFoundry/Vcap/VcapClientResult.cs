@@ -1,7 +1,7 @@
-﻿namespace IronFoundry.Vcap
-{
-    using Types;
+﻿using IronFoundry.Model;
 
+namespace IronFoundry.Vcap
+{
     public class VcapClientResult
     {
         private readonly bool success = true;

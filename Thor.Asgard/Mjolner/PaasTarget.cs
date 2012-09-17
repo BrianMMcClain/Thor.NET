@@ -1,28 +1,34 @@
 using System;
 using System.Collections.Generic;
-using IronFoundry.Types;
+using IronFoundry.Model;
 using IronFoundry.Vcap;
 
 namespace Thor.Asgard.Mjolner
 {
     public interface IPaasTarget
     {
-        IEnumerable<Application> CloudApplications { get; set; }
-        Info CloudInfo { get; set; }
+        IEnumerable<Application> CloudApplications { get; }
+        Info CloudInfo { get; }
     }
 
     public class PaasTarget : IPaasTarget
     {
+        private readonly VcapClient _client;
+
         public PaasTarget(string username, string password, Uri apiUri)
         {
-            var client = new VcapClient(apiUri.ToString());
-            client.Login(username, password);
-
-            CloudInfo = client.GetInfo();
-            CloudApplications = client.GetApplications();
+            _client = new VcapClient(apiUri.ToString());
+            _client.Login(username, password);
         }
 
-        public IEnumerable<Application> CloudApplications { get; set; }
-        public Info CloudInfo { get; set; }
+        public IEnumerable<Application> CloudApplications
+        {
+            get { return _client.GetApplications(); }
+        }
+
+        public Info CloudInfo
+        {
+            get { return _client.GetInfo(); }
+        }
     }
 }

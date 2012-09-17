@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using IronFoundry.Types;
+using IronFoundry.Model;
 
 namespace Thor.Models.Jord
 {

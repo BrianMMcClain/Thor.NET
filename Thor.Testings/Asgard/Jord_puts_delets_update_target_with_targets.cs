@@ -13,7 +13,7 @@ namespace Thor.Testings.Asgard
     public class Jord_puts_delets_update_target_with_targets
     {
         protected FoundryTarget target;
-        protected Targets targetsBridge;
+        protected TargetsBridge targetsBridge;
         protected Guid targetId;
         private ICuzSettingsIsSealedWrapper _wrapper;
 
@@ -25,7 +25,7 @@ namespace Thor.Testings.Asgard
 
             _wrapper = Substitute.For<ICuzSettingsIsSealedWrapper>();
 
-            targetsBridge = new Targets(_wrapper);
+            targetsBridge = new TargetsBridge(_wrapper);
             target = StaticTestData.SampleFoundryTarget();
 
             _wrapper.Get().Returns((new Foundry()));

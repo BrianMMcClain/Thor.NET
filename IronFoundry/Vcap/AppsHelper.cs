@@ -1,4 +1,5 @@
-﻿using IronFoundry.Utilities;
+﻿using IronFoundry.Model;
+using IronFoundry.Utilities;
 
 namespace IronFoundry.Vcap
 {
@@ -9,9 +10,7 @@ namespace IronFoundry.Vcap
     using System.Security.Cryptography;
     using System.Threading;
     using ICSharpCode.SharpZipLib.Zip;
-    using IronFoundry;
-    using IronFoundry.Properties;
-    using IronFoundry.Types;
+    using Properties;
     using Newtonsoft.Json;
     using RestSharp;
 

@@ -1,4 +1,6 @@
-﻿using Thor.Asgard.Mjolner;
+﻿using System;
+using IronFoundry.Model;
+using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
 
 namespace Thor.Net.Mappers
@@ -16,6 +18,27 @@ namespace Thor.Net.Mappers
             target.Version = paas.CloudInfo.Version;
             target.Support = paas.CloudInfo.Support;
             return target;
+        }
+
+        public static FoundryApplication FoundryApplicationMap(FoundryTarget target,
+                                                              Application cloudApplication)
+        {
+            var foundryApplication =
+                new FoundryApplication { Name = cloudApplication.Name, Target = target };
+
+            var rootUri = cloudApplication.Uris[0];
+            if (!string.IsNullOrWhiteSpace(rootUri))
+            {
+                if (!rootUri.StartsWith("http://"))
+                {
+                    rootUri = "http://" + rootUri;
+                    foundryApplication.Path = new Uri(rootUri);
+                }
+            }
+
+            foundryApplication.Resources = cloudApplication.Resources;
+
+            return foundryApplication;
         }
     }
 }

@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bridges\Applications.cs" />
-    <Compile Include="Bridges\Deployments.cs" />
+    <Compile Include="Bridges\ApplicationsBridge.cs" />
+    <Compile Include="Bridges\DeploymentsBridge.cs" />
     <Compile Include="Bridges\RainbowBridge.cs" />
-    <Compile Include="Bridges\Services.cs" />
-    <Compile Include="Bridges\Targets.cs" />
+    <Compile Include="Bridges\ServicesBridge.cs" />
+    <Compile Include="Bridges\TargetsBridge.cs" />
     <Compile Include="ICuzSettingsIsSealedWrapper.cs" />
     <Compile Include="Mjolner\PaasTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

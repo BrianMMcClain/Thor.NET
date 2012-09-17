@@ -8,7 +8,8 @@ using Thor.Asgard;
 using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
-using Application = IronFoundry.Types.Application;
+using Thor.Net.Views.Controls;
+using Application = IronFoundry.Model.Application;
 
 namespace Thor.Net.Views.Clouds
 {
@@ -48,7 +49,7 @@ namespace Thor.Net.Views.Clouds
                                 ApplicationTile =
                                     {
                                         Title = application.Name,
-                                        Count = GetInstanceCount(application),
+                                        Count = FoundryApplication.GetInstanceCount(application),
                                     },
                                 ApplicationInformationTextBlock =
                                     {
@@ -77,16 +78,6 @@ namespace Thor.Net.Views.Clouds
         private string GetUris(IEnumerable<string> uris)
         {
             return uris.Aggregate(string.Empty, (current, uri) => current + " " + uri);
-        }
-
-        private static string GetInstanceCount(Application application)
-        {
-            string instanceCount = "0";
-            if (application.RunningInstances != null)
-            {
-                instanceCount = application.RunningInstances.ToString();
-            }
-            return instanceCount;
         }
 
         public CloudsView ParentCloudsView { get { return ((Parent as StackPanel).Parent as CloudsView); } }
@@ -136,7 +127,7 @@ namespace Thor.Net.Views.Clouds
                 Stamp = DateTime.Now
             };
 
-            var targetRepository = new Targets(new SettingsWrapper());
+            var targetRepository = new TargetsBridge(new SettingsWrapper());
 
             if (!NavigationCloudsHelper.IfNameExists(TargetNameTextBox.Text, TargetNameLabel) &&
                 !NavigationCloudsHelper.IfUriExists(TargetUriTextBox.Text, TargetUriLabel))

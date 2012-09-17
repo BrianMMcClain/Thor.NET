@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using Thor.Asgard;
 using Thor.Asgard.Bridges;
-using Thor.Net.Views.Clouds;
 
 namespace Thor.Net.Views.Applications
 {
@@ -31,7 +30,7 @@ namespace Thor.Net.Views.Applications
 
         public static bool IfNameExists(string name, Label label)
         {
-            var nameExists = new Targets(new SettingsWrapper()).ValidateTargetNameExists(name);
+            var nameExists = new TargetsBridge(new SettingsWrapper()).ValidateTargetNameExists(name);
             label.Content = nameExists ?
                 Properties.Resources.TargetDuplicateName : Properties.Resources.TargetName;
             return nameExists;
@@ -39,7 +38,7 @@ namespace Thor.Net.Views.Applications
 
         public static bool IfUriExists(Uri uri, Label label)
         {
-            var uriExists = new Targets(new SettingsWrapper()).ValidateTargetUriExists(uri);
+            var uriExists = new TargetsBridge(new SettingsWrapper()).ValidateTargetUriExists(uri);
             label.Content = uriExists ?
                 Properties.Resources.TargetDuplicateUri : Properties.Resources.TargetUri;
             return uriExists;

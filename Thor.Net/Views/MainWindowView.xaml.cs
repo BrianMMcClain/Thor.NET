@@ -16,7 +16,7 @@ namespace Thor.Net.Views
 
         private void SettingsButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Available soon.");
+            MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }
     }
 }

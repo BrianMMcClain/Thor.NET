@@ -10,10 +10,9 @@ namespace Thor.Net.Views.Services
             InitializeComponent();
         }
 
-        private void AddCloud_Click(object sender, RoutedEventArgs e)
+        private void AddServicesClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Almost available, help us out on the Thor Project on Github at https://github.com/IronFoundry/Thor.NET.");
+            MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }
     }
 }
