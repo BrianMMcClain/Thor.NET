@@ -18,7 +18,7 @@
     </UserControl.Resources>
 
     <StackPanel>
-        <Controls:Tile Name="CloudTarget" Margin="15,15,0,0">
+        <Controls:Tile Name="CloudTarget" Margin="15,15,0,0" Click="CloudTargetClick">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Thor.Net;component/Images/cloud.png" Stretch="None" />
                 <StackPanel>

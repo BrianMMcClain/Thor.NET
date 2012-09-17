@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Thor.Net.Views.Controls
 {
@@ -7,6 +8,11 @@ namespace Thor.Net.Views.Controls
         public CloudTile()
         {
             InitializeComponent();
+        }
+
+        private void CloudTargetClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }
     }
 }

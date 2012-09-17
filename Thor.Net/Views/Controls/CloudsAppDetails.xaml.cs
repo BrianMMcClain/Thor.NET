@@ -10,14 +10,9 @@ namespace Thor.Net.Views.Controls
             InitializeComponent();
         }
 
-        private void EditApplicationButtonClick(object sender, RoutedEventArgs e)
+        private void ApplicationTile_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void DeleteApplicationButtonClick(object sender, RoutedEventArgs e)
-        {
-
+            MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }
     }
 }
