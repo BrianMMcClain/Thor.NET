@@ -1,5 +1,5 @@
 ﻿using System;
-using IronFoundry.Model;
+using IronFoundry.Models;
 using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
 
@@ -25,7 +25,7 @@ namespace Thor.Net.Mappers
         {
             var foundryApplication =
                 new FoundryApplication { Name = cloudApplication.Name, Target = target };
-
+            
             var rootUri = cloudApplication.Uris[0];
             if (!string.IsNullOrWhiteSpace(rootUri))
             {
@@ -35,8 +35,6 @@ namespace Thor.Net.Mappers
                     foundryApplication.Path = new Uri(rootUri);
                 }
             }
-
-            foundryApplication.Resources = cloudApplication.Resources;
 
             return foundryApplication;
         }

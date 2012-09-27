@@ -10,7 +10,7 @@ namespace Thor.Net.Views.Controls
             InitializeComponent();
         }
 
-        private void ApplicationTile_Click(object sender, RoutedEventArgs e)
+        private void ApplicationTileClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }

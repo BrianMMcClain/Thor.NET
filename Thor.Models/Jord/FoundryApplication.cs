@@ -1,5 +1,6 @@
 using System;
-using IronFoundry.Model;
+using IronFoundry.Models;
+using AppResources = IronFoundry.VcapClient.AppResources;
 
 namespace Thor.Models.Jord
 {

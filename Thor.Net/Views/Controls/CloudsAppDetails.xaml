@@ -19,7 +19,7 @@
     </UserControl.Resources>
 
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">
-        <Controls:Tile Name="ApplicationTile" Title="Application" Count="3"  Background="RosyBrown" Margin="15,15,0,0" Click="ApplicationTile_Click">
+        <Controls:Tile Name="ApplicationTile" Title="Application" Count="3"  Background="RosyBrown" Margin="15,15,0,0" Click="ApplicationTileClick">
             <StackPanel>
                 <Image Source="/Thor.Net;component/Images/app.png" Stretch="None" />
             </StackPanel>
