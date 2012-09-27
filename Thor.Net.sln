@@ -101,3 +101,63 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collateral", "Collateral", "{3BF66F76-B07B-4CCF-89B4-0D0CB9ABF1D4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Net", "Thor.Net\Thor.Net.csproj", "{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Testings", "Thor.Testings\Thor.Testings.csproj", "{3F15258E-04D9-472D-BB16-FAE3074957FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Models", "Thor.Models\Thor.Models.csproj", "{14EFCA2F-91FD-43B6-9B33-0597F7E45361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Asgard", "Thor.Asgard\Thor.Asgard.csproj", "{39A03181-1D02-4141-915F-23D262E2EA9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronFoundry", "IronFoundry\IronFoundry.csproj", "{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronFoundry.Tests", "IronFoundry.Tests\IronFoundry.Tests.csproj", "{FAFB3C4D-55F5-4E36-9243-D1330B1A94A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7A3C90EF-D7E5-4E5D-84EE-4B9C7622CD94}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F15258E-04D9-472D-BB16-FAE3074957FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F15258E-04D9-472D-BB16-FAE3074957FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F15258E-04D9-472D-BB16-FAE3074957FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F15258E-04D9-472D-BB16-FAE3074957FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EFCA2F-91FD-43B6-9B33-0597F7E45361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EFCA2F-91FD-43B6-9B33-0597F7E45361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EFCA2F-91FD-43B6-9B33-0597F7E45361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EFCA2F-91FD-43B6-9B33-0597F7E45361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A03181-1D02-4141-915F-23D262E2EA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A03181-1D02-4141-915F-23D262E2EA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A03181-1D02-4141-915F-23D262E2EA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A03181-1D02-4141-915F-23D262E2EA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAFB3C4D-55F5-4E36-9243-D1330B1A94A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAFB3C4D-55F5-4E36-9243-D1330B1A94A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAFB3C4D-55F5-4E36-9243-D1330B1A94A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAFB3C4D-55F5-4E36-9243-D1330B1A94A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
