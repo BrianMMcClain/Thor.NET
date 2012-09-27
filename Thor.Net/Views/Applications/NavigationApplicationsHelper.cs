@@ -15,7 +15,7 @@ namespace Thor.Net.Views.Applications
 
         public static void LoadListView(StackPanel parentPanel)
         {
-            ShowCloudsView(new ApplicationsListView(), parentPanel);
+            ShowCloudsView(new ApplicationListView(), parentPanel);
         }
 
         public static void LoadDetailView(StackPanel parentPanel)
