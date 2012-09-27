@@ -7,7 +7,7 @@ namespace IronFoundry.Model
     [Serializable]
     public class Cloud : EntityBase, IEquatable<Cloud>, IMergeable<Cloud>
     {
-        private readonly Guid _id;
+        private readonly Guid _id = Guid.Empty;
         private string _serverName;
         private string _hostName;
         private string _email;
@@ -33,6 +33,7 @@ namespace IronFoundry.Model
 
         public Cloud(Guid id)
         {
+            _id = id;
             _applications.CollectionChanged += (s, e) => RaisePropertyChanged("Applications");
             _services.CollectionChanged += (s, e) => RaisePropertyChanged("Services");
             _availableServices.CollectionChanged += (s, e) => RaisePropertyChanged("AvailableServices");
