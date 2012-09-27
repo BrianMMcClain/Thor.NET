@@ -84,10 +84,6 @@
       <Project>{14EFCA2F-91FD-43B6-9B33-0597F7E45361}</Project>
       <Name>Thor.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Thor.Net\Thor.Net.csproj">
-      <Project>{32895BAC-79DE-4A4E-ADED-A2939B3B52BA}</Project>
-      <Name>Thor.Net</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
