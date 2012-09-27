@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,7 +8,6 @@ using Thor.Asgard.Bridges;
 using Thor.Asgard.Mjolner;
 using Thor.Models.Jord;
 using Thor.Net.Views.Controls;
-using Application = IronFoundry.Model.Application;
 
 namespace Thor.Net.Views.Clouds
 {

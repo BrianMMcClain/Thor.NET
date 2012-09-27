@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using IronFoundry.Model;
-using IronFoundry.Vcap;
+using IronFoundry.Models;
+using IronFoundry.VcapClient;
 
 namespace Thor.Asgard.Mjolner
 {

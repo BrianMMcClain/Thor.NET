@@ -58,6 +58,9 @@
     <StartupObject>Thor.Net.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronFoundry.VcapClient">
+      <HintPath>..\deleteWhenNugetVcapClientIsAvailable\IronFoundry.VcapClient.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
