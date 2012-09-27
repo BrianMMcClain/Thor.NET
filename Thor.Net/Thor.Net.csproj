@@ -269,10 +269,6 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IronFoundry\IronFoundry.csproj">
-      <Project>{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}</Project>
-      <Name>IronFoundry</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Thor.Asgard\Thor.Asgard.csproj">
       <Project>{39A03181-1D02-4141-915F-23D262E2EA9B}</Project>
       <Name>Thor.Asgard</Name>

@@ -60,10 +60,6 @@
     <Compile Include="SettingsWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IronFoundry\IronFoundry.csproj">
-      <Project>{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}</Project>
-      <Name>IronFoundry</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Thor.Models\Thor.Models.csproj">
       <Project>{14EFCA2F-91FD-43B6-9B33-0597F7E45361}</Project>
       <Name>Thor.Models</Name>

@@ -1,5 +1,7 @@
 ﻿
 using System.Windows;
+using Thor.Asgard;
+using Thor.Models;
 
 namespace Thor.Net.Views
 {

@@ -12,7 +12,6 @@ namespace Thor.Net.Views.Controls
 
         private void CloudTargetClick(object sender, System.Windows.RoutedEventArgs e)
         {
-            MessageBox.Show(Properties.Resources.NotAvailableYetJoinThorProject);
         }
     }
 }

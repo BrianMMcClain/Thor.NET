@@ -49,12 +49,6 @@
     <Compile Include="Jord\IBaseFoundry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IronFoundry\IronFoundry.csproj">
-      <Project>{08F08CFF-0C55-473B-8D09-BCCA8CEC87FE}</Project>
-      <Name>IronFoundry</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

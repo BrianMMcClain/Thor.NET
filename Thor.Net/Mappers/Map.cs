@@ -25,7 +25,7 @@ namespace Thor.Net.Mappers
         {
             var foundryApplication =
                 new FoundryApplication { Name = cloudApplication.Name, Target = target };
-
+            
             var rootUri = cloudApplication.Uris[0];
             if (!string.IsNullOrWhiteSpace(rootUri))
             {
