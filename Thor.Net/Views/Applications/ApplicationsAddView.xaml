@@ -16,51 +16,51 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    
+
     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
-        <TextBlock FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add an Application Deployment</TextBlock>
+        <TextBlock FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add an Application</TextBlock>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
-                <Label Margin="15,15,0,0" Content="Cloud" Name="TargetNameLabel" />
+                <Label Margin="15,15,0,0" Content="Name" Name="NameLabel" />
                 <TextBox 
-                    Name="TargetNameTextBox"
-                    Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" LostFocus="TargetNameTextBoxLostFocus" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical" >
-                <Label Margin="15,15,0,0" Content="Target URI" Name="TargetUriLabel" />
-                <TextBox 
-                    Name="TargetUriTextBox"
-                    Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" LostFocus="TargetUriTextBoxLostFocus" />
+                    Name="ApplicationNameTextBox"
+                    Margin="15,0,0,0" Width="370" 
+                    VerticalContentAlignment="Center"/>
             </StackPanel>
         </StackPanel>
+
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" >
-                <Label Margin="15,15,0,0" Content="Username (E-mail)" />
-                <TextBox 
-                    Name="UsernameTextBox" 
-                    Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" />
+                <Label Margin="15,15,0,0" Content="Path" Name="PathLabel" />
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox 
+                        Name="PathTextBox"
+                        Margin="15,0,0,0" Width="240" 
+                        VerticalContentAlignment="Center" />
+
+                    <Button Name="Browse"
+                        Content="Browse" 
+                        Margin="10,0,0,0" 
+                        Width="120"
+                        Height="25" Click="BrowseClick" />
+                </StackPanel>
+
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Label Margin="15,15,0,0" Content="Password" />
-                <PasswordBox 
-                    Name="PasswordTextBox"
-                    Margin="15,0,0,0" 
-                    Width="170"/>
-            </StackPanel>
+
+
         </StackPanel>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="AddCloudButton"
-                    Content="Add Cloud" 
+            <Button Name="AddApplicationButton"
+                    Content="Add Application" 
                     Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="AddCloudButtonClick"
                     Width="150"
                     Height="35" IsDefault="True" />
-            <Button Name="CloudListViewButton"
-                    Content="View Clouds" 
+            <Button Name="ApplicationListViewButton"
+                    Content="View Applications" 
                     Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
                     Click="CancelButtonClick"
