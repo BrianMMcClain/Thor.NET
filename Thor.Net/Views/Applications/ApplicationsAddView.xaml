@@ -17,66 +17,56 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" >
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="3"></TextBlock>
-
-            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                <Label Grid.Column="0" Grid.Row="1" Margin="15,15,0,0"  Content="Cloud"  />
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
+        <TextBlock FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add an Application</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Label Margin="15,15,0,0" Content="Name" Name="NameLabel" />
                 <TextBox 
-                    Name="TargetNameTextBox"
-                    Grid.Column="0" Grid.Row="1" Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" />
+                    Name="ApplicationNameTextBox"
+                    Margin="15,0,0,0" Width="370" 
+                    VerticalContentAlignment="Center"/>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Target URI" />
-                <TextBox 
-                    Name="TargetUriTextBox"
-                    Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" >
+                <Label Margin="15,15,0,0" Content="Path" Name="PathLabel" />
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox 
+                        Name="PathTextBox"
+                        Margin="15,0,0,0" Width="240" 
+                        VerticalContentAlignment="Center" />
+
+                    <Button Name="Browse"
+                        Content="Browse" 
+                        Margin="10,0,0,0" 
+                        Width="120"
+                        Height="25" Click="BrowseClick" />
+                </StackPanel>
+
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Username (E-mail)" />
-                <TextBox 
-                    Name="UsernameTextBox" 
-                    Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" Width="170" 
-                    VerticalContentAlignment="Center" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
-                <Label Grid.Column="1" Grid.Row="1" Margin="15,15,0,0" Content="Password" />
-                <PasswordBox 
-                    Name="PasswordTextBox"
-                    Margin="15,0,0,0" 
-                    Width="170"/>
-            </StackPanel>
-            <Button Grid.Column="1" Grid.Row="3" 
-                    Name="PushApplication"
-                    Content="Push Application" 
-                    Margin="15,15,0,0" 
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="AddApplicationButton"
+                    Content="Add Application" 
+                    Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
+                    Click="AddCloudButtonClick"
                     Width="150"
-                    Height="35" Click="AddCloudButtonClick" />
-            <Button Grid.Column="2" Grid.Row="3"
-                    Name="ViewApplicationList"
+                    Height="35" IsDefault="True" />
+            <Button Name="ApplicationListViewButton"
                     Content="View Applications" 
-                    Margin="15,15,0,0" 
+                    Margin="25,25,0,0" 
                     Style="{DynamicResource SquareButtonStyle}" 
+                    Click="CancelButtonClick"
                     Width="150"
-                    Height="35" Click="CancelButtonClick" />
-        </Grid>
-
+                    Height="35" IsCancel="True" />
+        </StackPanel>
     </StackPanel>
+
 </UserControl>

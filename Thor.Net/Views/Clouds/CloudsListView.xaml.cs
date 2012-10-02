@@ -17,15 +17,15 @@ namespace Thor.Net.Views.Clouds
             InitializeComponent();
             RefreshTargetTiles();
         }
+        
+        public CloudsView ParentCloudsView { get { return ((Parent as StackPanel).Parent as CloudsView); } }
+
+        public List<Tile> Tiles { get; set; }
 
         private void AddCloudClick(object sender, RoutedEventArgs e)
         {
             NavigationCloudsHelper.LoadAddView(ParentCloudsView.CloudsViewInteractiveStackPanel);
         }
-
-        public CloudsView ParentCloudsView { get { return ((this.Parent as StackPanel).Parent as CloudsView); } }
-
-        public List<Tile> Tiles { get; set; }
 
         private void RefreshTargetTiles()
         {

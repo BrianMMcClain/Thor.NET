@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20,15,0,0">
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
+        <TextBlock FontSize="18" FontStyle="Normal" FontWeight="ExtraBold">Add a Cloud Target</TextBlock>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <Label Margin="15,15,0,0" Content="Cloud" Name="TargetNameLabel" />
