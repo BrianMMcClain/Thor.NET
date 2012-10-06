@@ -10,17 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Net", "Thor.Net\Thor.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Testings", "Thor.Testings\Thor.Testings.csproj", "{3F15258E-04D9-472D-BB16-FAE3074957FB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deleteWhenNugetVcapClientIsAvailable", "deleteWhenNugetVcapClientIsAvailable", "{DCDB0831-A8DF-461D-A487-1603B68E2FDE}"
-	ProjectSection(SolutionItems) = preProject
-		deleteWhenNugetVcapClientIsAvailable\ICSharpCode.SharpZipLib.dll = deleteWhenNugetVcapClientIsAvailable\ICSharpCode.SharpZipLib.dll
-		deleteWhenNugetVcapClientIsAvailable\IronFoundry.VcapClient.dll = deleteWhenNugetVcapClientIsAvailable\IronFoundry.VcapClient.dll
-		deleteWhenNugetVcapClientIsAvailable\IronFoundry.VcapClient.pdb = deleteWhenNugetVcapClientIsAvailable\IronFoundry.VcapClient.pdb
-		deleteWhenNugetVcapClientIsAvailable\Newtonsoft.Json.dll = deleteWhenNugetVcapClientIsAvailable\Newtonsoft.Json.dll
-		deleteWhenNugetVcapClientIsAvailable\Newtonsoft.Json.xml = deleteWhenNugetVcapClientIsAvailable\Newtonsoft.Json.xml
-		deleteWhenNugetVcapClientIsAvailable\RestSharp.dll = deleteWhenNugetVcapClientIsAvailable\RestSharp.dll
-		deleteWhenNugetVcapClientIsAvailable\RestSharp.xml = deleteWhenNugetVcapClientIsAvailable\RestSharp.xml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Asgard", "Thor.Asgard\Thor.Asgard.csproj", "{39A03181-1D02-4141-915F-23D262E2EA9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thor.Models", "Thor.Models\Thor.Models.csproj", "{14EFCA2F-91FD-43B6-9B33-0597F7E45361}"
